@@ -1,6 +1,7 @@
 #pragma once
 #include <ntddk.h>
 
+//IOCTL = Input & output control richting drivers, hiermee kunnen gebruikersmode applicaties communiceren met kernelmode drivers.
 #define DEVICE_NAME L"\\Device\\JimSecurity"
 #define SYMLINK_NAME L"\\DosDevices\\JimSecurity"
 
