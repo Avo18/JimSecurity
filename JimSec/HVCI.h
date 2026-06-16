@@ -1,6 +1,7 @@
 #pragma once
 
 #include <ntddk.h>
+#include <wdf.h>
 
 // kijkt of HVCI aan staat.
 // hvci is een hypervisor die bepaalde beveiligingsfuncties biedt, zoals het isoleren van kritieke systeemprocessen en het voorkomen van bepaalde soorten aanvallen.

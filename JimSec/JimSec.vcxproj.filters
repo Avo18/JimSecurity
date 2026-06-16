@@ -17,6 +17,12 @@
       <UniqueIdentifier>{8E41214B-6785-4CFE-B992-037D68949A14}</UniqueIdentifier>
       <Extensions>inf;inv;inx;mof;mc;</Extensions>
     </Filter>
+    <Filter Include="Header Files\Shared_Protocol">
+      <UniqueIdentifier>{5cf58f61-c498-4c33-afb1-2b8f75d0c2ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Sessions">
+      <UniqueIdentifier>{cc3557c8-51a9-4583-81f9-3d76e011d441}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Inf Include="JimSec.inf">
@@ -33,12 +39,21 @@
     <ClInclude Include="HVCI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Shared_Protocol\Auth.h">
+      <Filter>Header Files\Shared_Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="Sessions\Auth.h">
+      <Filter>Header Files\Sessions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Driver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="hvci.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Authentication.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

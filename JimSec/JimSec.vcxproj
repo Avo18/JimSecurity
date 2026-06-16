@@ -111,8 +111,11 @@
     <ClInclude Include="HVCI.h" />
     <ClInclude Include="IOCTL.h" />
     <ClInclude Include="SecurityDriver.h" />
+    <ClInclude Include="Sessions\Auth.h" />
+    <ClInclude Include="Shared_Protocol\Auth.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Authentication.cpp" />
     <ClCompile Include="Driver.cpp" />
     <ClCompile Include="hvci.cpp" />
   </ItemGroup>

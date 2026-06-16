@@ -1,0 +1,20 @@
+#pragma once
+#include "..\SecurityDriver.h"
+
+#define IOCTL_AUTH_START \
+CTL_CODE(FILE_DEVICE_UNKNOWN,0x800,METHOD_BUFFERED,FILE_ANY_ACCESS)
+
+#define IOCTL_AUTH_RESPONSE \
+CTL_CODE(FILE_DEVICE_UNKNOWN,0x801,METHOD_BUFFERED,FILE_ANY_ACCESS)
+
+typedef struct
+{
+    unsigned char Challenge[32];
+
+} AUTH_CHALLENGE;
+
+typedef struct
+{
+    unsigned char Signature[256];
+
+} AUTH_RESPONSE;

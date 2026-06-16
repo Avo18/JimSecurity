@@ -1,4 +1,5 @@
 #pragma once
+#include <ntddk.h>
 
 //#define IOCTL_SECURITY_PING \
 //CTL_CODE(FILE_DEVICE_UNKNOWN, 0x800, METHOD_BUFFERED, FILE_ANY_ACCESS)

@@ -1,6 +1,9 @@
 #include <ntddk.h>
 #include "IOCTL.h"
 #include "hvci.cpp"
+#include "Shared_Protocol/Auth.h"
+#include "Authentication.cpp"
+#include <winnt.h>
 
 PDEVICE_OBJECT gDeviceObject = NULL;
 
@@ -50,6 +53,21 @@ NTSTATUS DeviceControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
         break;
     }
 
+    case IOCTL_AUTH_START:
+    {
+
+        AUTH_CHALLENGE response;
+		Authentication auth = Authentication();
+        auth.GenerateChallenge(response.Challenge);
+
+        RtlCopyMemory(gSession.Challenge, response.Challenge, 32);
+
+        RtlCopyMemory(Irp->AssociatedIrp.SystemBuffer, &response, sizeof(response));
+
+        status = STATUS_SUCCESS;
+        break;
+    }
+
     case IOCTL_PING:
     {
         if (!gAuthenticated)
@@ -57,12 +75,12 @@ NTSTATUS DeviceControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
             status = STATUS_ACCESS_DENIED;
             break;
         }
-        if (!IsHvciEnabled())
-        {
-            DbgPrint("HVCI NOT enabled - security reduced mode\n");
-            status = STATUS_ACCESS_DENIED;
-            break;
-        }
+        //if (!IsHvciEnabled())
+        //{
+            //DbgPrint("HVCI NOT enabled - security reduced mode\n");
+            //status = STATUS_ACCESS_DENIED;
+            //break;
+        //}
 
 
         DbgPrint("Ping received from authenticated client\n");
@@ -95,10 +113,14 @@ NTSTATUS CreateClose(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 
 VOID DriverUnload(PDRIVER_OBJECT DriverObject)
 {
-    IoDeleteSymbolicLink(&(UNICODE_STRING)SYMLINK_NAME);
+    UNICODE_STRING symLink;
+    RtlInitUnicodeString(&symLink, SYMLINK_NAME);
+
+    IoDeleteSymbolicLink(&symLink);
     IoDeleteDevice(DriverObject->DeviceObject);
 }
 
+extern "C"
 NTSTATUS DriverEntry(PDRIVER_OBJECT DriverObject, PUNICODE_STRING RegistryPath)
 {
     UNICODE_STRING devName = RTL_CONSTANT_STRING(DEVICE_NAME);

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SecurityManaged_BCL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c395dc8f4dac3b17b28ae2fe005721124bc74913")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc698647649e0fb2cd70388b77adf199b3502fda")]
 [assembly: System.Reflection.AssemblyProductAttribute("SecurityManaged_BCL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SecurityManaged_BCL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
