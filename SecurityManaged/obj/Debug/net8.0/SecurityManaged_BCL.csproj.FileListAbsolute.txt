@@ -1,0 +1,12 @@
+C:\JimSec\SecurityManaged\bin\Debug\net8.0\SecurityManaged_BCL.deps.json
+C:\JimSec\SecurityManaged\bin\Debug\net8.0\SecurityManaged_BCL.dll
+C:\JimSec\SecurityManaged\bin\Debug\net8.0\SecurityManaged_BCL.pdb
+C:\JimSec\SecurityManaged\obj\Debug\net8.0\SecurityManaged_BCL.GeneratedMSBuildEditorConfig.editorconfig
+C:\JimSec\SecurityManaged\obj\Debug\net8.0\SecurityManaged_BCL.AssemblyInfoInputs.cache
+C:\JimSec\SecurityManaged\obj\Debug\net8.0\SecurityManaged_BCL.AssemblyInfo.cs
+C:\JimSec\SecurityManaged\obj\Debug\net8.0\SecurityManaged_BCL.csproj.CoreCompileInputs.cache
+C:\JimSec\SecurityManaged\obj\Debug\net8.0\SecurityManaged_BCL.sourcelink.json
+C:\JimSec\SecurityManaged\obj\Debug\net8.0\SecurityManaged_BCL.dll
+C:\JimSec\SecurityManaged\obj\Debug\net8.0\refint\SecurityManaged_BCL.dll
+C:\JimSec\SecurityManaged\obj\Debug\net8.0\SecurityManaged_BCL.pdb
+C:\JimSec\SecurityManaged\obj\Debug\net8.0\ref\SecurityManaged_BCL.dll

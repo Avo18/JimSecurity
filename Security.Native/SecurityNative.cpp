@@ -7,8 +7,8 @@
 //en eventueel data mee kan geven. De driver kan hierop reageren en data terugsturen. 
 // Hiermee kunnen gebruikersmode applicaties communiceren met kernelmode drivers.
 
-#define IOCTL_PING CTL_CODE(FILE_DEVICE_UNKNOWN, 0x800, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define IOCTL_AUTH CTL_CODE(FILE_DEVICE_UNKNOWN, 0x801, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_PING CTL_CODE(FILE_DEVICE_UNKNOWN, 0x800, METHOD_BUFFERED, FILE_READ_ACCESS)
+#define IOCTL_AUTH CTL_CODE(FILE_DEVICE_UNKNOWN, 0x801, METHOD_BUFFERED, FILE_READ_ACCESS)
 
 #define DRIVER_MAGIC 0x4A534543
 

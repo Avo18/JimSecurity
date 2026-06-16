@@ -4,6 +4,7 @@
 #include "Shared_Protocol/Auth.h"
 #include "Authentication.cpp"
 #include <winnt.h>
+#include "Sessions/Auth.h"
 
 PDEVICE_OBJECT gDeviceObject = NULL;
 
@@ -40,9 +41,7 @@ NTSTATUS DeviceControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
     {
     case IOCTL_AUTH:
     {
-        if (!ValidateCaller(
-            Irp->AssociatedIrp.SystemBuffer,
-            stack->Parameters.DeviceIoControl.InputBufferLength))
+        if (!ValidateCaller(Irp->AssociatedIrp.SystemBuffer, stack->Parameters.DeviceIoControl.InputBufferLength))
         {
             status = STATUS_ACCESS_DENIED;
             break;
@@ -52,7 +51,6 @@ NTSTATUS DeviceControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
         status = STATUS_SUCCESS;
         break;
     }
-
     case IOCTL_AUTH_START:
     {
 
@@ -60,14 +58,13 @@ NTSTATUS DeviceControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 		Authentication auth = Authentication();
         auth.GenerateChallenge(response.Challenge);
 
-        RtlCopyMemory(gSession.Challenge, response.Challenge, 32);
+        memcpy((gSession.Challenge), (response.Challenge), (32));
 
         RtlCopyMemory(Irp->AssociatedIrp.SystemBuffer, &response, sizeof(response));
 
         status = STATUS_SUCCESS;
         break;
     }
-
     case IOCTL_PING:
     {
         if (!gAuthenticated)
@@ -81,7 +78,6 @@ NTSTATUS DeviceControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
             //status = STATUS_ACCESS_DENIED;
             //break;
         //}
-
 
         DbgPrint("Ping received from authenticated client\n");
         status = STATUS_SUCCESS;
