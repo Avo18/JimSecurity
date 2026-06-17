@@ -35,7 +35,7 @@
     <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
     <ConfigurationType>Driver</ConfigurationType>
     <DriverType>KMDF</DriverType>
-    <DriverTargetPlatform>Universal</DriverTargetPlatform>
+    <DriverTargetPlatform>Windows Driver</DriverTargetPlatform>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <TargetVersion>Windows10</TargetVersion>
@@ -85,6 +85,12 @@
     <DriverSign>
       <FileDigestAlgorithm>sha256</FileDigestAlgorithm>
     </DriverSign>
+    <ClCompile>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <DriverSign>
@@ -110,12 +116,14 @@
   <ItemGroup>
     <ClInclude Include="HVCI.h" />
     <ClInclude Include="IOCTL.h" />
+    <ClInclude Include="RSA\PublicKey.h" />
     <ClInclude Include="SecurityDriver.h" />
     <ClInclude Include="Sessions\Auth.h" />
     <ClInclude Include="Shared_Protocol\Auth.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Authentication.cpp" />
+    <ClCompile Include="CryptoProvider.cpp" />
     <ClCompile Include="Driver.cpp" />
     <ClCompile Include="hvci.cpp" />
   </ItemGroup>

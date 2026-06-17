@@ -1,0 +1,19 @@
+﻿install vcpkg first: 
+bash: git clone https://github.com/microsoft/vcpkg.git
+cd vcpkg
+bootstrap-vcpkg.bat
+
+install open ssl: 
+vcpkg install openssl:x64-windows
+
+install linking library:
+vcpkg install openssl:x64-windows-static
+
+koppel vcpkg aan visual studio met commando: 
+vcpkg integrate install
+
+achter dit kan je gebruik maken van libray openssl
+#include <openssl/evp.h>
+
+als het nog niet werkt voeg manueel reference toe: 
+Project → Properties → C/C++ → General → Additional Include Directories

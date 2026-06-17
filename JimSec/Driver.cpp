@@ -1,10 +1,8 @@
-#include <ntddk.h>
 #include "IOCTL.h"
-#include "hvci.cpp"
 #include "Shared_Protocol/Auth.h"
-#include "Authentication.cpp"
-#include <winnt.h>
 #include "Sessions/Auth.h"
+#include "Authentication.cpp"
+#include "CryptoProvider.cpp"
 
 PDEVICE_OBJECT gDeviceObject = NULL;
 
@@ -28,6 +26,16 @@ BOOLEAN ValidateCaller(PVOID buffer, ULONG size)
     return TRUE;
 }
 
+BOOLEAN VerifyClient(BYTE* signature)
+{
+    BOOLEAN result = TRUE;
+    //result = VerifySignature(PublicKey, gSession.Challenge, signature);
+    UNREFERENCED_PARAMETER(signature);
+
+    return result;
+
+}
+
 NTSTATUS DeviceControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 {
     UNREFERENCED_PARAMETER(DeviceObject);
@@ -39,8 +47,34 @@ NTSTATUS DeviceControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 
     switch (stack->Parameters.DeviceIoControl.IoControlCode)
     {
+    case IOCTL_LOAD_KEY:
+    {
+        PUCHAR input = (PUCHAR)Irp->AssociatedIrp.SystemBuffer;
+        ULONG inputSize = stack->Parameters.DeviceIoControl.InputBufferLength;
+
+        status = LoadPublicKey(input, inputSize);
+        break;
+    }
     case IOCTL_AUTH:
     {
+ /*       Signature = RSA_SIGN(
+            PrivateKey,
+            Challenge
+        );*/
+
+  /*    if (VerifyClient(Signature))
+        {
+            gSession.Authenticated = TRUE;
+        }
+        else
+        {
+            gSession.Authenticated = FALSE;
+        }*/
+        if (!gSession.Authenticated)
+        {
+            return STATUS_ACCESS_DENIED;
+        }
+
         if (!ValidateCaller(Irp->AssociatedIrp.SystemBuffer, stack->Parameters.DeviceIoControl.InputBufferLength))
         {
             status = STATUS_ACCESS_DENIED;
@@ -53,9 +87,10 @@ NTSTATUS DeviceControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
     }
     case IOCTL_AUTH_START:
     {
-
         AUTH_CHALLENGE response;
-		Authentication auth = Authentication();
+        RtlZeroMemory(&response, sizeof(AUTH_CHALLENGE));
+
+        Authentication auth = Authentication();
         auth.GenerateChallenge(response.Challenge);
 
         memcpy((gSession.Challenge), (response.Challenge), (32));
@@ -123,6 +158,8 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT DriverObject, PUNICODE_STRING RegistryPath)
     UNICODE_STRING symLink = RTL_CONSTANT_STRING(SYMLINK_NAME);
 
     UNREFERENCED_PARAMETER(RegistryPath);
+
+    Init();
 
     NTSTATUS status = IoCreateDevice(
         DriverObject,

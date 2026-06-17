@@ -1,0 +1,72 @@
+﻿private key: 
+openssl genrsa -out private.pem 3072
+
+example:
+-----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w0BAQEFAASC...
+...
+...
+-----END PRIVATE KEY-----
+
+
+public key:
+openssl rsa -in private.pem -pubout -out public.pem
+
+example:
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A...
+...
+-----END PUBLIC KEY-----
+
+
+private key = Client
+public key = Server/Driver
+
+
+SecurityService.exe                         Driver.sys
+------------------                         -----------
+Private key aanwezig                        Public key aanwezig
+
+
+Challenge ontvangen                         Challenge maken
+
+        |                                        |
+        |<------------- Challenge ---------------|
+
+
+Sign(challenge, private key)
+
+        |
+        |
+        |------------ Signature ---------------->|
+
+
+                                      Verify(
+                                        challenge,
+                                        signature,
+                                        public key
+                                      )
+
+
+                                      OK / FAIL
+
+
+Architectuur: 
+
+C# App
+   |
+   |
+Named Pipe
+   |
+   |
+SecurityService.exe
+   |
+   | private key
+   |
+   | signature
+   ↓
+Driver.sys
+   |
+   | public key
+   |
+   | verify

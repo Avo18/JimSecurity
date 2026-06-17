@@ -23,6 +23,9 @@
     <Filter Include="Header Files\Sessions">
       <UniqueIdentifier>{cc3557c8-51a9-4583-81f9-3d76e011d441}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\RSA">
+      <UniqueIdentifier>{74256d23-1637-4840-b3a7-0a048cbf9fb8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Inf Include="JimSec.inf">
@@ -44,6 +47,9 @@
     </ClInclude>
     <ClInclude Include="Sessions\Auth.h">
       <Filter>Header Files\Sessions</Filter>
+    </ClInclude>
+    <ClInclude Include="RSA\PublicKey.h">
+      <Filter>Header Files\RSA</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

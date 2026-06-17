@@ -1,7 +1,7 @@
 #pragma once
 
-#include <ntddk.h>
-#include <wdf.h>
+//#include <ntddk.h>
+//#include <wdf.h>
 
 // kijkt of HVCI aan staat.
 // hvci is een hypervisor die bepaalde beveiligingsfuncties biedt, zoals het isoleren van kritieke systeemprocessen en het voorkomen van bepaalde soorten aanvallen.
@@ -13,7 +13,7 @@ typedef enum _SYSTEM_INFORMATION_CLASS {
     SystemCodeIntegrityInformation = 103
 } SYSTEM_INFORMATION_CLASS;
 
-typedef struct _SYSTEM_CODEINTEGRITY_INFORMATION {
-    ULONG Length;
-    ULONG CodeIntegrityOptions;
-} SYSTEM_CODEINTEGRITY_INFORMATION;
+//typedef struct _SYSTEM_CODEINTEGRITY_INFORMATION {
+//    ULONG Length;
+//    ULONG CodeIntegrityOptions;
+//} SYSTEM_CODEINTEGRITY_INFORMATION;
