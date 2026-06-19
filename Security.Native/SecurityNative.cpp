@@ -3,8 +3,14 @@
 #include <iostream>
 #include <openssl/evp.h>
 #include <openssl/pem.h>
+#include <ntstatus.h>
 
 //#include <ntddk.h>
+
+#include <bcrypt.h>
+
+BCRYPT_ALG_HANDLE gAlgHandle = NULL;
+BCRYPT_KEY_HANDLE gPublicKey = NULL;
 
 
 //DeviceIoControl(..) = WindowsAPI functie van ring3 (gebruikersmode) waarmee je een IOCTL code naar een driver kan sturen
@@ -123,6 +129,20 @@ public:
             &bytes,
             nullptr
         );*/
+    }
+
+    NTSTATUS Init()
+    {
+        return BCryptOpenAlgorithmProvider(&gAlgHandle, BCRYPT_RSA_ALGORITHM, NULL, 0);
+    }
+    NTSTATUS LoadPublicKey(PUCHAR keyBlob, ULONG keyBlobSize)
+    {
+        if (!gAlgHandle)
+            return STATUS_INVALID_HANDLE;
+    
+        NTSTATUS status = BCryptImportKeyPair(gAlgHandle, NULL, BCRYPT_RSAPUBLIC_BLOB, &gPublicKey, keyBlob, keyBlobSize, 0);
+    
+        return status;
     }
 
     EVP_PKEY* LoadPrivateKey()

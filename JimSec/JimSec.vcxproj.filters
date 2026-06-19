@@ -17,14 +17,41 @@
       <UniqueIdentifier>{8E41214B-6785-4CFE-B992-037D68949A14}</UniqueIdentifier>
       <Extensions>inf;inv;inx;mof;mc;</Extensions>
     </Filter>
-    <Filter Include="Header Files\Shared_Protocol">
-      <UniqueIdentifier>{5cf58f61-c498-4c33-afb1-2b8f75d0c2ab}</UniqueIdentifier>
+    <Filter Include="Header Files\Include">
+      <UniqueIdentifier>{537e6a30-85e3-4165-b205-60f7d3f9dd0f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Sessions">
+    <Filter Include="Header Files\Include\RSA">
+      <UniqueIdentifier>{74256d23-1637-4840-b3a7-0a048cbf9fb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Include\Sessions">
       <UniqueIdentifier>{cc3557c8-51a9-4583-81f9-3d76e011d441}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\RSA">
-      <UniqueIdentifier>{74256d23-1637-4840-b3a7-0a048cbf9fb8}</UniqueIdentifier>
+    <Filter Include="Header Files\Include\Shared_Protocol">
+      <UniqueIdentifier>{5cf58f61-c498-4c33-afb1-2b8f75d0c2ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Include\IOCTL">
+      <UniqueIdentifier>{65121b59-be6d-4666-8e54-d43d965fb688}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Include\IOCTL\Common">
+      <UniqueIdentifier>{8b12a765-e09d-4533-9042-4e6a4631b6f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Include\IOCTL\Types">
+      <UniqueIdentifier>{17ba637e-b231-4dad-b9cc-f0b914005965}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Src">
+      <UniqueIdentifier>{c50eec12-a901-4faa-a4b3-3ce44f16c050}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Src\IOCTL">
+      <UniqueIdentifier>{76f65991-998c-46e4-b900-beb9d8ceb836}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Src\IOCTL\Handlers">
+      <UniqueIdentifier>{a3a1aff0-bed5-4085-9ec7-c1b565683160}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Include\IOCTL\Handlers">
+      <UniqueIdentifier>{15764fa1-c339-4a39-abd5-d3223434f496}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Src\RSA">
+      <UniqueIdentifier>{88ff9b1d-d0c0-43c1-b76f-0b8b5713f9f6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -42,14 +69,23 @@
     <ClInclude Include="HVCI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Shared_Protocol\Auth.h">
-      <Filter>Header Files\Shared_Protocol</Filter>
+    <ClInclude Include="Include\RSA\MemoryKey.h">
+      <Filter>Header Files\Include\RSA</Filter>
     </ClInclude>
-    <ClInclude Include="Sessions\Auth.h">
-      <Filter>Header Files\Sessions</Filter>
+    <ClInclude Include="Include\Sessions\Auth.h">
+      <Filter>Header Files\Include\Sessions</Filter>
     </ClInclude>
-    <ClInclude Include="RSA\PublicKey.h">
-      <Filter>Header Files\RSA</Filter>
+    <ClInclude Include="Include\Shared_Protocol\Auth.h">
+      <Filter>Header Files\Include\Shared_Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\IOCTL\Types\PublicKey.h">
+      <Filter>Header Files\Include\IOCTL\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\IOCTL\IoControlList.h">
+      <Filter>Header Files\Include\IOCTL</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\IOCTL\Handlers\PublicKey.h">
+      <Filter>Header Files\Include\IOCTL\Handlers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +97,18 @@
     </ClCompile>
     <ClCompile Include="Authentication.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CryptoProvider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\IOCTL\Handlers\PublicKey.cpp">
+      <Filter>Source Files\Src\IOCTL\Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\IOCTL\IoControlList.cpp">
+      <Filter>Source Files\Src\IOCTL</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\RSA\MemoryKey.cpp">
+      <Filter>Source Files\Src\RSA</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

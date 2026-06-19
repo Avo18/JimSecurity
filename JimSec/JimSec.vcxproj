@@ -115,17 +115,23 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HVCI.h" />
+    <ClInclude Include="Include\IOCTL\Handlers\PublicKey.h" />
+    <ClInclude Include="Include\IOCTL\IoControlList.h" />
+    <ClInclude Include="Include\IOCTL\Types\PublicKey.h" />
+    <ClInclude Include="Include\RSA\MemoryKey.h" />
+    <ClInclude Include="Include\Sessions\Auth.h" />
+    <ClInclude Include="Include\Shared_Protocol\Auth.h" />
     <ClInclude Include="IOCTL.h" />
-    <ClInclude Include="RSA\PublicKey.h" />
     <ClInclude Include="SecurityDriver.h" />
-    <ClInclude Include="Sessions\Auth.h" />
-    <ClInclude Include="Shared_Protocol\Auth.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Authentication.cpp" />
     <ClCompile Include="CryptoProvider.cpp" />
     <ClCompile Include="Driver.cpp" />
     <ClCompile Include="hvci.cpp" />
+    <ClCompile Include="Src\IOCTL\Handlers\PublicKey.cpp" />
+    <ClCompile Include="Src\IOCTL\IoControlList.cpp" />
+    <ClCompile Include="Src\RSA\MemoryKey.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

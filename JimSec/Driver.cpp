@@ -1,8 +1,8 @@
 #include "IOCTL.h"
-#include "Shared_Protocol/Auth.h"
-#include "Sessions/Auth.h"
+#include "Include/Shared_Protocol/Auth.h"
+#include "Include/Sessions/Auth.h"
 #include "Authentication.cpp"
-#include "CryptoProvider.cpp"
+#include "Include/RSA/MemoryKey.h"
 
 PDEVICE_OBJECT gDeviceObject = NULL;
 
@@ -12,6 +12,7 @@ typedef struct _AUTH_REQUEST {
 } AUTH_REQUEST;
 
 BOOLEAN gAuthenticated = FALSE;
+RSA::MemoryKey _PublicKey = RSA::MemoryKey();
 
 BOOLEAN ValidateCaller(PVOID buffer, ULONG size)
 {
@@ -36,6 +37,8 @@ BOOLEAN VerifyClient(BYTE* signature)
 
 }
 
+#include "../../../../JimSec/JimSec/Include/IOCTL/IoControlList.h"
+
 NTSTATUS DeviceControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 {
     UNREFERENCED_PARAMETER(DeviceObject);
@@ -45,6 +48,14 @@ NTSTATUS DeviceControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 
     PIO_STACK_LOCATION stack = IoGetCurrentIrpStackLocation(Irp);
 
+    //TODO
+	//IOCTL::IoControlList ioControlList = IOCTL::IoControlList();
+ //   PIOCTL_HANDLER ioctl = ioControlList.FindHandler(stack->Parameters.DeviceIoControl.IoControlCode);
+	//if (ioctl)
+	//{
+ //       status = ioctl->Handler(ioctl->Context, Irp, stack);
+	//}
+
     switch (stack->Parameters.DeviceIoControl.IoControlCode)
     {
     case IOCTL_LOAD_KEY:
@@ -52,24 +63,25 @@ NTSTATUS DeviceControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
         PUCHAR input = (PUCHAR)Irp->AssociatedIrp.SystemBuffer;
         ULONG inputSize = stack->Parameters.DeviceIoControl.InputBufferLength;
 
-        status = LoadPublicKey(input, inputSize);
+        status = _PublicKey.LoadPublicKey(input, inputSize);
+        
         break;
     }
     case IOCTL_AUTH:
     {
- /*       Signature = RSA_SIGN(
-            PrivateKey,
-            Challenge
-        );*/
+        /*       Signature = RSA_SIGN(
+                   PrivateKey,
+                   Challenge
+               );*/
 
-  /*    if (VerifyClient(Signature))
-        {
-            gSession.Authenticated = TRUE;
-        }
-        else
-        {
-            gSession.Authenticated = FALSE;
-        }*/
+               /*    if (VerifyClient(Signature))
+                     {
+                         gSession.Authenticated = TRUE;
+                     }
+                     else
+                     {
+                         gSession.Authenticated = FALSE;
+                     }*/
         if (!gSession.Authenticated)
         {
             return STATUS_ACCESS_DENIED;
@@ -159,7 +171,7 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT DriverObject, PUNICODE_STRING RegistryPath)
 
     UNREFERENCED_PARAMETER(RegistryPath);
 
-    Init();
+    _PublicKey.Init();
 
     NTSTATUS status = IoCreateDevice(
         DriverObject,

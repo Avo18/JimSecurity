@@ -1,28 +1,352 @@
-﻿  SecurityNative.cpp
-C:\JimSec\Security.Native\SecurityNative.cpp(65,13): error C2065: 'FILE_DEVICE_UNKNOWN': undeclared identifier
+﻿  pch.cpp
+  dllmain.cpp
+  Main.cpp
+  SecurityNative.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(66,9): warning C4005: 'STATUS_WAIT_0': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2642,9):
+      see previous definition of 'STATUS_WAIT_0'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(227,9): warning C4005: 'STATUS_ABANDONED_WAIT_0': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2643,9):
+      see previous definition of 'STATUS_ABANDONED_WAIT_0'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(250,9): warning C4005: 'STATUS_USER_APC': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2644,9):
+      see previous definition of 'STATUS_USER_APC'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(286,9): warning C4005: 'STATUS_TIMEOUT': macro redefinition
+  Generating Code...
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2645,9):
+      see previous definition of 'STATUS_TIMEOUT'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(295,9): warning C4005: 'STATUS_PENDING': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2646,9):
+      see previous definition of 'STATUS_PENDING'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(751,9): warning C4005: 'DBG_EXCEPTION_HANDLED': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2647,9):
+      see previous definition of 'DBG_EXCEPTION_HANDLED'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(760,9): warning C4005: 'DBG_CONTINUE': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2648,9):
+      see previous definition of 'DBG_CONTINUE'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(835,9): warning C4005: 'STATUS_SEGMENT_NOTIFICATION': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2649,9):
+      see previous definition of 'STATUS_SEGMENT_NOTIFICATION'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(998,9): warning C4005: 'STATUS_FATAL_APP_EXIT': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2650,9):
+      see previous definition of 'STATUS_FATAL_APP_EXIT'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1345,9): warning C4005: 'DBG_REPLY_LATER': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2651,9):
+      see previous definition of 'DBG_REPLY_LATER'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1363,9): warning C4005: 'DBG_TERMINATE_THREAD': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2652,9):
+      see previous definition of 'DBG_TERMINATE_THREAD'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1372,9): warning C4005: 'DBG_TERMINATE_PROCESS': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2653,9):
+      see previous definition of 'DBG_TERMINATE_PROCESS'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1381,9): warning C4005: 'DBG_CONTROL_C': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2654,9):
+      see previous definition of 'DBG_CONTROL_C'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1390,9): warning C4005: 'DBG_PRINTEXCEPTION_C': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2655,9):
+      see previous definition of 'DBG_PRINTEXCEPTION_C'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1399,9): warning C4005: 'DBG_RIPEXCEPTION': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2656,9):
+      see previous definition of 'DBG_RIPEXCEPTION'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1408,9): warning C4005: 'DBG_CONTROL_BREAK': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2657,9):
+      see previous definition of 'DBG_CONTROL_BREAK'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1417,9): warning C4005: 'DBG_COMMAND_EXCEPTION': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2658,9):
+      see previous definition of 'DBG_COMMAND_EXCEPTION'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1426,9): warning C4005: 'DBG_PRINTEXCEPTION_WIDE_C': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2659,9):
+      see previous definition of 'DBG_PRINTEXCEPTION_WIDE_C'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1458,9): warning C4005: 'STATUS_GUARD_PAGE_VIOLATION': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2660,9):
+      see previous definition of 'STATUS_GUARD_PAGE_VIOLATION'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1469,9): warning C4005: 'STATUS_DATATYPE_MISALIGNMENT': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2661,9):
+      see previous definition of 'STATUS_DATATYPE_MISALIGNMENT'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1480,9): warning C4005: 'STATUS_BREAKPOINT': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2662,9):
+      see previous definition of 'STATUS_BREAKPOINT'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1491,9): warning C4005: 'STATUS_SINGLE_STEP': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2663,9):
+      see previous definition of 'STATUS_SINGLE_STEP'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1794,9): warning C4005: 'STATUS_LONGJUMP': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2664,9):
+      see previous definition of 'STATUS_LONGJUMP'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1821,9): warning C4005: 'STATUS_UNWIND_CONSOLIDATE': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2665,9):
+      see previous definition of 'STATUS_UNWIND_CONSOLIDATE'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1954,9): warning C4005: 'DBG_EXCEPTION_NOT_HANDLED': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2666,9):
+      see previous definition of 'DBG_EXCEPTION_NOT_HANDLED'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2121,9): warning C4005: 'STATUS_ACCESS_VIOLATION': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2667,9):
+      see previous definition of 'STATUS_ACCESS_VIOLATION'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2130,9): warning C4005: 'STATUS_IN_PAGE_ERROR': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2668,9):
+      see previous definition of 'STATUS_IN_PAGE_ERROR'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2148,9): warning C4005: 'STATUS_INVALID_HANDLE': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2669,9):
+      see previous definition of 'STATUS_INVALID_HANDLE'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2193,9): warning C4005: 'STATUS_INVALID_PARAMETER': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2670,9):
+      see previous definition of 'STATUS_INVALID_PARAMETER'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2293,9): warning C4005: 'STATUS_NO_MEMORY': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2671,9):
+      see previous definition of 'STATUS_NO_MEMORY'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2350,9): warning C4005: 'STATUS_ILLEGAL_INSTRUCTION': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2672,9):
+      see previous definition of 'STATUS_ILLEGAL_INSTRUCTION'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2431,9): warning C4005: 'STATUS_NONCONTINUABLE_EXCEPTION': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2673,9):
+      see previous definition of 'STATUS_NONCONTINUABLE_EXCEPTION'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2440,9): warning C4005: 'STATUS_INVALID_DISPOSITION': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2674,9):
+      see previous definition of 'STATUS_INVALID_DISPOSITION'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3373,9): warning C4005: 'STATUS_ARRAY_BOUNDS_EXCEEDED': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2675,9):
+      see previous definition of 'STATUS_ARRAY_BOUNDS_EXCEEDED'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3383,9): warning C4005: 'STATUS_FLOAT_DENORMAL_OPERAND': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2676,9):
+      see previous definition of 'STATUS_FLOAT_DENORMAL_OPERAND'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3393,9): warning C4005: 'STATUS_FLOAT_DIVIDE_BY_ZERO': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2677,9):
+      see previous definition of 'STATUS_FLOAT_DIVIDE_BY_ZERO'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3403,9): warning C4005: 'STATUS_FLOAT_INEXACT_RESULT': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2678,9):
+      see previous definition of 'STATUS_FLOAT_INEXACT_RESULT'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3413,9): warning C4005: 'STATUS_FLOAT_INVALID_OPERATION': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2679,9):
+      see previous definition of 'STATUS_FLOAT_INVALID_OPERATION'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3423,9): warning C4005: 'STATUS_FLOAT_OVERFLOW': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2680,9):
+      see previous definition of 'STATUS_FLOAT_OVERFLOW'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3433,9): warning C4005: 'STATUS_FLOAT_STACK_CHECK': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2681,9):
+      see previous definition of 'STATUS_FLOAT_STACK_CHECK'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3443,9): warning C4005: 'STATUS_FLOAT_UNDERFLOW': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2682,9):
+      see previous definition of 'STATUS_FLOAT_UNDERFLOW'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3453,9): warning C4005: 'STATUS_INTEGER_DIVIDE_BY_ZERO': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2683,9):
+      see previous definition of 'STATUS_INTEGER_DIVIDE_BY_ZERO'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3463,9): warning C4005: 'STATUS_INTEGER_OVERFLOW': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2684,9):
+      see previous definition of 'STATUS_INTEGER_OVERFLOW'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3473,9): warning C4005: 'STATUS_PRIVILEGED_INSTRUCTION': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2685,9):
+      see previous definition of 'STATUS_PRIVILEGED_INSTRUCTION'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(4419,9): warning C4005: 'STATUS_STACK_OVERFLOW': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2686,9):
+      see previous definition of 'STATUS_STACK_OVERFLOW'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(4936,9): warning C4005: 'STATUS_DLL_NOT_FOUND': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2687,9):
+      see previous definition of 'STATUS_DLL_NOT_FOUND'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(4965,9): warning C4005: 'STATUS_ORDINAL_NOT_FOUND': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2688,9):
+      see previous definition of 'STATUS_ORDINAL_NOT_FOUND'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(4975,9): warning C4005: 'STATUS_ENTRYPOINT_NOT_FOUND': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2689,9):
+      see previous definition of 'STATUS_ENTRYPOINT_NOT_FOUND'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(4985,9): warning C4005: 'STATUS_CONTROL_C_EXIT': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2690,9):
+      see previous definition of 'STATUS_CONTROL_C_EXIT'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(5063,9): warning C4005: 'STATUS_DLL_INIT_FAILED': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2691,9):
+      see previous definition of 'STATUS_DLL_INIT_FAILED'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(6060,9): warning C4005: 'STATUS_CONTROL_STACK_VIOLATION': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2692,9):
+      see previous definition of 'STATUS_CONTROL_STACK_VIOLATION'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(7654,9): warning C4005: 'STATUS_FLOAT_MULTIPLE_FAULTS': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2693,9):
+      see previous definition of 'STATUS_FLOAT_MULTIPLE_FAULTS'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(7664,9): warning C4005: 'STATUS_FLOAT_MULTIPLE_TRAPS': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2694,9):
+      see previous definition of 'STATUS_FLOAT_MULTIPLE_TRAPS'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(7796,9): warning C4005: 'STATUS_REG_NAT_CONSUMPTION': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2695,9):
+      see previous definition of 'STATUS_REG_NAT_CONSUMPTION'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(8779,9): warning C4005: 'STATUS_HEAP_CORRUPTION': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2696,9):
+      see previous definition of 'STATUS_HEAP_CORRUPTION'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(9007,9): warning C4005: 'STATUS_STACK_BUFFER_OVERRUN': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2697,9):
+      see previous definition of 'STATUS_STACK_BUFFER_OVERRUN'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(9134,9): warning C4005: 'STATUS_INVALID_CRUNTIME_PARAMETER': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2698,9):
+      see previous definition of 'STATUS_INVALID_CRUNTIME_PARAMETER'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(9197,9): warning C4005: 'STATUS_ASSERTION_FAILURE': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2699,9):
+      see previous definition of 'STATUS_ASSERTION_FAILURE'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(10106,9): warning C4005: 'STATUS_ENCLAVE_VIOLATION': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2700,9):
+      see previous definition of 'STATUS_ENCLAVE_VIOLATION'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(10893,9): warning C4005: 'STATUS_INTERRUPTED': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2701,9):
+      see previous definition of 'STATUS_INTERRUPTED'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(10902,9): warning C4005: 'STATUS_THREAD_NOT_RUNNING': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2702,9):
+      see previous definition of 'STATUS_THREAD_NOT_RUNNING'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(11223,9): warning C4005: 'STATUS_ALREADY_REGISTERED': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2703,9):
+      see previous definition of 'STATUS_ALREADY_REGISTERED'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(15368,9): warning C4005: 'STATUS_SXS_EARLY_DEACTIVATION': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2705,9):
+      see previous definition of 'STATUS_SXS_EARLY_DEACTIVATION'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(15377,9): warning C4005: 'STATUS_SXS_INVALID_DEACTIVATION': macro redefinition
+  (compiling source file '/SecurityNative.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2706,9):
+      see previous definition of 'STATUS_SXS_INVALID_DEACTIVATION'
+  
+C:\JimSec\Security.Native\SecurityNative.cpp(71,13): error C2065: 'FILE_DEVICE_UNKNOWN': undeclared identifier
   (compiling source file '/SecurityNative.cpp')
   
-C:\JimSec\Security.Native\SecurityNative.cpp(65,13): error C2065: 'METHOD_BUFFERED': undeclared identifier
+C:\JimSec\Security.Native\SecurityNative.cpp(71,13): error C2065: 'METHOD_BUFFERED': undeclared identifier
   (compiling source file '/SecurityNative.cpp')
   
-C:\JimSec\Security.Native\SecurityNative.cpp(65,13): error C2065: 'FILE_ANY_ACCESS': undeclared identifier
+C:\JimSec\Security.Native\SecurityNative.cpp(71,13): error C2065: 'FILE_ANY_ACCESS': undeclared identifier
   (compiling source file '/SecurityNative.cpp')
   
-C:\JimSec\Security.Native\SecurityNative.cpp(65,13): error C3861: 'CTL_CODE': identifier not found
+C:\JimSec\Security.Native\SecurityNative.cpp(71,13): error C3861: 'CTL_CODE': identifier not found
   (compiling source file '/SecurityNative.cpp')
   
-C:\JimSec\Security.Native\SecurityNative.cpp(130,22): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\JimSec\Security.Native\SecurityNative.cpp(150,22): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file '/SecurityNative.cpp')
   
-C:\JimSec\Security.Native\SecurityNative.cpp(168,13): error C2065: 'FILE_DEVICE_UNKNOWN': undeclared identifier
+C:\JimSec\Security.Native\SecurityNative.cpp(188,13): error C2065: 'FILE_DEVICE_UNKNOWN': undeclared identifier
   (compiling source file '/SecurityNative.cpp')
   
-C:\JimSec\Security.Native\SecurityNative.cpp(168,13): error C2065: 'METHOD_BUFFERED': undeclared identifier
+C:\JimSec\Security.Native\SecurityNative.cpp(188,13): error C2065: 'METHOD_BUFFERED': undeclared identifier
   (compiling source file '/SecurityNative.cpp')
   
-C:\JimSec\Security.Native\SecurityNative.cpp(168,13): error C2065: 'FILE_ANY_ACCESS': undeclared identifier
+C:\JimSec\Security.Native\SecurityNative.cpp(188,13): error C2065: 'FILE_ANY_ACCESS': undeclared identifier
   (compiling source file '/SecurityNative.cpp')
   
-C:\JimSec\Security.Native\SecurityNative.cpp(168,13): error C3861: 'CTL_CODE': identifier not found
+C:\JimSec\Security.Native\SecurityNative.cpp(188,13): error C3861: 'CTL_CODE': identifier not found
   (compiling source file '/SecurityNative.cpp')
   
