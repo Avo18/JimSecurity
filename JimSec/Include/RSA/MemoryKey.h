@@ -1,30 +1,25 @@
+#pragma once
 #include "..\..\SecurityDriver.h"
 #include "..\Sessions\Auth.h"
+#include "../../../JimSec/Include/IOCTL/Types/PublicKey.h"
 //#include <xkeycheck.h>
 
 // inladen van publieke key van RSA
 #define MAX_KEY_SIZE 512  // veilig voor RSA-4096 blob ruimte (ruim genomen)
-
-typedef struct _PUBLIC_KEY
-{
-    PUCHAR Buffer;     // pointer naar allocated kernel memory
-    ULONG Size;        // huidige grootte
-    ULONG Hash;       // optional integrity check
-} _PUBLIC_KEY;
-
-_PUBLIC_KEY gPublicKey = { 0 };
 
 namespace RSA
 {
     class MemoryKey
     {
     public:
+        MemoryKey();
         ~MemoryKey();
         NTSTATUS Init();
         NTSTATUS LoadPublicKey(PUCHAR input, ULONG size);
         VOID FreePublicKeyStorage();
     };
 };
+
 
 
 

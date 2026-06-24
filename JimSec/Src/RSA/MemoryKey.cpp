@@ -1,6 +1,15 @@
 #include "..\..\..\..\JimSec\JimSec\SecurityDriver.h"
 #include "..\..\..\..\JimSec\JimSec\Include\RSA\MemoryKey.h"
 
+extern IOCTL_Types::PUBLIC_KEY gPublicKey = {};
+
+RSA::MemoryKey::MemoryKey()
+{
+	gPublicKey.Buffer = NULL;
+	gPublicKey.Size = 0;
+	gPublicKey.Hash = 0;
+}
+
 RSA::MemoryKey::~MemoryKey()
 {
 	this->FreePublicKeyStorage();

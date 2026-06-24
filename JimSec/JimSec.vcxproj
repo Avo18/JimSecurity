@@ -35,7 +35,7 @@
     <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
     <ConfigurationType>Driver</ConfigurationType>
     <DriverType>KMDF</DriverType>
-    <DriverTargetPlatform>Windows Driver</DriverTargetPlatform>
+    <DriverTargetPlatform>Desktop</DriverTargetPlatform>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <TargetVersion>Windows10</TargetVersion>
@@ -91,6 +91,9 @@
       </AdditionalIncludeDirectories>
       <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <DriverSign>
@@ -115,12 +118,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HVCI.h" />
+    <ClInclude Include="Include\Integrity_Check\Common\Macros.h" />
+    <ClInclude Include="Include\Integrity_Check\Common\SHA_256.h" />
+    <ClInclude Include="Include\Integrity_Check\Integrity.h" />
+    <ClInclude Include="Include\Integrity_Check\Types\SHA256_CTX.h" />
+    <ClInclude Include="Include\IOCTL\Handlers\Func\IoctlHandlerFunc.h" />
     <ClInclude Include="Include\IOCTL\Handlers\PublicKey.h" />
     <ClInclude Include="Include\IOCTL\IoControlList.h" />
     <ClInclude Include="Include\IOCTL\Types\PublicKey.h" />
     <ClInclude Include="Include\RSA\MemoryKey.h" />
     <ClInclude Include="Include\Sessions\Auth.h" />
     <ClInclude Include="Include\Shared_Protocol\Auth.h" />
+    <ClInclude Include="Include\Utils\Kernel.h" />
     <ClInclude Include="IOCTL.h" />
     <ClInclude Include="SecurityDriver.h" />
   </ItemGroup>
@@ -129,8 +138,11 @@
     <ClCompile Include="CryptoProvider.cpp" />
     <ClCompile Include="Driver.cpp" />
     <ClCompile Include="hvci.cpp" />
+    <ClCompile Include="Src\Integrity_Check\Common\SHA_256.cpp" />
+    <ClCompile Include="Src\Integrity_Check\Integrity.cpp" />
     <ClCompile Include="Src\IOCTL\Handlers\PublicKey.cpp" />
     <ClCompile Include="Src\IOCTL\IoControlList.cpp" />
+    <ClCompile Include="Src\Module\Module.cpp" />
     <ClCompile Include="Src\RSA\MemoryKey.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

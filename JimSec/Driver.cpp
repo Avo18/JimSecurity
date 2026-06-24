@@ -1,10 +1,12 @@
 #include "IOCTL.h"
+#include "../../../../JimSec/JimSec/Include/IOCTL/IoControlList.h"
 #include "Include/Shared_Protocol/Auth.h"
 #include "Include/Sessions/Auth.h"
 #include "Authentication.cpp"
 #include "Include/RSA/MemoryKey.h"
 
 PDEVICE_OBJECT gDeviceObject = NULL;
+extern DRIVER_SESSION gSession = {};
 
 typedef struct _AUTH_REQUEST {
     ULONG Magic;
@@ -12,7 +14,8 @@ typedef struct _AUTH_REQUEST {
 } AUTH_REQUEST;
 
 BOOLEAN gAuthenticated = FALSE;
-RSA::MemoryKey _PublicKey = RSA::MemoryKey();
+
+RSA::MemoryKey* _memoryKey;
 
 BOOLEAN ValidateCaller(PVOID buffer, ULONG size)
 {
@@ -37,8 +40,6 @@ BOOLEAN VerifyClient(BYTE* signature)
 
 }
 
-#include "../../../../JimSec/JimSec/Include/IOCTL/IoControlList.h"
-
 NTSTATUS DeviceControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 {
     UNREFERENCED_PARAMETER(DeviceObject);
@@ -49,12 +50,12 @@ NTSTATUS DeviceControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
     PIO_STACK_LOCATION stack = IoGetCurrentIrpStackLocation(Irp);
 
     //TODO
-	//IOCTL::IoControlList ioControlList = IOCTL::IoControlList();
- //   PIOCTL_HANDLER ioctl = ioControlList.FindHandler(stack->Parameters.DeviceIoControl.IoControlCode);
-	//if (ioctl)
-	//{
- //       status = ioctl->Handler(ioctl->Context, Irp, stack);
-	//}
+	IOCTL::IoControlList ioControlList;
+    PIOCTL_HANDLER ioctl = ioControlList.FindHandler(stack->Parameters.DeviceIoControl.IoControlCode);
+	if (ioctl)
+	{
+        //status = ioctl->Handler(ioctl->Context, Irp, stack);
+	}
 
     switch (stack->Parameters.DeviceIoControl.IoControlCode)
     {
@@ -63,7 +64,7 @@ NTSTATUS DeviceControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
         PUCHAR input = (PUCHAR)Irp->AssociatedIrp.SystemBuffer;
         ULONG inputSize = stack->Parameters.DeviceIoControl.InputBufferLength;
 
-        status = _PublicKey.LoadPublicKey(input, inputSize);
+        status = _memoryKey->LoadPublicKey(input, inputSize);
         
         break;
     }
@@ -159,6 +160,11 @@ VOID DriverUnload(PDRIVER_OBJECT DriverObject)
     UNICODE_STRING symLink;
     RtlInitUnicodeString(&symLink, SYMLINK_NAME);
 
+    //// CRUCIAL: Verwijder de callbacks bij het afsluiten van de driver!
+    //// Als je dit vergeet, blijft Windows naar lege functies wijzen en krijg je een BSOD.
+    //PsRemoveCreateThreadNotifyRoutine(AntiCheatThreadNotifyRoutine);
+    //PsSetCreateProcessNotifyRoutine(AntiCheatProcessNotifyRoutine, TRUE); // TRUE betekent verwijderen
+
     IoDeleteSymbolicLink(&symLink);
     IoDeleteDevice(DriverObject->DeviceObject);
 }
@@ -171,7 +177,7 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT DriverObject, PUNICODE_STRING RegistryPath)
 
     UNREFERENCED_PARAMETER(RegistryPath);
 
-    _PublicKey.Init();
+    _memoryKey->Init();
 
     NTSTATUS status = IoCreateDevice(
         DriverObject,
@@ -192,6 +198,23 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT DriverObject, PUNICODE_STRING RegistryPath)
     DriverObject->MajorFunction[IRP_MJ_CLOSE] = CreateClose;
     DriverObject->MajorFunction[IRP_MJ_DEVICE_CONTROL] = DeviceControl;
     DriverObject->DriverUnload = DriverUnload;
+
+    //// Scan zodra er een nieuw proces start word er gekeken of er een cheat-injector opgestart word
+    //status = PsSetCreateProcessNotifyRoutine(AntiCheatProcessNotifyRoutine, FALSE); // FALSE betekent toevoegen
+    //if (!NT_SUCCESS(status)) {
+    //    DbgPrint("[-] Fout bij registreren proces callback: 0x%X\n", status);
+    //    return status;
+    //}
+
+    //// Scan zodra er een nieuwe thread wordt aangemaakt binnen het game-proces. 
+    //// Cheats maken vaak een nieuwe thread aan om hun code te runnen. Dat is hét moment om te scannen.
+    //status = PsSetCreateThreadNotifyRoutine(AntiCheatThreadNotifyRoutine);
+    //if (!NT_SUCCESS(status)) {
+    //    DbgPrint("[-] Fout bij registreren thread callback: 0x%X\n", status);
+    //    // Ruim de al geregistreerde proces-callback op
+    //    PsSetCreateProcessNotifyRoutine(AntiCheatProcessNotifyRoutine, TRUE);
+    //    return status;
+    //}
 
     return STATUS_SUCCESS;
 }

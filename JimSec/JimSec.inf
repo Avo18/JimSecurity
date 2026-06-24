@@ -18,7 +18,7 @@ DefaultDestDir = 13
 1 = %DiskName%,,,""
 
 [SourceDisksFiles]
-JimSec.sys = 1,,
+JimSecDriver.sys = 1,,
 
 ;*****************************************
 ; Install Section
@@ -34,7 +34,7 @@ JimSec.sys = 1,,
 CopyFiles = File_Copy
 
 [File_Copy]
-JimSec.sys
+JimSecDriver.sys
 
 ;-------------- Service installation
 [JimSec_Device.NT.Services]
@@ -46,7 +46,7 @@ DisplayName    = %JimSec.SVCDESC%
 ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
 StartType      = 3               ; SERVICE_DEMAND_START
 ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
-ServiceBinary  = %13%\JimSec.sys
+ServiceBinary  = %13%\JimSecDriver.sys
 
 [JimSec_Device.NT.Wdf]
 KmdfService = JimSec, JimSec_wdfsect

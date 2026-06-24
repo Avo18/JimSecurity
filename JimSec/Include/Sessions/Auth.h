@@ -8,4 +8,4 @@ typedef struct
     unsigned char Challenge[32];
 } DRIVER_SESSION;
 
-DRIVER_SESSION gSession = { 0 };
+extern DRIVER_SESSION gSession;
