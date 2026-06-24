@@ -49,13 +49,18 @@ NTSTATUS DeviceControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 
     PIO_STACK_LOCATION stack = IoGetCurrentIrpStackLocation(Irp);
 
-    //TODO
-	IOCTL::IoControlList ioControlList;
-    PIOCTL_HANDLER ioctl = ioControlList.FindHandler(stack->Parameters.DeviceIoControl.IoControlCode);
-	if (ioctl)
-	{
-        //status = ioctl->Handler(ioctl->Context, Irp, stack);
-	}
+ //   // achter het herwerken van switch case deze code enablen. 
+	//IOCTL::IoControlList ioControlList;
+ //   ULONG ioctlCode = stack->Parameters.DeviceIoControl.IoControlCode;
+ //   IOCTL_ENTRY* entry = ioControlList.FindHandle(ioctlCode);
+ //   if (entry != NULL)
+ //   {
+ //       status = entry->Handler(entry->Context, Irp, stack);
+ //   }
+ //   else
+ //   {
+ //       status = STATUS_INVALID_DEVICE_REQUEST;
+ //   }
 
     switch (stack->Parameters.DeviceIoControl.IoControlCode)
     {

@@ -21,6 +21,7 @@ namespace IOCTL
     public:
         IoControlList();
         PIOCTL_HANDLER FindHandler(ULONG ioctl);
+        IOCTL_ENTRY* FindHandle(ULONG ioctl);
     };
 }
 
