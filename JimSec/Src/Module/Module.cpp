@@ -18,6 +18,14 @@ constexpr const char* GetMessage(Section section)
     return ToString[(int)section];
 }
 
+class Scanner
+{
+
+};
+class GameProcess
+{
+
+};
 // Reworked code:
 class Module
 {
@@ -29,9 +37,11 @@ public:
     Module(PKPROCESS process, PVOID baseAddress);
     ~Module();
     PIMAGE_NT_HEADERS GetPE_File();
-    PIMAGE_SECTION_HEADER GetSectionHeaders();
+    PIMAGE_SECTION_HEADER GetSectionHeaders(PIMAGE_NT_HEADERS pe_file);
     ULONG GetIndexSectionHeader(PIMAGE_NT_HEADERS PE_Header, PIMAGE_SECTION_HEADER sectionHeader, Section section);
-    VOID GetModuleCodeSection(__out PVOID* buffer, __out SIZE_T* size, Section section);
+    VOID GetModuleCodeSection(PIMAGE_SECTION_HEADER sectionHeaders, ULONG sectionHeaderIndex,__out PVOID* buffer, __out SIZE_T* size);
+    
+    VOID BUILD(__out PVOID* buffer, __out SIZE_T* size);
 };
 
 Module::Module(PKPROCESS process, PVOID baseAddress)
@@ -69,10 +79,9 @@ PIMAGE_NT_HEADERS Module::GetPE_File()
 /// 
 /// </summary>
 /// <returns></returns>
-PIMAGE_SECTION_HEADER Module::GetSectionHeaders()
+PIMAGE_SECTION_HEADER Module::GetSectionHeaders(PIMAGE_NT_HEADERS pe_file)
 {
-    PIMAGE_NT_HEADERS nt_headers = GetPE_File();
-    return IMAGE_FIRST_SECTION(nt_headers);
+    return IMAGE_FIRST_SECTION(pe_file);
 }
 
 ULONG Module::GetIndexSectionHeader(PIMAGE_NT_HEADERS PE_Header, PIMAGE_SECTION_HEADER sectionHeader, Section section)
@@ -87,14 +96,22 @@ ULONG Module::GetIndexSectionHeader(PIMAGE_NT_HEADERS PE_Header, PIMAGE_SECTION_
     return NULL;
 }
 
-VOID Module::GetModuleCodeSection(__out PVOID* buffer, __out SIZE_T* size, Section section)
+VOID Module::GetModuleCodeSection(PIMAGE_SECTION_HEADER sectionHeaders, ULONG sectionHeaderIndex,  __out PVOID* buffer, __out SIZE_T* size)
 {
-    PIMAGE_NT_HEADERS pe_file = GetPE_File();
-    PIMAGE_SECTION_HEADER sectionHeaders = IMAGE_FIRST_SECTION(pe_file);
-    ULONG sectionHeaderIndex = GetIndexSectionHeader(pe_file, sectionHeaders, Section::MachineCode);
-
     *buffer = (PUCHAR)this->_baseAddress + sectionHeaders[sectionHeaderIndex].VirtualAddress;
     *size = sectionHeaders[sectionHeaderIndex].Misc.VirtualSize;
+}
+
+VOID Module::BUILD(__out PVOID* buffer, __out SIZE_T* size)
+{
+    PIMAGE_NT_HEADERS pe_file = GetPE_File();
+    PIMAGE_SECTION_HEADER sectionHeaders = GetSectionHeaders(pe_file);
+    ULONG sectionHeaderIndex = GetIndexSectionHeader(pe_file, sectionHeaders, Section::MachineCode);
+    PVOID* buffer; SIZE_T* size;
+
+    GetModuleCodeSection(sectionHeaders, sectionHeaderIndex, buffer, size);
+
+
 }
 
 Module::~Module()
