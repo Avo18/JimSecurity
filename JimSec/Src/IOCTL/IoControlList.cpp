@@ -7,17 +7,7 @@ IOCTL::IoControlList::IoControlList()
 	g_Table[0] = { IOCTL_LOAD_KEY, IoctlHandlerFunc<IOCTL_Handlers::PublicKey>::Invoke<&IOCTL_Handlers::PublicKey::Load>, &publicKey };
 }
 
-PIOCTL_HANDLER IOCTL::IoControlList::FindHandler(ULONG ioctl)
-{
-	for (int i = 0; i < ARRAYSIZE(g_Table); i++)
-	{
-		if (g_Table[i].Ioctl == ioctl)
-			return g_Table[i].Handler;
-	}
-	return NULL;
-}
-
-IOCTL_ENTRY* IOCTL::IoControlList::FindHandle(ULONG ioctl)
+IOCTL_ENTRY* IOCTL::IoControlList::FindHandler(ULONG ioctl)
 {
     for (int i = 0; i < ARRAYSIZE(g_Table); i++)
     {

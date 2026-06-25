@@ -1,7 +1,4 @@
-﻿  pch.cpp
-  dllmain.cpp
-  Main.cpp
-  SecurityNative.cpp
+﻿  SecurityNative.cpp
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(66,9): warning C4005: 'STATUS_WAIT_0': macro redefinition
   (compiling source file '/SecurityNative.cpp')
       C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2642,9):
@@ -18,7 +15,6 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(25
       see previous definition of 'STATUS_USER_APC'
   
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(286,9): warning C4005: 'STATUS_TIMEOUT': macro redefinition
-  Generating Code...
   (compiling source file '/SecurityNative.cpp')
       C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2645,9):
       see previous definition of 'STATUS_TIMEOUT'

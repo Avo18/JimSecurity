@@ -8,7 +8,7 @@ namespace IOCTL_Handlers
     class PublicKey
     {
     private:
-        RSA::MemoryKey* _MemoryKey;
+        RSA::MemoryKey* _memoryKey;
     public:
         PublicKey(RSA::MemoryKey* memoryKey);
         NTSTATUS Load(PIRP Irp, PIO_STACK_LOCATION stack);

@@ -1,0 +1,59 @@
+Werking van een executable documentatie: 
+
+IMAGE_DOS_HEADER
+        |
+        v
+IMAGE_NT_HEADERS 
+        |
+        +-- Signature ("PE\0\0") = controleert of dit een PE bestand is
+        |
+        +-- FileHeader = COFF header file. welke cpu architectuur (x64 of x86 of AMD) en wemle secties zijn er (.text, .rdata, .data, pdata, ...)
+        |
+        +-- OptionalHeader
+        |
+        v
+IMAGE_SECTION_HEADER[]
+        |
+        +----------------+
+        | .text          |
+        | code           |
+        +----------------+
+        | .rdata         |
+        | constants      |
+        +----------------+
+        | .data          |
+        | variables      |
+        +----------------+
+        | .pdata         |
+        | exceptions     |
+        +----------------+
+        | .rsrc          |
+        | resources      |
+        +----------------+
+
+IMAGE_NT_HEADERS?
+- is de hoofdstructuur van de PE header waarin Windows informatie bewaart over hoe een .exe, .dll of .sys geladen moet worden.
+
+IMAGE_NT_HEADERS.OptionalHeader?
+- laad informatie zoals: entry point (main), geheugen grootte, sections locaties, imports, exports
+
+.text? 
+- bevat machine code
+
+.rdata?
+- Readonly data (string, constants, vtables, RTTI informatie)
+
+.pdata?
+- exceptions
+
+.data?
+- globale data zoals (globale variabele, pointer, configuratie)
+- Kan intressant zijn voor cheats die state aanpassen.
+
+.idata? 
+- import table, verdachte dll imports of hooks om te checken
+- import table hierin worden alle .dlls gezet die nodig zijn voor de executable
+
+.rsrc?
+- resources, icoontjes 
+

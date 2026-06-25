@@ -3,6 +3,109 @@
 #include <ntimage.h>
 #define _NO_CRT_STDIO_INLINE
 
+enum class Section
+{
+    MachineCode,
+};
+
+static constexpr const char* ToString[] =
+{
+    ".txt",
+};
+
+constexpr const char* GetMessage(Section section)
+{
+    return ToString[(int)section];
+}
+
+// Reworked code:
+class Module
+{
+private:
+    PKPROCESS _process;
+    PVOID _baseAddress;
+    KAPC_STATE state;
+public:
+    Module(PKPROCESS process, PVOID baseAddress);
+    ~Module();
+    PIMAGE_NT_HEADERS GetPE_File();
+    PIMAGE_SECTION_HEADER GetSectionHeaders();
+    ULONG GetIndexSectionHeader(PIMAGE_NT_HEADERS PE_Header, PIMAGE_SECTION_HEADER sectionHeader, Section section);
+    VOID GetModuleCodeSection(__out PVOID* buffer, __out SIZE_T* size, Section section);
+};
+
+Module::Module(PKPROCESS process, PVOID baseAddress)
+{
+    this->_process = process;
+    this->_baseAddress = baseAddress;
+    KeStackAttachProcess(this->_process, &state);
+}
+
+/// <summary>
+/// NT betekend van windows NT
+/// PE file = Elk process heeft een Portable Executable waar informatie staat hoe het program geladen moet worden
+/// 
+/// PIMAGE_NT_HEADERS
+/// P     = Pointer
+// IMAGE  = PE image structuur
+//  NT    = Windows NT executable format
+//HEADERS = header informatie
+/// </summary>
+/// <returns>PIMAGE_NT_HEADERS</returns>
+PIMAGE_NT_HEADERS Module::GetPE_File()
+{
+    PIMAGE_DOS_HEADER dos = (PIMAGE_DOS_HEADER)this->_baseAddress;
+    PIMAGE_NT_HEADERS nt = (PIMAGE_NT_HEADERS)((PUCHAR)this->_baseAddress + dos->e_lfanew);
+    return nt;
+}
+
+/// <summary>
+/// Sectie = Segment binnen windows executable (vb: .text, .data, .rdata, ...)
+/// 
+/// PIMAGE_SECTION_HEADER
+/// P = Pointer
+/// IMAGE = PE Image structuur
+/// NT = Windows NT executable
+/// 
+/// </summary>
+/// <returns></returns>
+PIMAGE_SECTION_HEADER Module::GetSectionHeaders()
+{
+    PIMAGE_NT_HEADERS nt_headers = GetPE_File();
+    return IMAGE_FIRST_SECTION(nt_headers);
+}
+
+ULONG Module::GetIndexSectionHeader(PIMAGE_NT_HEADERS PE_Header, PIMAGE_SECTION_HEADER sectionHeader, Section section)
+{
+    for (int i = 0; i < PE_Header->FileHeader.NumberOfSections; i++)
+    {
+        if (memcmp(sectionHeader[i].Name, ToString[(int)section], 5) == 0)
+        {
+            return i;
+        }
+    }
+    return NULL;
+}
+
+VOID Module::GetModuleCodeSection(__out PVOID* buffer, __out SIZE_T* size, Section section)
+{
+    PIMAGE_NT_HEADERS pe_file = GetPE_File();
+    PIMAGE_SECTION_HEADER sectionHeaders = IMAGE_FIRST_SECTION(pe_file);
+    ULONG sectionHeaderIndex = GetIndexSectionHeader(pe_file, sectionHeaders, Section::MachineCode);
+
+    *buffer = (PUCHAR)this->_baseAddress + sectionHeaders[sectionHeaderIndex].VirtualAddress;
+    *size = sectionHeaders[sectionHeaderIndex].Misc.VirtualSize;
+}
+
+Module::~Module()
+{
+    KeUnstackDetachProcess(&state);
+}
+
+
+
+// OLD code
+
 BOOLEAN GetModuleCodeSection(PKPROCESS Process, PVOID BaseAddress, PVOID* outBuffer, SIZE_T* outSize)
 {
     KAPC_STATE state = {};

@@ -20,8 +20,7 @@ namespace IOCTL
         IOCTL_ENTRY g_Table[IOCTL_COUNT];
     public:
         IoControlList();
-        PIOCTL_HANDLER FindHandler(ULONG ioctl);
-        IOCTL_ENTRY* FindHandle(ULONG ioctl);
+        IOCTL_ENTRY* FindHandler(ULONG ioctl);
     };
 }
 

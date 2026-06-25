@@ -52,7 +52,7 @@ NTSTATUS DeviceControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
  //   // achter het herwerken van switch case deze code enablen. 
 	//IOCTL::IoControlList ioControlList;
  //   ULONG ioctlCode = stack->Parameters.DeviceIoControl.IoControlCode;
- //   IOCTL_ENTRY* entry = ioControlList.FindHandle(ioctlCode);
+ //   IOCTL_ENTRY* entry = ioControlList.FindHandler(ioctlCode);
  //   if (entry != NULL)
  //   {
  //       status = entry->Handler(entry->Context, Irp, stack);

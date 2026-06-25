@@ -2,11 +2,8 @@
 #include <ntddk.h>
 #include <wdf.h>
 
-typedef NTSTATUS(*PIOCTL_HANDLER)(
-    void* Context,
-    PIRP Irp,
-    PIO_STACK_LOCATION stack
-    );
+typedef NTSTATUS(*PIOCTL_HANDLER)(void* Context, PIRP Irp, PIO_STACK_LOCATION stack);
+
 struct IOCTL_ENTRY
 {
     ULONG Ioctl;
