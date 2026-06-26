@@ -1,5 +1,50 @@
 Werking van een executable documentatie: 
 
+
+Proces
+ |
+ | bevat code + data in virtueel geheugen
+ |
+ v
+Virtueel adres
+(bijv. RIP = 0x401000)
+Virtual Address: 0x401000
+ |
+ v
+Page Tables  (beziet dit als een boek)
+(vertaling virtuele adressen naar fysieke adressen richting RAM + rechten)
+Virtual page: 0x401000
+Physical frame: 0x900000
+ |
+ v
+Fysiek geheugen (RAM)
+(adres waar de echte bytes staan)
+0x900000:
+
+48 89 E5
+ |
+ v
+CPU leest bytes
+48 89 E5
+ |
+ v
+CPU decodeert bytes als instructie
+MOV RBP, RSP
+ |
+ v
+CPU voert instructie uit
+
+ezelsbrug: 
+Zie een bibliotheek:
+
+Page table = catalogus die zegt waar een boek ligt
+RAM = de boekenplank
+CPU = persoon die het boek leest
+
+
+
+Hoe vertaald dit zich in code? 
+
 IMAGE_DOS_HEADER
         |
         v
@@ -7,7 +52,7 @@ IMAGE_NT_HEADERS
         |
         +-- Signature ("PE\0\0") = controleert of dit een PE bestand is
         |
-        +-- FileHeader = COFF header file. welke cpu architectuur (x64 of x86 of AMD) en wemle secties zijn er (.text, .rdata, .data, pdata, ...)
+        +-- FileHeader = COFF header file. welke cpu architectuur (x64 of x86 of AMD) en welke secties zijn er (.text, .rdata, .data, pdata, ...) (sectie = segment)
         |
         +-- OptionalHeader
         |

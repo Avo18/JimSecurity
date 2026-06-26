@@ -126,12 +126,26 @@
     <ClInclude Include="Include\IOCTL\Handlers\PublicKey.h" />
     <ClInclude Include="Include\IOCTL\IoControlList.h" />
     <ClInclude Include="Include\IOCTL\Types\PublicKey.h" />
+    <ClInclude Include="Include\Kernel\Windows\NtProcess.h" />
+    <ClInclude Include="Include\Kernel\Windows\NtMemory.h" />
+    <ClInclude Include="Include\Process\Enum\Section.h" />
+    <ClInclude Include="Include\Process\Game.h" />
+    <ClInclude Include="Include\Process\Memory.h" />
+    <ClInclude Include="Include\Process\Module.h" />
+    <ClInclude Include="Include\PEB\Types\LDR_DATA_TABLE_ENTRY.h" />
+    <ClInclude Include="Include\PEB\Types\PEB_LDR_DATA.h" />
+    <ClInclude Include="Include\Process\ModuleAnalyzer.h" />
+    <ClInclude Include="Include\Process\ProcessContext.h" />
+    <ClInclude Include="Include\Process\ProcessHelper.h" />
     <ClInclude Include="Include\RSA\MemoryKey.h" />
     <ClInclude Include="Include\Sessions\Auth.h" />
     <ClInclude Include="Include\Shared_Protocol\Auth.h" />
     <ClInclude Include="Include\Utils\Kernel.h" />
     <ClInclude Include="IOCTL.h" />
     <ClInclude Include="SecurityDriver.h" />
+    <ClInclude Include="Src\Process\Game.cpp" />
+    <ClInclude Include="Src\Process\ProcessContext.cpp" />
+    <ClInclude Include="Src\Process\ProcessHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Authentication.cpp" />
@@ -142,7 +156,9 @@
     <ClCompile Include="Src\Integrity_Check\Integrity.cpp" />
     <ClCompile Include="Src\IOCTL\Handlers\PublicKey.cpp" />
     <ClCompile Include="Src\IOCTL\IoControlList.cpp" />
-    <ClCompile Include="Src\Module\Module.cpp" />
+    <ClCompile Include="Src\Process\Memory.cpp" />
+    <ClCompile Include="Src\Process\Module.cpp" />
+    <ClCompile Include="Src\Process\ModuleAnalyzer.cpp" />
     <ClCompile Include="Src\RSA\MemoryKey.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

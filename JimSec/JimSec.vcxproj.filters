@@ -129,6 +129,48 @@
     <ClInclude Include="Include\Utils\Kernel.h">
       <Filter>Header Files\Include\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Process\Module.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Process\Enum\Section.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\PEB\Types\PEB_LDR_DATA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\PEB\Types\LDR_DATA_TABLE_ENTRY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Kernel\Windows\NtProcess.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Kernel\Windows\NtMemory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Process\Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Process\ProcessContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Process\Memory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Process\ModuleAnalyzer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Process\ProcessHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Process\ProcessHelper.cpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Process\Game.cpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Process\ProcessContext.cpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Driver.cpp">
@@ -158,8 +200,14 @@
     <ClCompile Include="Src\Integrity_Check\Integrity.cpp">
       <Filter>Source Files\Src\Integrity_Check</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Module\Module.cpp">
+    <ClCompile Include="Src\Process\Module.cpp">
       <Filter>Source Files\Src\Module</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Process\Memory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Process\ModuleAnalyzer.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

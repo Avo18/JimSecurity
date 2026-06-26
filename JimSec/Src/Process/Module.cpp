@@ -1,182 +1,58 @@
 //#include <ntddk.h>
-#include <ntifs.h>
-#include <ntimage.h>
+#pragma once
+#include "../../../../JimSec/JimSec/Include/Process/Module.h"
+#include "../../../../JimSec/JimSec/Include/Process/Game.h"
+#include "../../../../JimSec/JimSec/Include/Process/Enum/Section.h"
+
 #define _NO_CRT_STDIO_INLINE
 
-enum class Section
+// new Code
+#include "../../../../../JimSec/JimSec/Include/Process/ProcessContext.h"
+#include "../../../../../JimSec/JimSec/Include/Process/ModuleAnalyzer.h"
+#include "../../../../../JimSec/JimSec/Include/Process/Module.h"
+#include "../../../../../JimSec/JimSec/Include/Kernel/Windows/NtMemory.h"
+#include "../../../../../JimSec/JimSec/Include/Kernel/Windows/NtProcess.h"
+
+
+BOOLEAN GetModuleCodeSectionClean(PEPROCESS Process, PVOID BaseAddress, PVOID* outBuffer, SIZE_T* outSize)
 {
-    MachineCode,
-};
+    if (!Process || !BaseAddress || !outBuffer || !outSize)
+        return FALSE;
 
-static constexpr const char* ToString[] =
-{
-    ".txt",
-};
+    *outBuffer = nullptr;
+    *outSize = 0;
 
-constexpr const char* GetMessage(Section section)
-{
-    return ToString[(int)section];
-}
-
-class Scanner
-{
-
-};
-class GameProcess
-{
-
-};
-// Reworked code:
-class Module
-{
-private:
-    PKPROCESS _process;
-    PVOID _baseAddress;
-    KAPC_STATE state;
-public:
-    Module(PKPROCESS process, PVOID baseAddress);
-    ~Module();
-    PIMAGE_NT_HEADERS GetPE_File();
-    PIMAGE_SECTION_HEADER GetSectionHeaders(PIMAGE_NT_HEADERS pe_file);
-    ULONG GetIndexSectionHeader(PIMAGE_NT_HEADERS PE_Header, PIMAGE_SECTION_HEADER sectionHeader, Section section);
-    VOID GetModuleCodeSection(PIMAGE_SECTION_HEADER sectionHeaders, ULONG sectionHeaderIndex,__out PVOID* buffer, __out SIZE_T* size);
-    
-    VOID BUILD(__out PVOID* buffer, __out SIZE_T* size);
-};
-
-Module::Module(PKPROCESS process, PVOID baseAddress)
-{
-    this->_process = process;
-    this->_baseAddress = baseAddress;
-    KeStackAttachProcess(this->_process, &state);
-}
-
-/// <summary>
-/// NT betekend van windows NT
-/// PE file = Elk process heeft een Portable Executable waar informatie staat hoe het program geladen moet worden
-/// 
-/// PIMAGE_NT_HEADERS
-/// P     = Pointer
-// IMAGE  = PE image structuur
-//  NT    = Windows NT executable format
-//HEADERS = header informatie
-/// </summary>
-/// <returns>PIMAGE_NT_HEADERS</returns>
-PIMAGE_NT_HEADERS Module::GetPE_File()
-{
-    PIMAGE_DOS_HEADER dos = (PIMAGE_DOS_HEADER)this->_baseAddress;
-    PIMAGE_NT_HEADERS nt = (PIMAGE_NT_HEADERS)((PUCHAR)this->_baseAddress + dos->e_lfanew);
-    return nt;
-}
-
-/// <summary>
-/// Sectie = Segment binnen windows executable (vb: .text, .data, .rdata, ...)
-/// 
-/// PIMAGE_SECTION_HEADER
-/// P = Pointer
-/// IMAGE = PE Image structuur
-/// NT = Windows NT executable
-/// 
-/// </summary>
-/// <returns></returns>
-PIMAGE_SECTION_HEADER Module::GetSectionHeaders(PIMAGE_NT_HEADERS pe_file)
-{
-    return IMAGE_FIRST_SECTION(pe_file);
-}
-
-ULONG Module::GetIndexSectionHeader(PIMAGE_NT_HEADERS PE_Header, PIMAGE_SECTION_HEADER sectionHeader, Section section)
-{
-    for (int i = 0; i < PE_Header->FileHeader.NumberOfSections; i++)
-    {
-        if (memcmp(sectionHeader[i].Name, ToString[(int)section], 5) == 0)
-        {
-            return i;
-        }
-    }
-    return NULL;
-}
-
-VOID Module::GetModuleCodeSection(PIMAGE_SECTION_HEADER sectionHeaders, ULONG sectionHeaderIndex,  __out PVOID* buffer, __out SIZE_T* size)
-{
-    *buffer = (PUCHAR)this->_baseAddress + sectionHeaders[sectionHeaderIndex].VirtualAddress;
-    *size = sectionHeaders[sectionHeaderIndex].Misc.VirtualSize;
-}
-
-VOID Module::BUILD(__out PVOID* buffer, __out SIZE_T* size)
-{
-    PIMAGE_NT_HEADERS pe_file = GetPE_File();
-    PIMAGE_SECTION_HEADER sectionHeaders = GetSectionHeaders(pe_file);
-    ULONG sectionHeaderIndex = GetIndexSectionHeader(pe_file, sectionHeaders, Section::MachineCode);
-    PVOID* buffer; SIZE_T* size;
-
-    GetModuleCodeSection(sectionHeaders, sectionHeaderIndex, buffer, size);
-
-
-}
-
-Module::~Module()
-{
-    KeUnstackDetachProcess(&state);
-}
-
-
-
-// OLD code
-
-BOOLEAN GetModuleCodeSection(PKPROCESS Process, PVOID BaseAddress, PVOID* outBuffer, SIZE_T* outSize)
-{
-    KAPC_STATE state = {};
-    
-    KeStackAttachProcess(Process, &state);
+    Process::Context ctx(Process);
 
     __try
     {
-        PIMAGE_DOS_HEADER dos = (PIMAGE_DOS_HEADER)BaseAddress;
-        PIMAGE_NT_HEADERS nt = (PIMAGE_NT_HEADERS)((PUCHAR)BaseAddress + dos->e_lfanew);
+        ctx.Attach();
 
-        PIMAGE_SECTION_HEADER section = IMAGE_FIRST_SECTION(nt);
+        Process::Module module(BaseAddress);
 
-        for (int i = 0; i < nt->FileHeader.NumberOfSections; i++)
-        {
-            if (memcmp(section[i].Name, ".text", 5) == 0)
-            {
-                *outBuffer = (PUCHAR)BaseAddress + section[i].VirtualAddress;
-                *outSize = section[i].Misc.VirtualSize;
+        PIMAGE_NT_HEADERS nt = module.GetNtHeaders();
+        if (!nt)
+            return FALSE;
 
-                KeUnstackDetachProcess(&state);
-                return TRUE;
-            }
-        }
+        PIMAGE_SECTION_HEADER sections = module.GetSectionHeaders(nt);
+        if (!sections)
+            return FALSE;
+
+        ULONG index = module.GetSectionIndex(nt, sections, Enum::Section::MachineCode);
+
+        if (index == (ULONG)-1)
+            return FALSE;
+
+        Process::ModuleAnalyzer::ExtractCodeSection(sections, index, BaseAddress, outBuffer, outSize);
+
+        return TRUE;
     }
-    __except(EXCEPTION_EXECUTE_HANDLER)
+    __except (EXCEPTION_EXECUTE_HANDLER)
     {
-        KeUnstackDetachProcess(&state);
         return FALSE;
     }
-
-    KeUnstackDetachProcess(&state);
-    return FALSE;
 }
 
-// Handmatige declaratie van de semi-gedocumenteerde kernel functie
-extern "C" NTSTATUS MmCopyVirtualMemory(
-    PKPROCESS SourceProcess,
-    PVOID SourceAddress,
-    PEPROCESS TargetProcess,
-    PVOID TargetAddress,
-    SIZE_T BufferSize,
-    KPROCESSOR_MODE PreviousMode,
-    PSIZE_T ReturnSize
-);
-
-// Helper-functie om het PEPROCESS van de game te vinden via het Process ID (PID)
-PKPROCESS GetProcessByPid(HANDLE ProcessId) {
-    PKPROCESS Process = NULL;
-    if (NT_SUCCESS(PsLookupProcessByProcessId(ProcessId, &Process))) {
-        return Process;
-    }
-    return NULL;
-}
 
 //------------------------
 // Process environment Block
@@ -201,8 +77,7 @@ typedef struct _LDR_DATA_TABLE_ENTRY {
     UNICODE_STRING BaseDllName;
 } LDR_DATA_TABLE_ENTRY, * PLDR_DATA_TABLE_ENTRY;
 
-// Omdat PEB ongedocumenteerd is in de kernel header, halen we deze handmatig op via PsGetProcessPeb
-extern "C" PVOID PsGetProcessPeb(PKPROCESS Process);
+
 
 // Functie die controleert of een specifiek adres binnen een legitieme module van de game valt
 BOOLEAN IsAddressInLegitimateModule(PKPROCESS Process, ULONG64 TargetAddress) {
@@ -300,6 +175,8 @@ VOID VerifyMemoryIntegrity(PVOID TargetVirtualAddress, unsigned char* LiveBuffer
     }
 }
 
+
+// OLD
 // Functie die de instructies (geheugen) van de game scant
 NTSTATUS ScanGameMemory(HANDLE GamePid, PVOID TargetVirtualAddress, SIZE_T SizeToRead) {
     PEPROCESS GameProcess = GetProcessByPid(GamePid);
@@ -347,4 +224,38 @@ NTSTATUS ScanGameMemory(HANDLE GamePid, PVOID TargetVirtualAddress, SIZE_T SizeT
     ExFreePoolWithTag(KernelBuffer, 'Anti');
     ObDereferenceObject(GameProcess);
     return Status;
+}
+
+
+
+
+
+// NEW
+#include "../../../../JimSec/JimSec/Include/Process/ProcessHelper.h"
+#include "../../../../JimSec/JimSec/Include/Process/Memory.h"
+NTSTATUS ScanGameMemory(HANDLE GamePid, PVOID TargetVirtualAddress, SIZE_T SizeToRead)
+{
+    PEPROCESS gameProcess = Process::ProcessHelper::GetByPid(GamePid);
+    if (!gameProcess)
+        return STATUS_NOT_FOUND;
+
+    PVOID buffer = ExAllocatePool2(POOL_FLAG_NON_PAGED, SizeToRead, 'scnA');
+    if (!buffer)
+        return STATUS_INSUFFICIENT_RESOURCES;
+
+    SIZE_T bytesRead = 0;
+
+    NTSTATUS status = Process::Memory::Read(gameProcess, TargetVirtualAddress, &buffer, SizeToRead, bytesRead);
+
+    if (!NT_SUCCESS(status))
+    {
+        ExFreePool(buffer);
+        return status;
+    }
+
+    status = Process::ModuleAnalyzer::ScanJumps(buffer, bytesRead, TargetVirtualAddress);
+
+    ExFreePool(buffer);
+
+    return status;
 }
