@@ -9,10 +9,12 @@ namespace Process
     {
     public:
         Module(PVOID baseAddress);
-        ~Module() = default;
+        ~Module();
         PIMAGE_NT_HEADERS GetNtHeaders() const;
         PIMAGE_SECTION_HEADER GetSectionHeaders(PIMAGE_NT_HEADERS nt) const;
+        PIMAGE_SECTION_HEADER Module::GetSectionHeaders() const;
         ULONG GetSectionIndex(PIMAGE_NT_HEADERS nt, PIMAGE_SECTION_HEADER sec, Enum::Section section);
+        ULONG Module::GetSectionIndex(Enum::Section section);
     private:
         PVOID m_baseAddress;
     };
@@ -27,7 +29,6 @@ Process::Module::Module(PVOID baseAddress)
 
     Process::Module::~Module()
     {
-        // niets meer hier → geen attach ownership in Module
     };
 
     /// <summary>
@@ -68,9 +69,34 @@ Process::Module::Module(PVOID baseAddress)
 
         return IMAGE_FIRST_SECTION(nt);
     };
+    PIMAGE_SECTION_HEADER Process::Module::GetSectionHeaders() const
+    {
+		PIMAGE_NT_HEADERS nt = GetNtHeaders();
+        if (!nt)
+            return nullptr;
+
+        return IMAGE_FIRST_SECTION(nt);
+    };
 
     ULONG Process::Module::GetSectionIndex(PIMAGE_NT_HEADERS nt, PIMAGE_SECTION_HEADER sectionHeader, Enum::Section section)
     {
+        if (!nt || !sectionHeader)
+            return (ULONG)-1;
+
+        for (ULONG i = 0; i < nt->FileHeader.NumberOfSections; i++)
+        {
+            if (memcmp(sectionHeader[i].Name, Enum::ToString[(int)section], 5) == 0)
+            {
+                return i;
+            }
+        }
+
+        return (ULONG)-1;
+    };
+    ULONG Process::Module::GetSectionIndex(Enum::Section section)
+    {
+		PIMAGE_NT_HEADERS nt = GetNtHeaders();
+		PIMAGE_SECTION_HEADER sectionHeader = GetSectionHeaders(nt);
         if (!nt || !sectionHeader)
             return (ULONG)-1;
 

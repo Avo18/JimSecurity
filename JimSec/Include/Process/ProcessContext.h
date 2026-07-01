@@ -1,23 +1,23 @@
 ﻿//--------------------------------
-//  RAII SAFE
+//  RAII SAFE (Resource Acquisition Is Initialization) 
+//  resources worden automatisch beheerd door object lifetime (constructor = acquire, destructor = release)
 //--------------------------------
 #pragma once
-#include <ntifs.h>
 
 namespace Process
 {
     class Context
     {
-    public:
-        explicit Context(PEPROCESS process);
-        ~Context();
-        PEPROCESS& GetProcess();
-        void Attach();
-        void Detach();
-
     private:
-        PEPROCESS m_process;
+        PKPROCESS m_process;
         KAPC_STATE m_state;
         BOOLEAN m_attached;
+    public:
+        explicit Context(PKPROCESS process);
+        ~Context();
+        PKPROCESS GetProcess() const;
+        PVOID GetImageBase() const;
+        void Attach();
+        void Detach();
     };
 }

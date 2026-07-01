@@ -1,20 +1,25 @@
 //#include <ntddk.h>
 #pragma once
+#include <ntifs.h>
+#include <ntimage.h>
 #include "../../../../JimSec/JimSec/Include/Process/Module.h"
 #include "../../../../JimSec/JimSec/Include/Process/Game.h"
 #include "../../../../JimSec/JimSec/Include/Process/Enum/Section.h"
+#include "../../../../JimSec/JimSec/Include/Process/ProcessHelper.h"
+#include "../../../../JimSec/JimSec/Include/Process/Memory.h"
+#include "../../../../../JimSec/JimSec/Include/Process/ProcessContext.h"
+#include "../../../../../JimSec/JimSec/Include/Process/ModuleAnalyzer.h"
+#include "../../../../../JimSec/JimSec/Include/Kernel/Windows/NtMemory.h"
+#include "../../../../../JimSec/JimSec/Include/Kernel/Windows/NtProcess.h"
+#include "../../../../../JimSec/JimSec/Include/PEB/Types/LDR_DATA_TABLE_ENTRY.h"
+#include "../../../../../JimSec/JimSec/Include/PEB/Types/PEB_LDR_DATA.h"
 
 #define _NO_CRT_STDIO_INLINE
 
 // new Code
-#include "../../../../../JimSec/JimSec/Include/Process/ProcessContext.h"
-#include "../../../../../JimSec/JimSec/Include/Process/ModuleAnalyzer.h"
-#include "../../../../../JimSec/JimSec/Include/Process/Module.h"
-#include "../../../../../JimSec/JimSec/Include/Kernel/Windows/NtMemory.h"
-#include "../../../../../JimSec/JimSec/Include/Kernel/Windows/NtProcess.h"
 
 
-BOOLEAN GetModuleCodeSectionClean(PEPROCESS Process, PVOID BaseAddress, PVOID* outBuffer, SIZE_T* outSize)
+BOOLEAN GetModuleCodeSectionClean(PKPROCESS Process, PVOID BaseAddress, PVOID* outBuffer, SIZE_T* outSize)
 {
     if (!Process || !BaseAddress || !outBuffer || !outSize)
         return FALSE;
@@ -43,7 +48,8 @@ BOOLEAN GetModuleCodeSectionClean(PEPROCESS Process, PVOID BaseAddress, PVOID* o
         if (index == (ULONG)-1)
             return FALSE;
 
-        Process::ModuleAnalyzer::ExtractCodeSection(sections, index, BaseAddress, outBuffer, outSize);
+      /*  Process::ModuleAnalyzer* moduleAnalyser;
+        moduleAnalyser->ExtractCodeSection(sections, index, BaseAddress, outBuffer, outSize);*/
 
         return TRUE;
     }
@@ -52,32 +58,6 @@ BOOLEAN GetModuleCodeSectionClean(PEPROCESS Process, PVOID BaseAddress, PVOID* o
         return FALSE;
     }
 }
-
-
-//------------------------
-// Process environment Block
-//------------------------
-
-// Handmatige structuren voor PEB-traversal (om geladen libraries te vinden)
-typedef struct _PEB_LDR_DATA {
-    ULONG Length;
-    BOOLEAN Initialized;
-    HANDLE SsHandle;
-    LIST_ENTRY InLoadOrderModuleList;
-} PEB_LDR_DATA, * PPEB_LDR_DATA;
-
-typedef struct _LDR_DATA_TABLE_ENTRY {
-    LIST_ENTRY InLoadOrderLinks;
-    LIST_ENTRY InMemoryOrderLinks;
-    LIST_ENTRY InInitializationOrderLinks;
-    PVOID DllBase;
-    PVOID EntryPoint;
-    ULONG SizeOfImage;
-    UNICODE_STRING FullDllName;
-    UNICODE_STRING BaseDllName;
-} LDR_DATA_TABLE_ENTRY, * PLDR_DATA_TABLE_ENTRY;
-
-
 
 // Functie die controleert of een specifiek adres binnen een legitieme module van de game valt
 BOOLEAN IsAddressInLegitimateModule(PKPROCESS Process, ULONG64 TargetAddress) {
@@ -178,9 +158,10 @@ VOID VerifyMemoryIntegrity(PVOID TargetVirtualAddress, unsigned char* LiveBuffer
 
 // OLD
 // Functie die de instructies (geheugen) van de game scant
-NTSTATUS ScanGameMemory(HANDLE GamePid, PVOID TargetVirtualAddress, SIZE_T SizeToRead) {
-    PEPROCESS GameProcess = GetProcessByPid(GamePid);
-    PEPROCESS CurrentProcess = PsGetCurrentProcess();
+NTSTATUS ScanGameMemory(HANDLE GamePid, PVOID TargetVirtualAddress, SIZE_T SizeToRead, SIZE_T A) {
+    UNREFERENCED_PARAMETER(A);
+    PKPROCESS GameProcess = Process::ProcessHelper::GetByPid(GamePid);
+    PKPROCESS CurrentProcess = PsGetCurrentProcess();
 
     if (!GameProcess) return STATUS_NOT_FOUND;
 
@@ -231,11 +212,9 @@ NTSTATUS ScanGameMemory(HANDLE GamePid, PVOID TargetVirtualAddress, SIZE_T SizeT
 
 
 // NEW
-#include "../../../../JimSec/JimSec/Include/Process/ProcessHelper.h"
-#include "../../../../JimSec/JimSec/Include/Process/Memory.h"
 NTSTATUS ScanGameMemory(HANDLE GamePid, PVOID TargetVirtualAddress, SIZE_T SizeToRead)
 {
-    PEPROCESS gameProcess = Process::ProcessHelper::GetByPid(GamePid);
+    PKPROCESS gameProcess = Process::ProcessHelper::GetByPid(GamePid);
     if (!gameProcess)
         return STATUS_NOT_FOUND;
 
@@ -245,7 +224,10 @@ NTSTATUS ScanGameMemory(HANDLE GamePid, PVOID TargetVirtualAddress, SIZE_T SizeT
 
     SIZE_T bytesRead = 0;
 
-    NTSTATUS status = Process::Memory::Read(gameProcess, TargetVirtualAddress, &buffer, SizeToRead, bytesRead);
+    Process::Context context(gameProcess);
+    Process::Memory memory(context);
+
+    NTSTATUS status = memory.Read(gameProcess, TargetVirtualAddress, &buffer, SizeToRead, bytesRead);
 
     if (!NT_SUCCESS(status))
     {
@@ -253,7 +235,8 @@ NTSTATUS ScanGameMemory(HANDLE GamePid, PVOID TargetVirtualAddress, SIZE_T SizeT
         return status;
     }
 
-    status = Process::ModuleAnalyzer::ScanJumps(buffer, bytesRead, TargetVirtualAddress);
+    Process::ModuleAnalyzer modelAnalyser(memory);
+    status = modelAnalyser.ScanJumps(buffer, bytesRead, TargetVirtualAddress);
 
     ExFreePool(buffer);
 

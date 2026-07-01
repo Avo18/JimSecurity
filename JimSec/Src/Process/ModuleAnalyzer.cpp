@@ -1,5 +1,13 @@
 #pragma once
+#include <ntifs.h>
+#include <ntimage.h>
+#include "../../../../JimSec/JimSec/Include/Process/Memory.h"
+#include "../../../../JimSec/JimSec/Include/Process/Module.h"
+#include "../../../../JimSec/JimSec/Include/Process/ProcessContext.h"
 #include "../../../../JimSec/JimSec/Include/Process/ModuleAnalyzer.h"
+#include "../../../JimSec/Include/Kernel/Windows/NtProcess.h"
+#include "../../../JimSec/Include/PEB/Types/PEB_LDR_DATA.h"
+#include "../../../JimSec/Include/PEB/Types/LDR_DATA_TABLE_ENTRY.h"
 
 namespace Process
 {
@@ -38,12 +46,9 @@ namespace Process
 
             DbgPrint("[!] JMP detected at %p -> %llX\n", (PVOID)instrAddr, target);
 
-            // TODO
-
-            if (!IsAddressInLegitimateModule(GameProcess, TargetAddress)) {
-                DbgPrint("[!!!] CHEAT DETECTIE: JMP springt naar een ONBEKENDE/EXTERNE regio! Adres: %llX\n", TargetAddress);
-                // HIER KUN JE DE SPELER BANNEN OF DE GAME CRASHEN
-            }
+            //if (!IsAddressInLegitimateModule(_memory.GetContext().GetProcess(), target)) {
+            //    DbgPrint("[!!!] CHEAT DETECTIE: JMP springt naar een ONBEKENDE/EXTERNE regio! Adres: %llX\n", target);
+            //}
         }
 
         return STATUS_SUCCESS;

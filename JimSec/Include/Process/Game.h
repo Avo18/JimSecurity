@@ -1,18 +1,33 @@
 #pragma once
-#include "Module.h"
-#include "ProcessContext.h"
 
 namespace Process
 {
-	class Game
-	{
-	public:
-		bool Initialize(PEPROCESS process);
-		void Shutdown();
+    class Context;
+    class Memory;
+    class ModuleAnalyzer;
+    class Module;
+    class Game
+    {
+    public:
+        Game();
+        Game(Context* context);
+        Game(PKPROCESS process, PVOID moduleBase);
+        ~Game();
 
-	private:
-		Context* m_context;
-		Module* m_module;
-        BOOLEAN m_initialized;
-	};
+        bool Initialize(PKPROCESS process, PVOID moduleBase);
+        void Shutdown();
+        NTSTATUS RunChecks();
+
+        Context* GetContext();
+        Memory* GetMemory();
+        Module* GetModule();
+        ModuleAnalyzer* GetAnalyzer();
+    
+    private:
+        Context* _context;
+        Memory* _memory;
+        Module* _module;
+        ModuleAnalyzer* _analyzer;
+        BOOLEAN _initialized;
+    };
 }

@@ -1,0 +1,18 @@
+
+Hoe het JimSec architecturaal is opgebouwd
+
+Driver (Main)
+ |
+ +-- IOCTL Handlers
+        |
+        +-- AntiCheatManager
+               |
+               +-- Game
+                     |
+                     +-- ProcessContext (welk proces?)
+                     |
+                     +-- Memory (geheugen lezen)
+                     |
+                     +-- Module (PE base / omvormen)
+                     |
+                     +-- ModuleAnalyzer (lezen van Memory + Module vb: jumps/dll checks/integrity checks = Detectie)

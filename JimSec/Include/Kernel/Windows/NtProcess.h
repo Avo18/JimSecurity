@@ -5,6 +5,8 @@
 //--------------------------
 
 #pragma once
-#include <ntddk.h>
+#include <ntifs.h>
+#include <ntimage.h>
 
 extern "C" PVOID PsGetProcessPeb(PKPROCESS Process);
+extern "C" PVOID PsGetProcessSectionBaseAddress(PKPROCESS Process);

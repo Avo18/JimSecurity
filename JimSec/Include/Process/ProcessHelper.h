@@ -1,12 +1,11 @@
 #pragma once
-#include <ntifs.h>
 
 namespace Process
 {
     class ProcessHelper
     {
     public:
-        static PEPROCESS GetByPid(HANDLE pid);
+        static PKPROCESS GetByPid(HANDLE pid);
     };
 }
 

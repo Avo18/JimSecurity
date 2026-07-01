@@ -10,7 +10,7 @@
 #define _NO_CRT_STDIO_INLINE
 
 extern "C"
-NTSTATUS MmCopyVirtualMemory(PKPROCESS SourceProcess, PVOID SourceAddress, PEPROCESS TargetProcess, PVOID TargetAddress, SIZE_T BufferSize, KPROCESSOR_MODE PreviousMode, PSIZE_T ReturnSize);
+NTSTATUS MmCopyVirtualMemory(PKPROCESS SourceProcess, PVOID SourceAddress, PKPROCESS TargetProcess, PVOID TargetAddress, SIZE_T BufferSize, KPROCESSOR_MODE PreviousMode, PSIZE_T ReturnSize);
 
 // De verwachte, ongewijzigde hash van de sectie
 const UCHAR EXPECTED_HASH[32] = {
@@ -108,7 +108,7 @@ BOOLEAN CompareHash(UCHAR a[32], UCHAR b[32])
 
 NTSTATUS CheckModuleIntegrity(ULONG pid, PVOID moduleBase, SIZE_T moduleSize, UCHAR expectedHash[32])
 {
-    PEPROCESS process = NULL;
+    PKPROCESS process = NULL;
 
     NTSTATUS status = PsLookupProcessByProcessId((HANDLE)pid, &process);
 

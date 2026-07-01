@@ -1,14 +1,8 @@
 #pragma once
-#include <ntddk.h>
-#include <wdf.h>
-#include "../../../../JimSec/JimSec/Include/Shared_Protocol/Auth.h"
-#include "../../../../JimSec/JimSec/Include/IOCTL/Handlers/PublicKey.h"
-#include "../../../../JimSec/JimSec/Include/IOCTL/Handlers/Func/IoctlHandlerFunc.h"
 
 using namespace IOCTL_Handlers;
 
-
-#define IOCTL_COUNT 1
+#define IOCTL_COUNT 2
 
 namespace IOCTL
 {
@@ -23,6 +17,10 @@ namespace IOCTL
         IOCTL_ENTRY* FindHandler(ULONG ioctl);
     };
 }
+
+
+
+
 
 
 /*

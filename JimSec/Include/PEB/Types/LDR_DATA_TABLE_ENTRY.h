@@ -1,5 +1,6 @@
 #pragma once
-#include <ntddk.h>
+#include <ntifs.h>
+#include <ntimage.h>
 
 typedef struct LDR_DATA_TABLE_ENTRY {
     LIST_ENTRY InLoadOrderLinks;

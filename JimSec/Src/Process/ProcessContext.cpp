@@ -1,17 +1,24 @@
 #pragma once
+#include <ntifs.h>
 #include "../../../../JimSec/JimSec/Include/Process/ProcessContext.h"
+#include "../../../../JimSec/JimSec/Include/Kernel/Windows/NtProcess.h"
 
+using namespace Process;
 namespace Process
 {
-    Context::Context(PEPROCESS process)
+    Context::Context(PKPROCESS process)
     {
         m_process = process;
         m_attached = false;
     }
 
-    PEPROCESS& Context::GetProcess()
+    PKPROCESS Context::GetProcess() const
     {
         return m_process;
+    }
+    PVOID Context::GetImageBase() const
+    {
+        return PsGetProcessSectionBaseAddress(m_process);
     }
 
     void Context::Attach()
