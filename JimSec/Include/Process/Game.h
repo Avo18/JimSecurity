@@ -1,5 +1,5 @@
 #pragma once
-
+#include "../../../../JimSec/JimSec/Include/Process/Module.h"
 namespace Process
 {
     class Context;
@@ -9,8 +9,8 @@ namespace Process
     class Game
     {
     public:
-        Game();
-        Game(Context* context);
+        //Game();
+        Game(Process::Context* context);
         Game(PKPROCESS process, PVOID moduleBase);
         ~Game();
 
@@ -18,16 +18,16 @@ namespace Process
         void Shutdown();
         NTSTATUS RunChecks();
 
-        Context* GetContext();
-        Memory* GetMemory();
-        Module* GetModule();
-        ModuleAnalyzer* GetAnalyzer();
+        Process::Context* GetContext();
+        Process::Memory* GetMemory();
+        Process::Module* GetModule();
+        Process::ModuleAnalyzer* GetAnalyzer();
     
     private:
-        Context* _context;
-        Memory* _memory;
-        Module* _module;
-        ModuleAnalyzer* _analyzer;
+        Process::Context* _context;
+        Process::Memory* _memory;
+        Process::Module* _module;
+        Process::ModuleAnalyzer* _analyzer;
         BOOLEAN _initialized;
     };
 }

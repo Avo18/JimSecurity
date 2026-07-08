@@ -18,7 +18,7 @@ namespace RSA
         NTSTATUS LoadPublicKey(PUCHAR input, ULONG size);
         VOID FreePublicKeyStorage();
     };
-};
+}
 
 
 

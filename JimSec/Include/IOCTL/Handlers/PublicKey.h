@@ -1,7 +1,5 @@
 #pragma once
-#include "../../RSA/MemoryKey.h"
-
-using namespace RSA;
+#include "..\..\..\..\..\JimSec\JimSec\Include\RSA\MemoryKey.h"
 
 namespace IOCTL_Handlers
 {

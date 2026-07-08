@@ -1,4 +1,5 @@
 #pragma once
+#include "../../../../JimSec/JimSec/Include/Process/Module.h"
 
 namespace Process
 {

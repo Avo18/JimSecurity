@@ -145,9 +145,11 @@
     <ClInclude Include="Include\Utils\Kernel.h" />
     <ClInclude Include="IOCTL.h" />
     <ClInclude Include="SecurityDriver.h" />
-    <ClInclude Include="Src\Process\Game.cpp" />
-    <ClInclude Include="Src\Process\ProcessContext.cpp" />
-    <ClInclude Include="Src\Process\ProcessHelper.cpp" />
+    <ClCompile Include="Src\Process\Game.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Src\Process\ProcessContext.cpp" />
+    <ClCompile Include="Src\Process\ProcessHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Authentication.cpp" />

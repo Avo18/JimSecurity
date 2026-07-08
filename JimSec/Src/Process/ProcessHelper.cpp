@@ -1,4 +1,3 @@
-#pragma once
 #include <ntifs.h>
 #include "../../../../JimSec/JimSec/Include/Process/ProcessHelper.h"
 

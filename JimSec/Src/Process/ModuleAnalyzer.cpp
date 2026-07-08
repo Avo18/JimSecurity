@@ -2,7 +2,6 @@
 #include <ntifs.h>
 #include <ntimage.h>
 #include "../../../../JimSec/JimSec/Include/Process/Memory.h"
-#include "../../../../JimSec/JimSec/Include/Process/Module.h"
 #include "../../../../JimSec/JimSec/Include/Process/ProcessContext.h"
 #include "../../../../JimSec/JimSec/Include/Process/ModuleAnalyzer.h"
 #include "../../../JimSec/Include/Kernel/Windows/NtProcess.h"

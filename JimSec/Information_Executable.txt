@@ -78,6 +78,7 @@ IMAGE_SECTION_HEADER[]
 
 IMAGE_NT_HEADERS?
 - is de hoofdstructuur van de PE header waarin Windows informatie bewaart over hoe een .exe, .dll of .sys geladen moet worden.
+- vergelijkt dit met een bibliotheek. er zijn kasten met boeken (secties) en een catalogus (IMAGE_NT_HEADERS) die zegt waar de boeken liggen en hoe ze gelezen moeten worden.
 
 IMAGE_NT_HEADERS.OptionalHeader?
 - laad informatie zoals: entry point (main), geheugen grootte, sections locaties, imports, exports

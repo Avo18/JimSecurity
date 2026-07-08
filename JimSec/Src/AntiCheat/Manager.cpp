@@ -1,17 +1,17 @@
-#pragma once
 #include <ntifs.h>
 #include "../../../../JimSec/JimSec/Include/AntiCheat/Manager.h"
-#include "../../../../JimSec/JimSec/Include/Process/Game.h"
 #include "../../../../JimSec/JimSec/Include/Process/ProcessHelper.h"
 #include "../../../../JimSec/JimSec/Include/Process/ProcessContext.h"
+#include "../../../../JimSec/JimSec/Include/Utils/Kernel.h"
+
 
 using namespace Process;
 
 namespace AntiCheat
 {
-    Manager::Manager()
+    Manager::Manager(HANDLE pid)
     {
-        _game = nullptr;
+		StartGame(pid);
     }
 
     Manager::~Manager()
@@ -29,15 +29,12 @@ namespace AntiCheat
         if (!process)
             return false;
 
-        Context* context = &Context(process);
-
-        _game = new Process::Game(context);
+        Process::Context* context = AllocateObject<Process::Context>(process);
+        _game = AllocateObject<Process::Game>(context);
 
         if (!_game)
         {
-            delete(_game);
             _game = nullptr;
-            
             ObDereferenceObject(process);
 
             return false;
@@ -54,14 +51,12 @@ namespace AntiCheat
     }
 
 
-
     void Manager::StopGame()
     {
         if (_game)
         {
             _game->Shutdown();
 
-            delete(_game);
             _game = nullptr;
         }
     }

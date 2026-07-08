@@ -15,7 +15,7 @@ typedef struct _AUTH_REQUEST {
 
 BOOLEAN gAuthenticated = FALSE;
 
-RSA::MemoryKey* _memoryKey;
+//RSA::MemoryKey* _memoryKey;
 
 BOOLEAN ValidateCaller(PVOID buffer, ULONG size)
 {
@@ -69,7 +69,7 @@ NTSTATUS DeviceControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
         PUCHAR input = (PUCHAR)Irp->AssociatedIrp.SystemBuffer;
         ULONG inputSize = stack->Parameters.DeviceIoControl.InputBufferLength;
 
-        status = _memoryKey->LoadPublicKey(input, inputSize);
+        //status = _memoryKey->LoadPublicKey(input, inputSize);
         
         break;
     }
@@ -182,7 +182,7 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT DriverObject, PUNICODE_STRING RegistryPath)
 
     UNREFERENCED_PARAMETER(RegistryPath);
 
-    _memoryKey->Init();
+    //_memoryKey->Init();
 
     NTSTATUS status = IoCreateDevice(
         DriverObject,

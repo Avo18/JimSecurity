@@ -1,15 +1,19 @@
-#pragma once
 #include <ntifs.h>
 #include "../../../../JimSec/JimSec/Include/Process/ProcessContext.h"
 #include "../../../../JimSec/JimSec/Include/Kernel/Windows/NtProcess.h"
 
-using namespace Process;
 namespace Process
 {
     Context::Context(PKPROCESS process)
     {
+        m_state = {};
         m_process = process;
         m_attached = false;
+    }
+    Context::~Context()
+    {
+        if (m_attached)
+            KeUnstackDetachProcess(&m_state);
     }
 
     PKPROCESS Context::GetProcess() const
@@ -37,11 +41,5 @@ namespace Process
 
         KeUnstackDetachProcess(&m_state);
         m_attached = false;
-    }
-
-    Context::~Context()
-    {
-        if (m_attached)
-            KeUnstackDetachProcess(&m_state);
     }
 }
