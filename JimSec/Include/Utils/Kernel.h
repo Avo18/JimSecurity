@@ -36,6 +36,8 @@ inline void* __cdecl Allocate(size_t size) {
 
 /*
 * comoiler genereert zelf een deleting destructor dus we moeten operator delete implementeren anders krijg je een linker error 'scalar deleting destructor'
+* FreeObject heeft een decontructor die decontrcutor zoekt achterliggend achter delete maar die moet overschreven worden anders gebruikt die STL delete operator 
+* en die is niet beschikbaar in kernel mode
 */
 inline void operator delete(void* ptr)
 {
