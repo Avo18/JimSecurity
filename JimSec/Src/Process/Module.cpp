@@ -140,7 +140,7 @@ BOOLEAN GetModuleCodeSectionClean(PKPROCESS Process, PVOID BaseAddress, PVOID* o
         if (index == (ULONG)-1)
             return FALSE;
 
-      /*  Process::ModuleAnalyzer* moduleAnalyser;
+       /* Process::ModuleAnalyzer* moduleAnalyser;
         moduleAnalyser->ExtractCodeSection(sections, index, BaseAddress, outBuffer, outSize);*/
 
         return TRUE;

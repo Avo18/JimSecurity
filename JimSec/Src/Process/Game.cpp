@@ -92,7 +92,7 @@ namespace Process
 
         if (_module)
         {
-			//FreeObject(_module);
+			FreeObject(_module);
             _module = nullptr;
         }
 

@@ -168,6 +168,12 @@
     <ClInclude Include="Include\AntiCheat\Manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\IOCTL\Handlers\Manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Shared_Protocol\Protocol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Driver.cpp">
@@ -220,6 +226,9 @@
     </ClCompile>
     <ClCompile Include="Src\Process\ProcessHelper.cpp">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\IOCTL\Handlers\Manager.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

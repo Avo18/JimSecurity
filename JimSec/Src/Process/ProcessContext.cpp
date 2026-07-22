@@ -18,7 +18,7 @@ namespace Process
 
     PKPROCESS Context::GetProcess() const
     {
-        return m_process;
+        return (struct _KPROCESS*)m_process;
     }
     PVOID Context::GetImageBase() const
     {

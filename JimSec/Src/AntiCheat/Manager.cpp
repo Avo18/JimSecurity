@@ -13,6 +13,9 @@ namespace AntiCheat
     {
 		StartGame(pid);
     }
+    Manager::Manager()
+    {
+    }
 
     Manager::~Manager()
     {

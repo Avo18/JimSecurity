@@ -7,10 +7,11 @@ namespace AntiCheat
 	{
 	private:
 		Process::Game* _game;
-		BOOLEAN StartGame(HANDLE pid);
 	public:
+		Manager();
 		Manager(HANDLE pid);
 		~Manager();
+		BOOLEAN StartGame(HANDLE pid);
 		void StopGame();
 		NTSTATUS PerformScan();
 	};

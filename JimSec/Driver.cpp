@@ -49,22 +49,23 @@ NTSTATUS DeviceControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 
     PIO_STACK_LOCATION stack = IoGetCurrentIrpStackLocation(Irp);
 
- //   // achter het herwerken van switch case deze code enablen. 
-	//IOCTL::IoControlList ioControlList;
- //   ULONG ioctlCode = stack->Parameters.DeviceIoControl.IoControlCode;
- //   IOCTL_ENTRY* entry = ioControlList.FindHandler(ioctlCode);
- //   if (entry != NULL)
- //   {
- //       status = entry->Handler(entry->Context, Irp, stack);
- //   }
- //   else
- //   {
- //       status = STATUS_INVALID_DEVICE_REQUEST;
- //   }
+    // achter het herwerken van switch case deze code enablen. 
+	IOCTL::IoControlList ioControlList;
+    ULONG ioctlCode = stack->Parameters.DeviceIoControl.IoControlCode;
+    IOCTL_ENTRY* entry = ioControlList.FindHandler(ioctlCode);
+    if (entry != NULL)
+    {
+        status = entry->Handler(entry->Context, Irp, stack);
+    }
+    else
+    {
+        status = STATUS_INVALID_DEVICE_REQUEST;
+    }
+
 
     switch (stack->Parameters.DeviceIoControl.IoControlCode)
     {
-    case IOCTL_LOAD_KEY:
+    case IOCTL_LOAD_KEY:// done
     {
         PUCHAR input = (PUCHAR)Irp->AssociatedIrp.SystemBuffer;
         ULONG inputSize = stack->Parameters.DeviceIoControl.InputBufferLength;

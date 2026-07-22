@@ -20,8 +20,7 @@ template<typename T> inline T&& Forward(T&& arg)
 template<typename T> void FreeObject(T* object)
 {
     if (!object) return;
-    //object->~T();
-    static_cast<T*>(object)->~T();
+    object->~T();
     ExFreePoolWithTag(object, JIMS_POOL_TAG);
 }
 
@@ -51,33 +50,3 @@ inline void operator delete(void* ptr, size_t)
     ExFreePoolWithTag(ptr, JIMS_POOL_TAG);
 }
 
-//void __cdecl operator delete(void* ptr, size_t size) {
-//        UNREFERENCED_PARAMETER(size);
-//        if (ptr) {
-//            ExFreePoolWithTag(ptr, JIMS_POOL_TAG);
-//        }
-//    }
-
-//// enkel voor heaps gebruiken, long living objects
-//
-//#define JIMS_POOL_TAG 'mciJ'
-//
-//namespace Util
-//{
-//    void* __cdecl operator new(size_t size) {
-//        return ExAllocatePool2(POOL_FLAG_NON_PAGED, size, JIMS_POOL_TAG);
-//    }
-//
-//    void __cdecl operator delete(void* ptr) {
-//        if (ptr) {
-//            ExFreePoolWithTag(ptr, JIMS_POOL_TAG);
-//        }
-//    }
-//
-//    void __cdecl operator delete(void* ptr, size_t size) {
-//        UNREFERENCED_PARAMETER(size);
-//        if (ptr) {
-//            ExFreePoolWithTag(ptr, JIMS_POOL_TAG);
-//        }
-//    }
-//}
