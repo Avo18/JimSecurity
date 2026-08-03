@@ -10,7 +10,7 @@ namespace IOCTL_Handlers
 		AntiCheat::Manager* _manager;
 	public:
 		Manager(AntiCheat::Manager* manager);
-		NTSTATUS Start(PIRP Irp, PIO_STACK_LOCATION stack);
+		NTSTATUS Start(PIRP irp, PIO_STACK_LOCATION stack);
 		NTSTATUS Scan();
 	};
 }

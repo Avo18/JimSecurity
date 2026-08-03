@@ -20,7 +20,7 @@ namespace Process
     // cpp file nog te verplaatsen
     Module::Module(PVOID baseAddress)
     {
-        m_baseAddress = baseAddress;
+        _baseAddress = baseAddress;
     };
 
     Module::~Module()
@@ -40,12 +40,12 @@ namespace Process
     /// <returns>PIMAGE_NT_HEADERS</returns>
     PIMAGE_NT_HEADERS Module::GetNtHeaders() const
     {
-        PIMAGE_DOS_HEADER dos = (PIMAGE_DOS_HEADER)this->m_baseAddress;
+        PIMAGE_DOS_HEADER dos = (PIMAGE_DOS_HEADER)this->_baseAddress;
 
         if (!dos || dos->e_lfanew == 0)
             return nullptr;
 
-        return (PIMAGE_NT_HEADERS)((PUCHAR)this->m_baseAddress + dos->e_lfanew);
+        return (PIMAGE_NT_HEADERS)((PUCHAR)this->_baseAddress + dos->e_lfanew);
     };
 
     /// <summary>

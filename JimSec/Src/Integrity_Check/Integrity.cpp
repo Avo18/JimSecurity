@@ -1,18 +1,14 @@
-//#include <ntddk.h>
-//#include <process.h>
-//#include <wdf.h>
 #include <ntifs.h>
 #include "../../../JimSec/Include/Integrity_Check/Common/SHA_256.h"
 #include "../../../JimSec/Include/Integrity_Check/Common/Macros.h"
 #include "../../../JimSec/Include/Integrity_Check/Types/SHA256_CTX.h"
 #include "../../../JimSec/Include/Integrity_Check/Integrity.h"
+#include "../../../JimSec/Include/Kernel/Windows/NtMemory.h"
 
 #define _NO_CRT_STDIO_INLINE
 
-extern "C"
-NTSTATUS MmCopyVirtualMemory(PKPROCESS SourceProcess, PVOID SourceAddress, PKPROCESS TargetProcess, PVOID TargetAddress, SIZE_T BufferSize, KPROCESSOR_MODE PreviousMode, PSIZE_T ReturnSize);
-
 // De verwachte, ongewijzigde hash van de sectie
+// nog aan te passen zodat dit gebruikt kan worden voor .exe hashing & RSA key
 const UCHAR EXPECTED_HASH[32] = {
     0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08,
     0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x10,
@@ -25,26 +21,18 @@ BOOLEAN Integrity_Check::Integrity::Check(ULONG pid, PVOID base, SIZE_T size, BO
     UNREFERENCED_PARAMETER(pid);
 
     SHA256_CTX ctx;
+
     UCHAR currentHash[32] = { 0 };
 
     if (modified == NULL || base == NULL || size == 0) {
         return FALSE;
     }
-
-    // Default status instellen
     *modified = FALSE;
 
-    // 1. Initialiseer de SHA-256 context (gebeurt volledig op de kernel stack)
     _sha256.Init(&ctx);
-
-    // 2. Hash de data direct vanuit het geheugenadres
-    // WAARSCHUWING: Zorg dat de thread in de juiste procescontext (CR3) zit als 'base' user-mode geheugen is!
     _sha256.Update(&ctx, (const UCHAR*)base, size);
-
-    // 3. Genereer de uiteindelijke hash output
     _sha256.Final(&ctx, currentHash);
 
-    // 4. Vergelijk de berekende hash met onze baseline baseline behulp van kernel's RtlCompareMemory
     if (RtlCompareMemory(currentHash, EXPECTED_HASH, 32) != 32)
     {
         *modified = TRUE; // Er is geknoeid met het geheugen (mismatch)
@@ -75,7 +63,7 @@ NTSTATUS ReadProcessMemorySafe(PKPROCESS Process, PVOID SourceAddress, PVOID Buf
 NTSTATUS CalculateMemoryHash(PKPROCESS process, PVOID baseAddress, SIZE_T size, UCHAR outhash[32])
 {
     UNREFERENCED_PARAMETER(outhash);
-	UCHAR* buffer = static_cast<UCHAR*>(ExAllocatePool2(POOL_FLAG_NON_PAGED, size, 'buff')); // alloceert geheugen in driver kernel
+	UCHAR* buffer = static_cast<UCHAR*>(ExAllocatePool2(POOL_FLAG_NON_PAGED, size, 'buff')); 
 	if (!buffer) {
 		return STATUS_INSUFFICIENT_RESOURCES;
 	}

@@ -8,14 +8,14 @@ namespace IOCTL_Handlers
 	{
 	};
 
-	NTSTATUS Manager::Start(PIRP Irp, PIO_STACK_LOCATION stack) {
-		if (Irp->AssociatedIrp.SystemBuffer == nullptr ||
+	NTSTATUS Manager::Start(PIRP irp, PIO_STACK_LOCATION stack) {
+		if (irp->AssociatedIrp.SystemBuffer == nullptr ||
 			stack->Parameters.DeviceIoControl.InputBufferLength < sizeof(HANDLE))
 		{
 			return STATUS_INVALID_PARAMETER;
 		}
 
-		HANDLE pid = *(HANDLE*)Irp->AssociatedIrp.SystemBuffer;
+		HANDLE pid = *(HANDLE*)irp->AssociatedIrp.SystemBuffer;
 		BOOLEAN started = this->_manager->StartGame(pid);
 		if (started) {
 			return STATUS_SUCCESS;

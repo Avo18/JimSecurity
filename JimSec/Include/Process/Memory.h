@@ -10,6 +10,6 @@ namespace Process
     public:
         explicit Memory(Context& context);
         Context& GetContext();
-        NTSTATUS Read(PKPROCESS process, PVOID address, PVOID* buffer, SIZE_T size, SIZE_T bytesRead);
+        NTSTATUS Read(_In_ PKPROCESS process,_In_ PVOID address,_Inout_ PVOID* buffer, _In_ SIZE_T size, _Inout_ SIZE_T bytesRead);
     };
 }

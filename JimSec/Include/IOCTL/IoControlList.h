@@ -2,7 +2,7 @@
 #include "../../../../JimSec/JimSec/Include/IOCTL/Handlers/PublicKey.h"
 #include "../../../../JimSec/JimSec/Include/IOCTL/Handlers/Func/IoctlHandlerFunc.h"
 
-#define IOCTL_COUNT 4
+#define IOCTL_COUNT 5
 namespace IOCTL
 {
     class IoControlList
@@ -17,20 +17,3 @@ namespace IOCTL
     };
 }
 
-
-
-
-
-
-/*
-auto entry = FindHandler(Ioctl);
-
-if(entry)
-{
-    return entry->Handler(
-        entry->Context,
-        Irp,
-        stack
-    );
-}
-*/

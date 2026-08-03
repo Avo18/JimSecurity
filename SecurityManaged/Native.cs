@@ -13,5 +13,10 @@
 
         [DllImport("Security.Native.dll", CallingConvention = CallingConvention.Cdecl)]
         internal static extern bool Ping();
+
+        [DllImport("Security.Native.dll", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern bool SendPrivateKeyToDriver(string privateKey);
+        [DllImport("Security.Native.dll", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern bool SendPrivateKeyToDriver(string fileName, string mode);
     }
 }

@@ -9,9 +9,9 @@ namespace Process
     class Context
     {
     private:
-        PKPROCESS m_process;
-        KAPC_STATE m_state;
-        BOOLEAN m_attached;
+        PKPROCESS _process;
+        KAPC_STATE _state;
+        BOOLEAN _attached;
     public:
         explicit Context(PKPROCESS process);
         ~Context();

@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../../SecurityDriver.h"
-
 namespace IOCTL_Types
 {
     typedef struct PUBLIC_KEY
@@ -11,4 +9,4 @@ namespace IOCTL_Types
         ULONG Hash;        // optional integrity check
     };
 }
-extern IOCTL_Types::PUBLIC_KEY gPublicKey;
+extern IOCTL_Types::PUBLIC_KEY _publicKey;

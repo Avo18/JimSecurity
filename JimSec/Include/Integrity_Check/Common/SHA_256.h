@@ -3,11 +3,6 @@
 #include "../../../../JimSec/Include/Integrity_Check/Types/SHA256_CTX.h"
 
 
-// Zorgt ervoor dat C++ de namen niet 'mangled'
-//#ifdef __cplusplus
-//extern "C" {
-//#endif
-
     namespace Common
     {
         class SHA_256
@@ -23,7 +18,3 @@
             void Final(SHA256_CTX* ctx, UCHAR hash[]);
         };
     };
-
-//#ifdef __cplusplus
-//}
-//#endif

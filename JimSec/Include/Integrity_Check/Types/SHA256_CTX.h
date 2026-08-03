@@ -1,7 +1,6 @@
 #pragma once 
 #include <ntddk.h>
 
-//// SHA-256 Context structuur
 typedef struct {
     UCHAR data[64];
     ULONG datalen;

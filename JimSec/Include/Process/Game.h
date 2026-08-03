@@ -14,7 +14,7 @@ namespace Process
         Game(PKPROCESS process, PVOID moduleBase);
         ~Game();
 
-        bool Initialize(PKPROCESS process, PVOID moduleBase);
+        bool Initialize(_In_ PKPROCESS process, _In_ PVOID moduleBase);
         void Shutdown();
         NTSTATUS RunChecks();
 

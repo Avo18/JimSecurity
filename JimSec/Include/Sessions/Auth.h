@@ -1,5 +1,4 @@
 #pragma once
-#include "..\..\SecurityDriver.h"
 
 typedef struct
 {
@@ -8,4 +7,4 @@ typedef struct
     unsigned char Challenge[32];
 } DRIVER_SESSION;
 
-extern DRIVER_SESSION gSession;
+extern DRIVER_SESSION _session;

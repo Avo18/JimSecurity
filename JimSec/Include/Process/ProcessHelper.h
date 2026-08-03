@@ -5,7 +5,7 @@ namespace Process
     class ProcessHelper
     {
     public:
-        static PKPROCESS GetByPid(HANDLE pid);
+        static PKPROCESS GetByPid(_In_ HANDLE pid);
     };
 }
 

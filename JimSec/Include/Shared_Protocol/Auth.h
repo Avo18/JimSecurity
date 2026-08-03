@@ -1,5 +1,4 @@
 #pragma once
-#include "..\..\SecurityDriver.h"
 
 
 #define IOCTL_LOAD_KEY \

@@ -84,13 +84,7 @@
     </Inf>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SecurityDriver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="IOCTL.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HVCI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Include\RSA\MemoryKey.h">
@@ -174,18 +168,15 @@
     <ClInclude Include="Include\Shared_Protocol\Protocol.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\IOCTL\Handlers\Client.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\IOCTL\Handlers\Hvci.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Driver.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="hvci.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Authentication.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CryptoProvider.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Src\IOCTL\Handlers\PublicKey.cpp">
@@ -228,6 +219,12 @@
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="Src\IOCTL\Handlers\Manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\IOCTL\Handlers\Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\IOCTL\Handlers\Hvci.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

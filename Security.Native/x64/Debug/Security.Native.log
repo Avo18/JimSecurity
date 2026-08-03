@@ -319,30 +319,9 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(15
       C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2706,9):
       see previous definition of 'STATUS_SXS_INVALID_DEACTIVATION'
   
-C:\JimSec\Security.Native\SecurityNative.cpp(71,13): error C2065: 'FILE_DEVICE_UNKNOWN': undeclared identifier
+C:\JimSec\Security.Native\SecurityNative.cpp(92,16): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file '/SecurityNative.cpp')
   
-C:\JimSec\Security.Native\SecurityNative.cpp(71,13): error C2065: 'METHOD_BUFFERED': undeclared identifier
-  (compiling source file '/SecurityNative.cpp')
-  
-C:\JimSec\Security.Native\SecurityNative.cpp(71,13): error C2065: 'FILE_ANY_ACCESS': undeclared identifier
-  (compiling source file '/SecurityNative.cpp')
-  
-C:\JimSec\Security.Native\SecurityNative.cpp(71,13): error C3861: 'CTL_CODE': identifier not found
-  (compiling source file '/SecurityNative.cpp')
-  
-C:\JimSec\Security.Native\SecurityNative.cpp(150,22): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file '/SecurityNative.cpp')
-  
-C:\JimSec\Security.Native\SecurityNative.cpp(188,13): error C2065: 'FILE_DEVICE_UNKNOWN': undeclared identifier
-  (compiling source file '/SecurityNative.cpp')
-  
-C:\JimSec\Security.Native\SecurityNative.cpp(188,13): error C2065: 'METHOD_BUFFERED': undeclared identifier
-  (compiling source file '/SecurityNative.cpp')
-  
-C:\JimSec\Security.Native\SecurityNative.cpp(188,13): error C2065: 'FILE_ANY_ACCESS': undeclared identifier
-  (compiling source file '/SecurityNative.cpp')
-  
-C:\JimSec\Security.Native\SecurityNative.cpp(188,13): error C3861: 'CTL_CODE': identifier not found
+C:\JimSec\Security.Native\SecurityNative.cpp(128,13): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
   (compiling source file '/SecurityNative.cpp')
   

@@ -9,6 +9,6 @@ namespace IOCTL_Handlers
         RSA::MemoryKey* _memoryKey;
     public:
         PublicKey(RSA::MemoryKey* memoryKey);
-        NTSTATUS Load(PIRP Irp, PIO_STACK_LOCATION stack);
+        NTSTATUS Load(PIRP irp, PIO_STACK_LOCATION stack);
     };
 }

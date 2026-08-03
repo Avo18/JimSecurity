@@ -9,9 +9,9 @@ namespace IOCTL_Handlers
 	{
 	};
 
-	NTSTATUS PublicKey::Load(PIRP Irp, PIO_STACK_LOCATION stack)
+	NTSTATUS PublicKey::Load(PIRP irp, PIO_STACK_LOCATION stack)
 	{
-		PUCHAR input = (PUCHAR)Irp->AssociatedIrp.SystemBuffer;
+		PUCHAR input = (PUCHAR)irp->AssociatedIrp.SystemBuffer;
 		ULONG inputSize = stack->Parameters.DeviceIoControl.InputBufferLength;
 		return _memoryKey->LoadPublicKey(input, inputSize);
 	};

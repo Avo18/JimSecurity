@@ -4,21 +4,16 @@
 #include <openssl/evp.h>
 #include <openssl/pem.h>
 #include <ntstatus.h>
-
-//#include <ntddk.h>
-
 #include <bcrypt.h>
+#include <winioctl.h>
 
-BCRYPT_ALG_HANDLE gAlgHandle = NULL;
-BCRYPT_KEY_HANDLE gPublicKey = NULL;
+BCRYPT_ALG_HANDLE _algHandle = NULL;
+BCRYPT_KEY_HANDLE _publicKey = NULL;
 
-
-//DeviceIoControl(..) = WindowsAPI functie van ring3 (gebruikersmode) waarmee je een IOCTL code naar een driver kan sturen
-//en eventueel data mee kan geven. De driver kan hierop reageren en data terugsturen. 
-// Hiermee kunnen gebruikersmode applicaties communiceren met kernelmode drivers.
 
 #define IOCTL_PING CTL_CODE(FILE_DEVICE_UNKNOWN, 0x800, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define IOCTL_AUTH CTL_CODE(FILE_DEVICE_UNKNOWN, 0x801, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_LOAD_KEY CTL_CODE(FILE_DEVICE_UNKNOWN, 0x100, METHOD_BUFFERED, FILE_WRITE_DATA)
 
 #define DRIVER_MAGIC 0x4A534543
 
@@ -39,13 +34,13 @@ typedef struct _AUTH_REQUEST {
 class SecurityClient
 {
 private:
-    HANDLE hDevice;
+    HANDLE handleDevice;
 
 public:
 
     bool Connect()
     {
-        hDevice = CreateFileW(
+        handleDevice = CreateFileW(
             L"\\\\.\\JimSecurity",
             GENERIC_READ | GENERIC_WRITE,
             0,
@@ -55,7 +50,7 @@ public:
             NULL
         );
 
-        return hDevice != INVALID_HANDLE_VALUE;
+        return handleDevice != INVALID_HANDLE_VALUE;
     }
 
     bool Authenticate()
@@ -67,7 +62,7 @@ public:
         DWORD returned;
 
         return DeviceIoControl(
-            hDevice,
+            handleDevice,
             IOCTL_AUTH,
             &req,
             sizeof(req),
@@ -78,103 +73,84 @@ public:
         );
     }
 
-    BOOLEAN VerifyClient(BYTE* signature)
-    {
-
-        BOOLEAN result;
-
-
-     /*   result =
-            VerifySignature(
-                PublicKey,
-                gSession.Challenge,
-                signature
-            );*/
-
-
-        return result;
-
-    }
-    /// <summary>
-    /// Private key check voor de client
-    /// </summary>
-    /// <param name="challenge"></param>
-    /// <param name="signature"></param>
-    /// <returns></returns>
-    bool SignChallenge(BYTE* challenge, BYTE* signature)
-    {
-        // Moet nog geimplementeerd worden, dit is een placeholder
-		// RSA_SIGN = haalt uw private key op en signeert de challenge, en verstuurd de signature terug naar de driver.
-        // die deze zal verifiëren met de public key die in de driver is opgeslagen
-		RSA_sign(challenge, signature); 
-
-        return true;
-    }
-
-    void RSA_sign(BYTE* challenge, BYTE* signature)
-    {
-		LoadPrivateKey();
-
-    }
-    void sendToDriver()
-    {
-    /*    DWORD bytes;
-        DeviceIoControl(
-            hDriver,
-            IOCTL_AUTH_RESPONSE,
-            &response,
-            sizeof(response),
-            nullptr,
-            0,
-            &bytes,
-            nullptr
-        );*/
-    }
-
     NTSTATUS Init()
     {
-        return BCryptOpenAlgorithmProvider(&gAlgHandle, BCRYPT_RSA_ALGORITHM, NULL, 0);
+        return BCryptOpenAlgorithmProvider(&_algHandle, BCRYPT_RSA_ALGORITHM, NULL, 0);
     }
     NTSTATUS LoadPublicKey(PUCHAR keyBlob, ULONG keyBlobSize)
     {
-        if (!gAlgHandle)
+        if (!_algHandle)
             return STATUS_INVALID_HANDLE;
     
-        NTSTATUS status = BCryptImportKeyPair(gAlgHandle, NULL, BCRYPT_RSAPUBLIC_BLOB, &gPublicKey, keyBlob, keyBlobSize, 0);
+        NTSTATUS status = BCryptImportKeyPair(_algHandle, NULL, BCRYPT_RSAPUBLIC_BLOB, &_publicKey, keyBlob, keyBlobSize, 0);
     
         return status;
     }
 
-    EVP_PKEY* LoadPrivateKey()
-    {
-        FILE* file = fopen("private.pem", "rb");
-
-        if (!file)
-            return nullptr;
-
+	bool SendPrivateKeyToDriver(const char* privateKeyPath, char* mode)
+	{
+		FILE* file = fopen(privateKeyPath, mode);
+		if (!file)
+			return false;
         EVP_PKEY* key = PEM_read_PrivateKey(file, nullptr, nullptr, nullptr);
+        if (!key) return false;
 
-        fclose(file);
-	
-        return key;
-    }
-
-    bool SignChallenge(unsigned char* challenge, size_t challengeSize, unsigned char* signature, size_t* signatureSize)
+		long keySize = i2d_PrivateKey(key, nullptr);
+		unsigned char* keyBuffer = new unsigned char[keySize];
+        i2d_PrivateKey(key, &keyBuffer);
+		fclose(file);
+		DWORD returned;
+		bool result = DeviceIoControl(
+			handleDevice,
+			IOCTL_LOAD_KEY,
+			keyBuffer,
+			keySize,
+			nullptr,
+			0,
+			&returned,
+			nullptr
+		);
+		delete[] keyBuffer;
+		return result;
+	}
+    bool SendPrivateKeyToDriver(char* privateKey)
     {
-        EVP_PKEY* privateKey = LoadPrivateKey();
-
         if (!privateKey)
             return false;
 
-        EVP_MD_CTX* ctx = EVP_MD_CTX_new();
+        size_t keySize = strlen(privateKey);
 
-        EVP_DigestSignInit(ctx, nullptr, EVP_sha256(), nullptr, privateKey);
-        EVP_DigestSignUpdate(ctx, challenge, challengeSize);
+        DWORD returned;
+        bool result = DeviceIoControl(
+            handleDevice,
+            IOCTL_LOAD_KEY,
+            privateKey,
+            keySize,
+            nullptr,
+            0,
+            &returned,
+            nullptr
+        );
+        return result;
+    }
 
-        EVP_DigestSignFinal(ctx, signature, signatureSize);
 
-        EVP_MD_CTX_free(ctx);
-        EVP_PKEY_free(privateKey);
+    bool SignChallenge(unsigned char* challenge, size_t challengeSize, unsigned char* signature, size_t* signatureSize)
+    {
+    //    EVP_PKEY* privateKey = LoadPrivateKey();
+
+    //    if (!privateKey)
+    //        return false;
+
+    //    EVP_MD_CTX* ctx = EVP_MD_CTX_new();
+
+    //    EVP_DigestSignInit(ctx, nullptr, EVP_sha256(), nullptr, privateKey);
+    //    EVP_DigestSignUpdate(ctx, challenge, challengeSize);
+
+    //    EVP_DigestSignFinal(ctx, signature, signatureSize);
+
+    //    EVP_MD_CTX_free(ctx);
+    //    EVP_PKEY_free(privateKey);
 
         return true;
     }
@@ -184,7 +160,7 @@ public:
         DWORD returned;
 
         return DeviceIoControl(
-            hDevice,
+            handleDevice,
             IOCTL_PING,
             nullptr,
             0,

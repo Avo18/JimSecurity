@@ -1,16 +1,17 @@
 #pragma once
-#include "..\..\..\..\JimSec\JimSec\SecurityDriver.h"
+#include <ntddk.h>
+#include <wdf.h>
 #include "..\..\..\..\JimSec\JimSec\Include\RSA\MemoryKey.h"
 
-extern IOCTL_Types::PUBLIC_KEY gPublicKey = {};
+extern IOCTL_Types::PUBLIC_KEY _publicKey = {};
 
 namespace RSA
 {
 	MemoryKey::MemoryKey()
 	{
-		gPublicKey.Buffer = NULL;
-		gPublicKey.Size = 0;
-		gPublicKey.Hash = 0;
+		_publicKey.Buffer = NULL;
+		_publicKey.Size = 0;
+		_publicKey.Hash = 0;
 	}
 
 	MemoryKey::~MemoryKey()
@@ -20,10 +21,10 @@ namespace RSA
 
 	NTSTATUS MemoryKey::Init()
 	{
-		gPublicKey.Buffer = (PUCHAR)ExAllocatePool2(POOL_FLAG_NON_PAGED, MAX_KEY_SIZE, 'JSec');
-		if (!gPublicKey.Buffer)
+		_publicKey.Buffer = (PUCHAR)ExAllocatePool2(POOL_FLAG_NON_PAGED, MAX_KEY_SIZE, 'JSec');
+		if (!_publicKey.Buffer)
 			return STATUS_INSUFFICIENT_RESOURCES;
-		gPublicKey.Size = 0;
+		_publicKey.Size = 0;
 		return STATUS_SUCCESS;
 	}
 
@@ -33,20 +34,20 @@ namespace RSA
 			return STATUS_INVALID_PARAMETER;
 		if (size > MAX_KEY_SIZE)
 			return STATUS_BUFFER_TOO_SMALL;
-		if (!gPublicKey.Buffer)
+		if (!_publicKey.Buffer)
 			return STATUS_DEVICE_NOT_READY;
-		RtlCopyMemory(gPublicKey.Buffer, input, size);
-		gPublicKey.Size = size;
+		RtlCopyMemory(_publicKey.Buffer, input, size);
+		_publicKey.Size = size;
 		return STATUS_SUCCESS;
 	}
 
 	VOID MemoryKey::FreePublicKeyStorage()
 	{
-		if (gPublicKey.Buffer)
+		if (_publicKey.Buffer)
 		{
-			ExFreePoolWithTag(gPublicKey.Buffer, 'JSec');
-			gPublicKey.Buffer = NULL;
-			gPublicKey.Size = 0;
+			ExFreePoolWithTag(_publicKey.Buffer, 'JSec');
+			_publicKey.Buffer = NULL;
+			_publicKey.Size = 0;
 		}
 	}
 }
