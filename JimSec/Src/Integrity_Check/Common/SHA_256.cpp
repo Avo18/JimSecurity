@@ -3,6 +3,13 @@
 #include "../../../../JimSec/Include/Integrity_Check/Common/Macros.h"
 #include "../../../../JimSec/Include/Integrity_Check/Types/SHA256_CTX.h"
 
+//-----------------------------------------------------------------------------
+// 
+//          Dit deel is auto generated door AI, voor SHA-256 algoritme.
+// 
+//-----------------------------------------------------------------------------
+
+
 static const ULONG k[64] = {
     0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,
     0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,
@@ -27,23 +34,42 @@ void Common::SHA_256::Transform(SHA256_CTX* ctx, const UCHAR data[]) {
     for (; i < 64; ++i)
         m[i] = SIG1(m[i - 2]) + m[i - 7] + SIG0(m[i - 15]) + m[i - 16];
 
-    a = ctx->state[0]; b = ctx->state[1]; c = ctx->state[2]; d = ctx->state[3];
-    e = ctx->state[4]; f = ctx->state[5]; g = ctx->state[6]; h = ctx->state[7];
+    a = ctx->state[0]; 
+    b = ctx->state[1]; 
+    c = ctx->state[2]; 
+    d = ctx->state[3];
+    e = ctx->state[4]; 
+    f = ctx->state[5]; 
+    g = ctx->state[6]; 
+    h = ctx->state[7];
 
     for (i = 0; i < 64; ++i) {
         t1 = h + EP1(e) + CH(e, f, g) + k[i] + m[i];
         t2 = EP0(a) + MAJ(a, b, c);
         h = g; g = f; f = e; e = d + t1; d = c; c = b; b = a; a = t1 + t2;
     }
-    ctx->state[0] += a; ctx->state[1] += b; ctx->state[2] += c; ctx->state[3] += d;
-    ctx->state[4] += e; ctx->state[5] += f; ctx->state[6] += g; ctx->state[7] += h;
+    ctx->state[0] += a; 
+    ctx->state[1] += b; 
+    ctx->state[2] += c; 
+    ctx->state[3] += d;
+    ctx->state[4] += e; 
+    ctx->state[5] += f; 
+    ctx->state[6] += g; 
+    ctx->state[7] += h;
 }
 
 void  Common::SHA_256::Init(SHA256_CTX* ctx) {
     ctx->datalen = 0;
-    ctx->bitlen[0] = 0; ctx->bitlen[1] = 0;
-    ctx->state[0] = 0x6a09e667; ctx->state[1] = 0xbb67ae85; ctx->state[2] = 0x3c6ef372; ctx->state[3] = 0xa54ff53a;
-    ctx->state[4] = 0x510e527f; ctx->state[5] = 0x9b05688c; ctx->state[6] = 0x1f83d9ab; ctx->state[7] = 0x5be0cd19;
+    ctx->bitlen[0] = 0; 
+    ctx->bitlen[1] = 0;
+    ctx->state[0] = 0x6a09e667; 
+    ctx->state[1] = 0xbb67ae85; 
+    ctx->state[2] = 0x3c6ef372; 
+    ctx->state[3] = 0xa54ff53a;
+    ctx->state[4] = 0x510e527f; 
+    ctx->state[5] = 0x9b05688c; 
+    ctx->state[6] = 0x1f83d9ab; 
+    ctx->state[7] = 0x5be0cd19;
 }
 
 void Common::SHA_256::Update(SHA256_CTX* ctx, const UCHAR data[], SIZE_T len) {
@@ -54,7 +80,8 @@ void Common::SHA_256::Update(SHA256_CTX* ctx, const UCHAR data[], SIZE_T len) {
         if (ctx->datalen == 64) {
             Common::SHA_256::Transform(ctx, ctx->data);
             ctx->bitlen[0] += 512;
-            if (ctx->bitlen[0] == 0) ctx->bitlen[1]++;
+            if (ctx->bitlen[0] == 0) 
+                ctx->bitlen[1]++;
             ctx->datalen = 0;
         }
     }
@@ -75,12 +102,17 @@ void Common::SHA_256::Final(SHA256_CTX* ctx, UCHAR hash[]) {
     }
 
     ctx->bitlen[0] += ctx->datalen * 8;
-    if (ctx->bitlen[0] < ctx->datalen * 8) ctx->bitlen[1]++;
+    if (ctx->bitlen[0] < ctx->datalen * 8) 
+        ctx->bitlen[1]++;
 
-    ctx->data[63] = (UCHAR)(ctx->bitlen[0]); ctx->data[62] = (UCHAR)(ctx->bitlen[0] >> 8);
-    ctx->data[61] = (UCHAR)(ctx->bitlen[0] >> 16); ctx->data[60] = (UCHAR)(ctx->bitlen[0] >> 24);
-    ctx->data[59] = (UCHAR)(ctx->bitlen[1]); ctx->data[58] = (UCHAR)(ctx->bitlen[1] >> 8);
-    ctx->data[57] = (UCHAR)(ctx->bitlen[1] >> 16); ctx->data[56] = (UCHAR)(ctx->bitlen[1] >> 24);
+    ctx->data[63] = (UCHAR)(ctx->bitlen[0]); 
+    ctx->data[62] = (UCHAR)(ctx->bitlen[0] >> 8);
+    ctx->data[61] = (UCHAR)(ctx->bitlen[0] >> 16); 
+    ctx->data[60] = (UCHAR)(ctx->bitlen[0] >> 24);
+    ctx->data[59] = (UCHAR)(ctx->bitlen[1]); 
+    ctx->data[58] = (UCHAR)(ctx->bitlen[1] >> 8);
+    ctx->data[57] = (UCHAR)(ctx->bitlen[1] >> 16); 
+    ctx->data[56] = (UCHAR)(ctx->bitlen[1] >> 24);
     Common::SHA_256::Transform(ctx, ctx->data);
 
     for (i = 0; i < 4; ++i) {
