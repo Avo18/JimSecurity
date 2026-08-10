@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 		RSA_Key_Generation.txt = RSA_Key_Generation.txt
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SharedLib", "..\SharedLib\SharedLib.vcxproj", "{657B1EB1-573F-411F-A17E-94CEFB32CB03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,18 @@ Global
 		{785AF880-AD8F-4291-9FC0-76A8AC9EEC04}.Release|ARM64.Build.0 = Release|Any CPU
 		{785AF880-AD8F-4291-9FC0-76A8AC9EEC04}.Release|x64.ActiveCfg = Release|Any CPU
 		{785AF880-AD8F-4291-9FC0-76A8AC9EEC04}.Release|x64.Build.0 = Release|Any CPU
+		{657B1EB1-573F-411F-A17E-94CEFB32CB03}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{657B1EB1-573F-411F-A17E-94CEFB32CB03}.Debug|Any CPU.Build.0 = Debug|x64
+		{657B1EB1-573F-411F-A17E-94CEFB32CB03}.Debug|ARM64.ActiveCfg = Debug|x64
+		{657B1EB1-573F-411F-A17E-94CEFB32CB03}.Debug|ARM64.Build.0 = Debug|x64
+		{657B1EB1-573F-411F-A17E-94CEFB32CB03}.Debug|x64.ActiveCfg = Debug|x64
+		{657B1EB1-573F-411F-A17E-94CEFB32CB03}.Debug|x64.Build.0 = Debug|x64
+		{657B1EB1-573F-411F-A17E-94CEFB32CB03}.Release|Any CPU.ActiveCfg = Release|x64
+		{657B1EB1-573F-411F-A17E-94CEFB32CB03}.Release|Any CPU.Build.0 = Release|x64
+		{657B1EB1-573F-411F-A17E-94CEFB32CB03}.Release|ARM64.ActiveCfg = Release|x64
+		{657B1EB1-573F-411F-A17E-94CEFB32CB03}.Release|ARM64.Build.0 = Release|x64
+		{657B1EB1-573F-411F-A17E-94CEFB32CB03}.Release|x64.ActiveCfg = Release|x64
+		{657B1EB1-573F-411F-A17E-94CEFB32CB03}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
