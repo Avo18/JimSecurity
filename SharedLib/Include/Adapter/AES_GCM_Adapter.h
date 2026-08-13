@@ -7,26 +7,25 @@ namespace Adapter
 {
 	template<typename T> class AES_GCM_Adapter
 	{
+	private:
+		AES_GCM* _aesGcm;
 	public:
-		AES_GCM_Adapter(T* obj)
+		AES_GCM_Adapter() {}
+		AES_GCM_Adapter(unsigned char* key)
+			: _aesGcm(new AES_GCM(key))
 		{
-			_obj = obj;
 		}
-		bool Encrypt(const unsigned char* key)
+		bool Encrypt(T* obj)
 		{
-			return _easGcm.Encrypt(_obj, key);
+			return _easGcm.Encrypt(obj);
 		}
-		bool Decrypt(const unsigned char* key)
+		bool Decrypt(T* obj)
 		{
-			return _aesGcm.Decrypt(_obj, key);
+			return _aesGcm.Decrypt(obj);
 		}
 		~AES_GCM_Adapter()
 		{
-			_obj = nullptr;
+			_aesGcm = nullptr;
 		}
-	
-	private:
-		T* _obj;
-		AES_GCM _aesGcm;
 	};
 }

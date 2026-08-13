@@ -6,6 +6,7 @@
 #include <ntstatus.h>
 #include <bcrypt.h>
 #include <winioctl.h>
+#include "../../../JimSec/Security.Native/IOCTL/Packets/PingPacket.h"
 
 BCRYPT_ALG_HANDLE _algHandle = NULL;
 BCRYPT_KEY_HANDLE _publicKey = NULL;
@@ -61,6 +62,8 @@ public:
 
         DWORD returned;
 
+
+
         return DeviceIoControl(
             handleDevice,
             IOCTL_AUTH,
@@ -89,7 +92,8 @@ public:
 
 	bool SendPrivateKeyToDriver(const char* privateKeyPath, char* mode)
 	{
-		FILE* file = fopen(privateKeyPath, mode);
+        FILE* file;
+        fopen_s(&file, privateKeyPath, mode);
 		if (!file)
 			return false;
         EVP_PKEY* key = PEM_read_PrivateKey(file, nullptr, nullptr, nullptr);
@@ -157,18 +161,22 @@ public:
 
     bool Ping()
     {
-        DWORD returned;
+		return *((int*)0) = 0x01;
+		/*Packets::PingPacket pingPacket(handleDevice, nullptr);
+		return pingPacket.Ping(nullptr) == STATUS_SUCCESS;*/
 
-        return DeviceIoControl(
-            handleDevice,
-            IOCTL_PING,
-            nullptr,
-            0,
-            nullptr,
-            0,
-            &returned,
-            nullptr
-        );
+        //DWORD returned;
+
+        //return DeviceIoControl(
+        //    handleDevice,
+        //    IOCTL_PING,
+        //    nullptr,
+        //    0,
+        //    nullptr,
+        //    0,
+        //    &returned,
+        //    nullptr
+        //);
     }
 };
 

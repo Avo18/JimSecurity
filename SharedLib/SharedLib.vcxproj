@@ -142,6 +142,8 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="Include\Adapter\AES_GCM_Adapter.h" />
     <ClInclude Include="Include\AES-GCM.h" />
+    <ClInclude Include="Include\ECDH_256\ECDH.h" />
+    <ClInclude Include="Include\ECDH_256\Types\Context.h" />
     <ClInclude Include="Include\Packet.h" />
     <ClInclude Include="Include\Protocol.h" />
     <ClInclude Include="pch.h" />
@@ -154,6 +156,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="SharedLib.cpp" />
+    <ClCompile Include="Src\ECDH_256\ECDH.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

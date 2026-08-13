@@ -2,8 +2,8 @@
 #include <sal.h>
 #include <bcrypt.h>
 
-#ifndef _AES-GCM_
-#define _AES-GCM_
+#ifndef _AES_GCM_
+#define _AES_GCM_
 
 constexpr int AES_KEY_SIZE = 32;
 constexpr int GCM_NONCE_SIZE = 12;
@@ -33,9 +33,7 @@ private:
 			_algorithm = nullptr;
 		}
 	}
-
-public:
-	bool Initialize(_In_reads_bytes_(AES256_KEY_SIZE) const unsigned char* key)
+	bool Initialize(_In_reads_bytes_(AES256_KEY_SIZE) unsigned char* key)
 	{
 		NTSTATUS status = BCryptOpenAlgorithmProvider(&_algorithm, BCRYPT_AES_ALGORITHM, nullptr, 0);
 		if (!BCRYPT_SUCCESS(status))
@@ -52,12 +50,18 @@ public:
 			Cleanup();
 			return false;
 		}
+		Cleanup();
 		return true;
+	}
 
+public:
+	AES_GCM(unsigned char* key)
+	{
+		Initialize(key);
 	}
 	template<typename T> bool Encrypt(_Inout_ T& obj) {
 
-		NTSTATUS status = BCryptGenRandom(nullptr, obj.nonce,	GCM_NONCE_SIZE,	BCRYPT_USE_SYSTEM_PREFERRED_RNG);
+		NTSTATUS status = BCryptGenRandom(nullptr, obj.nonce, GCM_NONCE_SIZE, BCRYPT_USE_SYSTEM_PREFERRED_RNG);
 		if (!BCRYPT_SUCCESS(status))
 		{
 			Cleanup();
@@ -72,7 +76,7 @@ public:
 		authInfo.cbTag = GCM_TAG_SIZE;
 
 		unsigned long encryptedSize = 0;
-		status = BCryptEncrypt(aesKey, reinterpret_cast<unsigned char*>(const_cast<T*>(&obj)), sizeof(obj), &authInfo, nullptr, 0, obj.ciphertext, sizeof(obj.ciphertext), &encryptedSize, 0);
+		status = BCryptEncrypt(_aesKey, reinterpret_cast<unsigned char*>(const_cast<T*>(&obj)), sizeof(obj), &authInfo, nullptr, 0, obj.ciphertext, sizeof(obj.ciphertext), &encryptedSize, 0);
 		obj.ciphertextSize = encryptedSize;
 
 		Cleanup();
@@ -90,7 +94,7 @@ public:
 
 		ULONG decryptedSize = 0;
 
-		NTSTATUS status = BCryptDecrypt(aesKey, const_cast<unsigned char*>(input.ciphertext), input.ciphertextSize, &authInfo, nullptr, 0, reinterpret_cast<unsigned char*>(&obj), sizeof(obj), &decryptedSize, 0);
+		NTSTATUS status = BCryptDecrypt(_aesKey, const_cast<unsigned char*>(input.ciphertext), input.ciphertextSize, &authInfo, nullptr, 0, reinterpret_cast<unsigned char*>(&obj), sizeof(obj), &decryptedSize, 0);
 		if (!BCRYPT_SUCCESS(status) || decryptedSize != sizeof(T))
 		{
 			result = false;

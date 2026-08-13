@@ -33,12 +33,21 @@
     <ClInclude Include="Include\Adapter\AES_GCM_Adapter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\ECDH_256\ECDH.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ECDH_256\Types\Context.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SharedLib.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ECDH_256\ECDH.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

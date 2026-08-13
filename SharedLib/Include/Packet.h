@@ -8,6 +8,8 @@ typedef unsigned long DWORD;
 typedef unsigned char WORD;
 #define MAX_PACKET_SIZE 256
 
+const int SESSION_KEY_LENTH = 16;
+
 namespace Shared
 {
 	class Packet
@@ -64,7 +66,6 @@ namespace Shared
 			struct {
 				int _command;
 				int _size;
-				int _capacity;
 				WORD _data[1];
 			};
 			WORD _packet[MAX_PACKET_SIZE];
