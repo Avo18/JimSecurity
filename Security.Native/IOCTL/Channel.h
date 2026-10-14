@@ -2,15 +2,16 @@
 
 namespace IOCTL
 {
-	class Packet;
+	class Shared::Packet;
 	class Channel
 	{
 	private:
 		HANDLE _handleDevice;
-		DWORD* _sessionKey;
+		unsigned char* _sessionKey;
 	public:
-		Channel(_In_ HANDLE handleDevice, _In_ DWORD* sessionKey);
+		Channel(_In_ HANDLE handleDevice, _In_ unsigned char* sessionKey);
 		~Channel();
-		DWORD Send(_Inout_ Packet* packet);
+		DWORD Send(_Inout_ Shared::Packet* packet);
+		DWORD Receive(_Inout_ Shared::Packet* packet);
 	};
 }

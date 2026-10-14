@@ -13,7 +13,7 @@ constexpr int GCM_TAG_SIZE = 16;
 #define BYTES_PER_BIT = 8
 #define AES256_KEY_SIZE (EAS256_BITS / BYTES_PER_BIT)
 
-class AES_GCM
+template<typename T> class AES_GCM
 {
 private:
 	BCRYPT_ALG_HANDLE _algorithm = nullptr;
@@ -59,7 +59,9 @@ public:
 	{
 		Initialize(key);
 	}
-	template<typename T> bool Encrypt(_Inout_ T& obj) {
+	bool Encrypt(_In_ PUCHAR tag, _In_ PUCHAR nonce, _Inout_ PUCHAR* buffer, _Inout_ PULONG* size) {
+		PUCHAR inputCopy;
+		memcpy(&inputCopy, &buffer, sizeof(buffer));
 
 		NTSTATUS status = BCryptGenRandom(nullptr, obj.nonce, GCM_NONCE_SIZE, BCRYPT_USE_SYSTEM_PREFERRED_RNG);
 		if (!BCRYPT_SUCCESS(status))
@@ -70,41 +72,41 @@ public:
 
 		BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO authInfo;
 		BCRYPT_INIT_AUTH_MODE_INFO(authInfo);
-		authInfo.pbNonce = obj.nonce;
+		authInfo.pbNonce = nonce;
 		authInfo.cbNonce = GCM_NONCE_SIZE;
-		authInfo.pbTag = obj.tag;
+		authInfo.pbTag = tag;
 		authInfo.cbTag = GCM_TAG_SIZE;
 
-		unsigned long encryptedSize = 0;
-		status = BCryptEncrypt(_aesKey, reinterpret_cast<unsigned char*>(const_cast<T*>(&obj)), sizeof(obj), &authInfo, nullptr, 0, obj.ciphertext, sizeof(obj.ciphertext), &encryptedSize, 0);
-		obj.ciphertextSize = encryptedSize;
+		//unsigned long encryptedSize = 0;
+		status = BCryptEncrypt(_aesKey, inputCopy, sizeof(inputCopy), &authInfo, nullptr, 0, buffer, sizeof(buffer), &size, 0);
+		//obj.ciphertextSize = encryptedSize;
 
 		Cleanup();
 		return true;
 	}
-	template<typename T> bool Decrypt(_Inout_ T& obj)
+	bool Decrypt(_In_ PUCHAR tag, _In_ PUCHAR nonce, _Inout_ PUCHAR* buffer, _Inout_ PULONG* size)
 	{
+		PUCHAR inputCopy;
+		memcpy(&inputCopy, &buffer, sizeof(buffer));
+
 		bool result;
 		BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO authInfo;
 		BCRYPT_INIT_AUTH_MODE_INFO(authInfo);
-		authInfo.pbNonce = const_cast<unsigned char*>(obj.nonce);
+		authInfo.pbNonce = nonce;
 		authInfo.cbNonce = GCM_NONCE_SIZE;
-		authInfo.pbTag = const_cast<unsigned char*>(obj.tag);
+		authInfo.pbTag = tag;
 		authInfo.cbTag = GCM_TAG_SIZE;
 
-		ULONG decryptedSize = 0;
+		ULONG* decryptedSize = 0;
 
-		NTSTATUS status = BCryptDecrypt(_aesKey, const_cast<unsigned char*>(input.ciphertext), input.ciphertextSize, &authInfo, nullptr, 0, reinterpret_cast<unsigned char*>(&obj), sizeof(obj), &decryptedSize, 0);
-		if (!BCRYPT_SUCCESS(status) || decryptedSize != sizeof(T))
-		{
-			result = false;
-		}
-		else
+		NTSTATUS status = BCryptDecrypt(_aesKey, inputCopy, sizeof(inputCopy), &authInfo, nullptr, 0, buffer, &size, &decryptedSize, 0);
+		if (BCRYPT_SUCCESS(status) || *decryptedSize != *size)
 		{
 			result = true;
 		}
+		
 		Cleanup();
-		return true;
+		return result;
 	}
 };
 #endif 

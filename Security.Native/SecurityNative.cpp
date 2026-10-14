@@ -62,8 +62,6 @@ public:
 
         DWORD returned;
 
-
-
         return DeviceIoControl(
             handleDevice,
             IOCTL_AUTH,
@@ -117,18 +115,18 @@ public:
 		delete[] keyBuffer;
 		return result;
 	}
-    bool SendPrivateKeyToDriver(char* privateKey)
+    bool SendPublicKeyToDriver(char* publicKey)
     {
-        if (!privateKey)
+        if (!publicKey)
             return false;
 
-        size_t keySize = strlen(privateKey);
+        size_t keySize = strlen(publicKey);
 
         DWORD returned;
         bool result = DeviceIoControl(
             handleDevice,
             IOCTL_LOAD_KEY,
-            privateKey,
+            publicKey,
             keySize,
             nullptr,
             0,

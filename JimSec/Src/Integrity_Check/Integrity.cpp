@@ -65,6 +65,7 @@ NTSTATUS CalculateMemoryHash(PKPROCESS process, PVOID baseAddress, SIZE_T size, 
     UNREFERENCED_PARAMETER(outhash);
 	UCHAR* buffer = static_cast<UCHAR*>(ExAllocatePool2(POOL_FLAG_NON_PAGED, size, 'buff')); 
 	if (!buffer) {
+        ExFreePool(buffer);
 		return STATUS_INSUFFICIENT_RESOURCES;
 	}
 

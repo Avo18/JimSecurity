@@ -1,5 +1,4 @@
-#include <ntddk.h>
-#include <wdm.h>
+#include <ntifs.h>
 #include "../../../../JimSec/JimSec/Include/Shared_Protocol/Auth.h"
 #include "../../../../JimSec/JimSec/Include/Shared_Protocol/Protocol.h"
 #include "../../../../JimSec/JimSec/Include/RSA/MemoryKey.h"

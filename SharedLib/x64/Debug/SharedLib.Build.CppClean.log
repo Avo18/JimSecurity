@@ -1,7 +1,6 @@
-c:\jimsec\sharedlib\x64\debug\sharedlib.pch
 c:\jimsec\jimsec\x64\debug\sharedlib.pdb
 c:\jimsec\jimsec\x64\debug\sharedlib.idb
-c:\jimsec\sharedlib\x64\debug\pch.obj
+c:\jimsec\sharedlib\x64\debug\ecdh.obj
 c:\jimsec\sharedlib\x64\debug\sharedlib.obj
 c:\jimsec\jimsec\x64\debug\sharedlib.lib
 c:\jimsec\sharedlib\x64\debug\sharedlib.tlog\cl.command.1.tlog

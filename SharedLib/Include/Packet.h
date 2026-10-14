@@ -5,7 +5,7 @@
 #define _PACKET_
 
 typedef unsigned long DWORD;
-typedef unsigned char WORD;
+typedef unsigned char* WORD;
 #define MAX_PACKET_SIZE 256
 
 const int SESSION_KEY_LENTH = 16;
@@ -49,6 +49,18 @@ namespace Shared
 			memcpy(_packet + _size, tag, tagSize);
 			_size += tagSize;
 		}
+		void RandomNonce()
+		{
+			_nonce = new PUCHAR[10];
+			for (int i = 0; i < 10; i++)
+			{
+				//_nonce[i] = rand() % 256;
+			}
+		}
+		void SetSize(PULONG packetSize)
+		{
+			_packetSize = packetSize;
+		}
 
 		template<typename T> T Get(int index) const {
 			return *((T*)&_data[index]);
@@ -59,7 +71,9 @@ namespace Shared
 		inline const WORD* GetData() const { return _packet; }
 		inline int GetSize() const { return _size; }
 		inline int GetCommand() const { return _command; }
-
+		PULONG GetPacketSize() const { return _packetSize; }
+		PUCHAR* GetNonce() const { return _nonce; }
+		PUCHAR* GetTag() const { return _tag; }
 	private:
 		union
 		{
@@ -70,6 +84,9 @@ namespace Shared
 			};
 			WORD _packet[MAX_PACKET_SIZE];
 		};
+		PUCHAR* _nonce;
+		PUCHAR* _tag;
+		PULONG _packetSize;
 	};
 }
 #endif

@@ -17,13 +17,13 @@ namespace SecurityManaged
         {
             Native.Ping();
         }
-        public bool SendPrivateKey(string privateKey)
+        public bool SendPublicKey(string privateKey)
         {
-            return Native.SendPrivateKeyToDriver(privateKey);
+            return Native.SendPublicKeyToDriver(privateKey);
         }
-        public bool SendPrivateKeyFromFile(string fileName, string mode)
+        public bool SendPublicKeyFromFile(string fileName, string mode)
         {
-            return Native.SendPrivateKeyToDriver(fileName, mode);
+            return Native.SendPublicKeyToDriver(fileName, mode);
         }
     }
 }

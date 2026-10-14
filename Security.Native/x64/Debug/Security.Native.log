@@ -322,10 +322,8 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(15
       C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2706,9):
       see previous definition of 'STATUS_SXS_INVALID_DEACTIVATION'
   
-C:\JimSec\SharedLib\Include\Packet.h(8,23): error C2371: 'WORD': redefinition; different basic types
+C:\JimSec\SharedLib\Include\Packet.h(8,24): error C2040: 'WORD': 'unsigned char *' differs in levels of indirection from 'unsigned short'
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\minwindef.h(159,29):
-      see declaration of 'WORD'
   
 C:\JimSec\SharedLib\Include\Packet.h(25,29): error C3861: 'val': identifier not found
   (compiling source file 'SecurityNative.cpp')
@@ -340,7 +338,7 @@ C:\JimSec\SharedLib\Include\Packet.h(25,29): error C2065: 'val': undeclared iden
 C:\JimSec\SharedLib\Include\Packet.h(37,13): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'SecurityNative.cpp')
   
-C:\JimSec\Security.Native\SecurityNative.cpp(132,13): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
+C:\JimSec\Security.Native\SecurityNative.cpp(130,13): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
   Channel.cpp
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(66,9): warning C4005: 'STATUS_WAIT_0': macro redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
@@ -662,10 +660,17 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(15
       C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2706,9):
       see previous definition of 'STATUS_SXS_INVALID_DEACTIVATION'
   
-C:\JimSec\SharedLib\Include\Packet.h(8,23): error C2371: 'WORD': redefinition; different basic types
+C:\JimSec\Security.Native\IOCTL\Channel.h(5,8): error C2653: 'Shared': is not a class or namespace name
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\minwindef.h(159,29):
-      see declaration of 'WORD'
+  
+C:\JimSec\Security.Native\IOCTL\Channel.h(14,22): error C2653: 'Shared': is not a class or namespace name
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+  
+C:\JimSec\Security.Native\IOCTL\Channel.h(15,25): error C2653: 'Shared': is not a class or namespace name
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+  
+C:\JimSec\SharedLib\Include\Packet.h(8,24): error C2040: 'WORD': 'unsigned char *' differs in levels of indirection from 'unsigned short'
+  (compiling source file 'Src/IOCTL/Channel.cpp')
   
 C:\JimSec\SharedLib\Include\Packet.h(25,29): error C3861: 'val': identifier not found
   (compiling source file 'Src/IOCTL/Channel.cpp')
@@ -680,37 +685,278 @@ C:\JimSec\SharedLib\Include\Packet.h(25,29): error C2065: 'val': undeclared iden
 C:\JimSec\SharedLib\Include\Packet.h(37,13): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'Src/IOCTL/Channel.cpp')
   
-C:\JimSec\SharedLib\Include\AES-GCM.h(97,71): error C3861: 'input': identifier not found
+C:\JimSec\SharedLib\Include\AES-GCM.h(47,106): error C2760: syntax error: '=' was unexpected here; expected 'expression'
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\JimSec\SharedLib\Include\AES-GCM.h(85,28):
-      This diagnostic occurred in the compiler generated function 'bool AES_GCM::Decrypt(T &)'
-  
-C:\JimSec\SharedLib\Include\AES-GCM.h(97,90): error C3861: 'input': identifier not found
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\JimSec\SharedLib\Include\AES-GCM.h(85,28):
-      This diagnostic occurred in the compiler generated function 'bool AES_GCM::Decrypt(T &)'
-  
-C:\JimSec\SharedLib\Include\AES-GCM.h(97,71): error C2065: 'input': undeclared identifier
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\JimSec\SharedLib\Include\AES-GCM.h(85,28):
-      This diagnostic occurred in the compiler generated function 'bool AES_GCM::Decrypt(T &)'
-  
-C:\JimSec\SharedLib\Include\AES-GCM.h(97,90): error C2065: 'input': undeclared identifier
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\JimSec\SharedLib\Include\AES-GCM.h(85,28):
-      This diagnostic occurred in the compiler generated function 'bool AES_GCM::Decrypt(T &)'
-  
-C:\JimSec\SharedLib\Include\AES-GCM.h(47,106): error C2059: syntax error: '='
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-  
-C:\JimSec\SharedLib\Include\Adapter\AES_GCM_Adapter.h(20,11): error C3861: '_easGcm': identifier not found
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\JimSec\SharedLib\Include\Adapter\AES_GCM_Adapter.h(20,11):
+      C:\JimSec\SharedLib\Include\AES-GCM.h(47,106):
       the template instantiation context (the oldest one first) is
-          C:\JimSec\SharedLib\Include\Adapter\AES_GCM_Adapter.h(8,29):
+          C:\JimSec\SharedLib\Include\AES-GCM.h(16,28):
+          while compiling class template 'AES_GCM'
+  
+C:\JimSec\SharedLib\Include\AES-GCM.h(47,106): error C3878: syntax error: unexpected token '=' following 'expression'
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+  
+C:\JimSec\SharedLib\Include\AES-GCM.h(47,106): error C2760: syntax error: ')' was unexpected here; expected ';'
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+  
+C:\JimSec\SharedLib\Include\AES-GCM.h(47,106): error C3878: syntax error: unexpected token ')' following 'expression-statement'
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+  
+C:\JimSec\SharedLib\Include\AES-GCM.h(47,124): error C2760: syntax error: ')' was unexpected here; expected ';'
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+  
+C:\JimSec\SharedLib\Include\AES-GCM.h(47,124): error C3878: syntax error: unexpected token ')' following 'expression-statement'
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+  
+C:\JimSec\SharedLib\Include\AES-GCM.h(66,46): error C3861: 'obj': identifier not found
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+  
+C:\JimSec\SharedLib\Include\AES-GCM.h(81,12): error C2664: 'NTSTATUS BCryptEncrypt(BCRYPT_KEY_HANDLE,PUCHAR,ULONG,void *,PUCHAR,ULONG,PUCHAR,ULONG,ULONG *,ULONG)': cannot convert argument 7 from 'PUCHAR *' to 'PUCHAR'
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\JimSec\SharedLib\Include\AES-GCM.h(81,88):
+      Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\bcrypt.h(1368,1):
+      see declaration of 'BCryptEncrypt'
+      C:\JimSec\SharedLib\Include\AES-GCM.h(81,12):
+      while trying to match the argument list '(BCRYPT_KEY_HANDLE, PUCHAR, size_t, BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO *, nullptr, int, PUCHAR *, size_t, PULONG **, int)'
+      C:\JimSec\SharedLib\Include\AES-GCM.h(81,25):
+      'BCryptEncrypt': function declaration must be available as none of the arguments depend on a template parameter
+  
+C:\JimSec\SharedLib\Include\AES-GCM.h(66,46): error C2065: 'obj': undeclared identifier
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+  
+C:\JimSec\SharedLib\Include\AES-GCM.h(102,21): error C2664: 'NTSTATUS BCryptDecrypt(BCRYPT_KEY_HANDLE,PUCHAR,ULONG,void *,PUCHAR,ULONG,PUCHAR,ULONG,ULONG *,ULONG)': cannot convert argument 7 from 'PUCHAR *' to 'PUCHAR'
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\JimSec\SharedLib\Include\AES-GCM.h(102,97):
+      Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\bcrypt.h(1384,1):
+      see declaration of 'BCryptDecrypt'
+      C:\JimSec\SharedLib\Include\AES-GCM.h(102,21):
+      while trying to match the argument list '(BCRYPT_KEY_HANDLE, PUCHAR, size_t, BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO *, nullptr, int, PUCHAR *, PULONG **, ULONG **, int)'
+      C:\JimSec\SharedLib\Include\AES-GCM.h(102,34):
+      'BCryptDecrypt': function declaration must be available as none of the arguments depend on a template parameter
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(188,9): warning C4005: 'PROBE_ALIGNMENT': macro redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(160,9):
+      see previous definition of 'PROBE_ALIGNMENT'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(205,9): warning C4005: 'PROBE_ALIGNMENT32': macro redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(177,9):
+      see previous definition of 'PROBE_ALIGNMENT32'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(812,16): error C2011: '_PROCESSOR_NUMBER': 'struct' type redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(672,16):
+      see declaration of '_PROCESSOR_NUMBER'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(825,16): error C2011: '_GROUP_AFFINITY': 'struct' type redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(685,16):
+      see declaration of '_GROUP_AFFINITY'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(831,16): error C2011: '_GROUP_AFFINITY32': 'struct' type redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(691,16):
+      see declaration of '_GROUP_AFFINITY32'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(837,16): error C2011: '_GROUP_AFFINITY64': 'struct' type redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(697,16):
+      see declaration of '_GROUP_AFFINITY64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1182,16): error C2011: '_FLOAT128': 'struct' type redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(891,16):
+      see declaration of '_FLOAT128'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1235,15): error C2011: '_LARGE_INTEGER': 'union' type redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(940,15):
+      see declaration of '_LARGE_INTEGER'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1255,15): error C2011: '_ULARGE_INTEGER': 'union' type redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(960,15):
+      see declaration of '_ULARGE_INTEGER'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1285,16): error C2011: '_LUID': 'struct' type redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(990,16):
+      see declaration of '_LUID'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1653,9): warning C4005: 'UNICODE_STRING_MAX_BYTES': macro redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1227,9):
+      see previous definition of 'UNICODE_STRING_MAX_BYTES'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1699,16): error C2011: '_LIST_ENTRY': 'struct' type redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1236,16):
+      see declaration of '_LIST_ENTRY'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1709,16): error C2011: '_SINGLE_LIST_ENTRY': 'struct' type redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1246,16):
+      see declaration of '_SINGLE_LIST_ENTRY'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1756,16): error C2011: 'LIST_ENTRY32': 'struct' type redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1257,16):
+      see declaration of 'LIST_ENTRY32'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1762,16): error C2011: 'LIST_ENTRY64': 'struct' type redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1263,16):
+      see declaration of 'LIST_ENTRY64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1782,5): error C2027: use of undefined type 'LIST_ENTRY64'
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1263,16):
+      see declaration of 'LIST_ENTRY64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1782,36): error C2027: use of undefined type 'LIST_ENTRY32'
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1257,16):
+      see declaration of 'LIST_ENTRY32'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1783,5): error C2027: use of undefined type 'LIST_ENTRY64'
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1263,16):
+      see declaration of 'LIST_ENTRY64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1783,36): error C2027: use of undefined type 'LIST_ENTRY32'
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1257,16):
+      see declaration of 'LIST_ENTRY32'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1793,5): error C2027: use of undefined type 'LIST_ENTRY32'
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1257,16):
+      see declaration of 'LIST_ENTRY32'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1793,25): error C2027: use of undefined type 'LIST_ENTRY64'
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1263,16):
+      see declaration of 'LIST_ENTRY64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1794,5): error C2027: use of undefined type 'LIST_ENTRY32'
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1257,16):
+      see declaration of 'LIST_ENTRY32'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1794,25): error C2027: use of undefined type 'LIST_ENTRY64'
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1263,16):
+      see declaration of 'LIST_ENTRY64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3130,9): warning C4005: 'MAKELANGID': macro redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2309,9):
+      see previous definition of 'MAKELANGID'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3131,9): warning C4005: 'PRIMARYLANGID': macro redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2310,9):
+      see previous definition of 'PRIMARYLANGID'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3132,9): warning C4005: 'SUBLANGID': macro redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2311,9):
+      see previous definition of 'SUBLANGID'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3175,9): warning C4005: 'MAKELCID': macro redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2354,9):
+      see previous definition of 'MAKELCID'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3177,9): warning C4005: 'MAKESORTLCID': macro redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2356,9):
+      see previous definition of 'MAKESORTLCID'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3180,9): warning C4005: 'LANGIDFROMLCID': macro redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2359,9):
+      see previous definition of 'LANGIDFROMLCID'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3181,9): warning C4005: 'SORTIDFROMLCID': macro redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2360,9):
+      see previous definition of 'SORTIDFROMLCID'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3182,9): warning C4005: 'SORTVERSIONFROMLCID': macro redefinition
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2361,9):
+      see previous definition of 'SORTVERSIONFROMLCID'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3379,12): error C2766: explicit specialization; '_ENUM_FLAG_INTEGER_FOR_SIZE<1>' has already been defined
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2558,12):
+      see previous definition of '_ENUM_FLAG_INTEGER_FOR_SIZE<1>'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3385,12): error C2766: explicit specialization; '_ENUM_FLAG_INTEGER_FOR_SIZE<2>' has already been defined
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2564,12):
+      see previous definition of '_ENUM_FLAG_INTEGER_FOR_SIZE<2>'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3391,12): error C2766: explicit specialization; '_ENUM_FLAG_INTEGER_FOR_SIZE<4>' has already been defined
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2570,12):
+      see previous definition of '_ENUM_FLAG_INTEGER_FOR_SIZE<4>'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3397,12): error C2766: explicit specialization; '_ENUM_FLAG_INTEGER_FOR_SIZE<8>' has already been defined
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2576,12):
+      see previous definition of '_ENUM_FLAG_INTEGER_FOR_SIZE<8>'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3404,12): error C2953: '_ENUM_FLAG_SIZED_INTEGER': class template has already been defined
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3404,12):
+      see declaration of '_ENUM_FLAG_SIZED_INTEGER'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3469,15): error C2027: use of undefined type '_LARGE_INTEGER'
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(940,15):
+      see declaration of '_LARGE_INTEGER'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3469,40): error C2338: static_assert failed: 'Windows headers require the default packing option. Changing this can lead to memory corruption. This diagnostic can be disabled by building with WINDOWS_IGNORE_PACKING_MISMATCH defined.'
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+  
+C:\JimSec\SharedLib\Include\Adapter\AES_GCM_Adapter.h(22,11): error C3861: '_easGcm': identifier not found
+  (compiling source file 'Src/IOCTL/Channel.cpp')
+      C:\JimSec\SharedLib\Include\Adapter\AES_GCM_Adapter.h(22,11):
+      the template instantiation context (the oldest one first) is
+          C:\JimSec\SharedLib\Include\Adapter\AES_GCM_Adapter.h(10,29):
           while compiling class template 'Adapter::AES_GCM_Adapter'
   
-C:\JimSec\SharedLib\Include\Adapter\AES_GCM_Adapter.h(20,11): error C2065: '_easGcm': undeclared identifier
+C:\JimSec\SharedLib\Include\Adapter\AES_GCM_Adapter.h(22,11): error C2065: '_easGcm': undeclared identifier
   (compiling source file 'Src/IOCTL/Channel.cpp')
+  
+C:\JimSec\Security.Native\Src\IOCTL\Channel.cpp(27,17): error C2511: 'DWORD IOCTL::Channel::Send(Shared::Packet *)': overloaded member function not found in 'IOCTL::Channel'
+      C:\JimSec\Security.Native\IOCTL\Channel.h(6,8):
+      see declaration of 'IOCTL::Channel'
+  
+C:\JimSec\Security.Native\Src\IOCTL\Channel.cpp(30,25): error C2671: 'IOCTL::Channel::Send': static member functions do not have 'this' pointers
+C:\JimSec\Security.Native\Src\IOCTL\Channel.cpp(30,24): error C2512: 'Adapter::PacketAdapter::PacketAdapter': no appropriate default constructor available
+      C:\JimSec\Security.Native\Src\IOCTL\Channel.cpp(30,24):
+      while trying to match the argument list '()'
+  
+C:\JimSec\Security.Native\Src\IOCTL\Channel.cpp(33,24): error C2597: illegal reference to non-static member 'IOCTL::Channel::_handleDevice'
+      C:\JimSec\Security.Native\IOCTL\Channel.h(9,10):
+      see declaration of 'IOCTL::Channel::_handleDevice'
+  
+C:\JimSec\Security.Native\Src\IOCTL\Channel.cpp(45,17): error C2511: 'DWORD IOCTL::Channel::Receive(Shared::Packet *)': overloaded member function not found in 'IOCTL::Channel'
+      C:\JimSec\Security.Native\IOCTL\Channel.h(6,8):
+      see declaration of 'IOCTL::Channel'
+  
+C:\JimSec\Security.Native\Src\IOCTL\Channel.cpp(48,25): error C2671: 'IOCTL::Channel::Receive': static member functions do not have 'this' pointers
+C:\JimSec\Security.Native\Src\IOCTL\Channel.cpp(48,24): error C2512: 'Adapter::PacketAdapter::PacketAdapter': no appropriate default constructor available
+      C:\JimSec\Security.Native\Src\IOCTL\Channel.cpp(48,24):
+      while trying to match the argument list '()'
+  
+C:\JimSec\Security.Native\Src\IOCTL\Channel.cpp(49,23): error C2597: illegal reference to non-static member 'IOCTL::Channel::_handleDevice'
+      C:\JimSec\Security.Native\IOCTL\Channel.h(9,10):
+      see declaration of 'IOCTL::Channel::_handleDevice'
   
   Generating Code...

@@ -27,17 +27,7 @@ namespace Process
     {
     };
 
-    /// <summary>
-    /// NT betekend van windows NT
-    /// PE file = Elk process heeft een Portable Executable waar informatie staat hoe het program geladen moet worden
-    /// 
-    /// PIMAGE_NT_HEADERS
-    /// P     = Pointer
-    // IMAGE  = PE image structuur
-    //  NT    = Windows NT executable format
-    //HEADERS = header informatie
-    /// </summary>
-    /// <returns>PIMAGE_NT_HEADERS</returns>
+
     PIMAGE_NT_HEADERS Module::GetNtHeaders() const
     {
         PIMAGE_DOS_HEADER dos = (PIMAGE_DOS_HEADER)this->_baseAddress;
@@ -48,16 +38,6 @@ namespace Process
         return (PIMAGE_NT_HEADERS)((PUCHAR)this->_baseAddress + dos->e_lfanew);
     };
 
-    /// <summary>
-    /// Sectie = Segment binnen windows executable (vb: .text, .data, .rdata, ...)
-    /// 
-    /// PIMAGE_SECTION_HEADER
-    /// P = Pointer
-    /// IMAGE = PE Image structuur
-    /// NT = Windows NT executable
-    /// 
-    /// </summary>
-    /// <returns></returns>
     PIMAGE_SECTION_HEADER Module::GetSectionHeaders(PIMAGE_NT_HEADERS nt) const
     {
         if (!nt)

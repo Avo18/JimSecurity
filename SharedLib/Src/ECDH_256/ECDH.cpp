@@ -1,5 +1,5 @@
 #include "../../../../JimSec/SharedLib/Include/ECDH_256/ECDH.h"
-#include "../../../../Program Files (x86)/Windows Kits/10/Include/10.0.28000.0/km/wdm.h"
+#include <ntstatus.h>
 
 namespace ECDH_256
 {
