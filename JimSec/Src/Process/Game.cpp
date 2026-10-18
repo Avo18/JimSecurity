@@ -1,10 +1,10 @@
-#include "../../../../JimSec/JimSec/Include/Process/Game.h"
-#include "../../../../JimSec/JimSec/Include/Process/Memory.h"
-#include "../../../../JimSec/JimSec/Include/Process/ModuleAnalyzer.h"
-#include "../../../../JimSec/JimSec/Include/Process/ProcessContext.h"
-#include "../../../../JimSec/JimSec/Include/Utils/Kernel.h"
-#include "../../../../JimSec/JimSec/Include/Process/Enum/Section.h"
-#include "../../../../JimSec/JimSec/Include/Process/ProcessHelper.h"
+#include "../../../JimSec/Include/Process/Game.h"
+#include "../../../JimSec/Include/Process/Memory.h"
+#include "../../../JimSec/Include/Process/ModuleAnalyzer.h"
+#include "../../../JimSec/Include/Process/ProcessContext.h"
+#include "../../../JimSec/Include/Utils/Kernel.h"
+#include "../../../JimSec/Include/Process/Enum/Section.h"
+#include "../../../JimSec/Include/Process/ProcessHelper.h"
 
 
 namespace Process

@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include <ntifs.h>
 #include <ntimage.h>
-#include "../../../../JimSec/JimSec/Include/Process/Enum/Section.h"
+#include "../../../JimSec/Include/Process/Enum/Section.h"
 
 namespace Process
 {

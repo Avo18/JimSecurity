@@ -162,7 +162,7 @@
     <ClInclude Include="Include\AntiCheat\Manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Include\IOCTL\Handlers\Manager.h">
+    <ClInclude Include="Include\IOCTL\Handlers\ManagerHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Include\Shared_Protocol\Protocol.h">
@@ -218,7 +218,7 @@
     <ClCompile Include="Src\Process\ProcessHelper.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="Src\IOCTL\Handlers\Manager.cpp">
+    <ClCompile Include="Src\IOCTL\Handlers\ManagerHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Src\IOCTL\Handlers\Client.cpp">

@@ -1,9 +1,8 @@
 //#include "../pch.h"
 
 #include <Windows.h>
-#include <ntstatus.h>
-#include <bcrypt.h>
-#include "../../../JimSec/Security.Native/IOCTL/Channel.h"
+#include <winioctl.h>
+#include "../../../Security.Native/IOCTL/Channel.h"
 #include <Packet.h>
 #include <AES-GCM.h>
 #include <Adapter/AES_GCM_Adapter.h>
@@ -39,7 +38,7 @@ namespace IOCTL
 				return GetLastError();
 			}
 		}
-		return STATUS_UNSUCCESSFUL;
+		return returned;
 	}
 
 	DWORD Channel::Receive(Shared::Packet* packet)
@@ -54,7 +53,7 @@ namespace IOCTL
 			}
 			else
 			{
-				return STATUS_UNSUCCESSFUL;
+				return returned;
 			}
 		}
 		else

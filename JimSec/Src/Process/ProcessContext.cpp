@@ -1,6 +1,6 @@
 #include <ntifs.h>
-#include "../../../../JimSec/JimSec/Include/Process/ProcessContext.h"
-#include "../../../../JimSec/JimSec/Include/Kernel/Windows/NtProcess.h"
+#include "../../../JimSec/Include/Process/ProcessContext.h"
+#include "../../../JimSec/Include/Kernel/Windows/NtProcess.h"
 
 namespace Process
 {

@@ -87,8 +87,9 @@
     </DriverSign>
     <ClCompile>
       <CompileAs>CompileAsCpp</CompileAs>
-      <AdditionalIncludeDirectories>C:\JimSec\SharedLib\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Git\SharedLib\Include;C:\JimSec\SharedLib\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>false</TreatWarningAsError>
+      <CallingConvention>StdCall</CallingConvention>
     </ClCompile>
     <Link>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
@@ -99,6 +100,9 @@
     <DriverSign>
       <FileDigestAlgorithm>sha256</FileDigestAlgorithm>
     </DriverSign>
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Git\SharedLib\Include;</AdditionalIncludeDirectories>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
     <DriverSign>
@@ -127,7 +131,7 @@
     <ClInclude Include="Include\IOCTL\Handlers\Hvci.h" />
     <ClInclude Include="Include\IOCTL\Handlers\Ping.h" />
     <ClInclude Include="Include\IOCTL\Handlers\PublicKey.h" />
-    <ClInclude Include="Include\IOCTL\Handlers\Manager.h" />
+    <ClInclude Include="Include\IOCTL\Handlers\ManagerHandler.h" />
     <ClInclude Include="Include\IOCTL\IoControlList.h" />
     <ClInclude Include="Include\IOCTL\Types\PublicKey.h" />
     <ClInclude Include="Include\Kernel\Windows\NtProcess.h" />
@@ -149,7 +153,7 @@
     <ClInclude Include="IOCTL.h" />
     <ClCompile Include="Src\IOCTL\Handlers\Client.cpp" />
     <ClCompile Include="Src\IOCTL\Handlers\Hvci.cpp" />
-    <ClCompile Include="Src\IOCTL\Handlers\Manager.cpp" />
+    <ClCompile Include="Src\IOCTL\Handlers\ManagerHandler.cpp" />
     <ClCompile Include="Src\Process\Game.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>

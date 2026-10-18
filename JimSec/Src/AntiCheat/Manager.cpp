@@ -1,8 +1,8 @@
 #include <ntifs.h>
-#include "../../../../JimSec/JimSec/Include/AntiCheat/Manager.h"
-#include "../../../../JimSec/JimSec/Include/Process/ProcessHelper.h"
-#include "../../../../JimSec/JimSec/Include/Process/ProcessContext.h"
-#include "../../../../JimSec/JimSec/Include/Utils/Kernel.h"
+#include "../../../JimSec/Include/AntiCheat/Manager.h"
+#include "../../../JimSec/Include/Process/ProcessHelper.h"
+#include "../../../JimSec/Include/Process/ProcessContext.h"
+#include "../../../JimSec/Include/Utils/Kernel.h"
 
 
 using namespace Process;

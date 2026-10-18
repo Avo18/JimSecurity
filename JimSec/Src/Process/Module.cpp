@@ -2,16 +2,16 @@
 #pragma once
 #include <ntifs.h>
 #include <ntimage.h>
-#include "../../../../JimSec/JimSec/Include/Process/Module.h"
-#include "../../../../JimSec/JimSec/Include/Process/Enum/Section.h"
-#include "../../../../JimSec/JimSec/Include/Process/ProcessHelper.h"
-#include "../../../../JimSec/JimSec/Include/Process/Memory.h"
-#include "../../../../../JimSec/JimSec/Include/Process/ProcessContext.h"
-#include "../../../../../JimSec/JimSec/Include/Process/ModuleAnalyzer.h"
-#include "../../../../../JimSec/JimSec/Include/Kernel/Windows/NtMemory.h"
-#include "../../../../../JimSec/JimSec/Include/Kernel/Windows/NtProcess.h"
-#include "../../../../../JimSec/JimSec/Include/PEB/Types/LDR_DATA_TABLE_ENTRY.h"
-#include "../../../../../JimSec/JimSec/Include/PEB/Types/PEB_LDR_DATA.h"
+#include "../../../JimSec/Include/Process/Module.h"
+#include "../../../JimSec/Include/Process/Enum/Section.h"
+#include "../../../JimSec/Include/Process/ProcessHelper.h"
+#include "../../../JimSec/Include/Process/Memory.h"
+#include "../../../JimSec/Include/Process/ProcessContext.h"
+#include "../../../JimSec/Include/Process/ModuleAnalyzer.h"
+#include "../../../JimSec/Include/Kernel/Windows/NtMemory.h"
+#include "../../../JimSec/Include/Kernel/Windows/NtProcess.h" 
+#include "../../../JimSec/Include/PEB/Types/LDR_DATA_TABLE_ENTRY.h"
+#include "../../../JimSec/Include/PEB/Types/PEB_LDR_DATA.h"
 
 #define _NO_CRT_STDIO_INLINE
 

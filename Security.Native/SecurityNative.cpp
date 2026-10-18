@@ -6,7 +6,7 @@
 #include <ntstatus.h>
 #include <bcrypt.h>
 #include <winioctl.h>
-#include "../../../JimSec/Security.Native/IOCTL/Packets/PingPacket.h"
+#include "../Security.Native/IOCTL/Packets/PingPacket.h"
 
 BCRYPT_ALG_HANDLE _algHandle = NULL;
 BCRYPT_KEY_HANDLE _publicKey = NULL;

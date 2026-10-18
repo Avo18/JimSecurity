@@ -4,7 +4,7 @@
 #include <bcrypt.h>
 #include <sal.h>
 
-#include "../../../../JimSec/SharedLib/Include/ECDH_256/Types/Context.h"
+#include "../../../SharedLib/Include/ECDH_256/Types/Context.h"
 
 #define ECDH_PUBLIC_KEY_MAX_SIZE 256
 

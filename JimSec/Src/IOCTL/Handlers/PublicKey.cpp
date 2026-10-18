@@ -1,5 +1,5 @@
 #include <ntddk.h>
-#include "..\..\..\..\..\JimSec\JimSec\Include\IOCTL\Handlers\PublicKey.h"
+#include "../../../JimSec/Include/IOCTL/Handlers/PublicKey.h"
 
 using namespace RSA;
 namespace IOCTL_Handlers

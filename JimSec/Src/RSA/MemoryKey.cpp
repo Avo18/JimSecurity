@@ -1,7 +1,7 @@
 #pragma once
 #include <ntddk.h>
 #include <wdf.h>
-#include "..\..\..\..\JimSec\JimSec\Include\RSA\MemoryKey.h"
+#include "..\..\..\JimSec\Include\RSA\MemoryKey.h"
 
 extern IOCTL_Types::PUBLIC_KEY _publicKey = {};
 

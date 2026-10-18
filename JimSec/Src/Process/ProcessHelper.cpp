@@ -1,5 +1,5 @@
 #include <ntifs.h>
-#include "../../../../JimSec/JimSec/Include/Process/ProcessHelper.h"
+#include "../../../JimSec/Include/Process/ProcessHelper.h"
 
 namespace Process
 {

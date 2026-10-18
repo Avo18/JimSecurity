@@ -1,10 +1,10 @@
 #pragma once
 #include <ntifs.h>
 #include <ntimage.h>
-#include "../../../../JimSec/JimSec/Include/Process/Memory.h"
-#include "../../../../JimSec/JimSec/Include/Process/ProcessContext.h"
-#include "../../../../JimSec/JimSec/Include/Process/ModuleAnalyzer.h"
-#include "../../../JimSec/Include/Kernel/Windows/NtProcess.h"
+#include "../../../JimSec/Include/Process/Memory.h"
+#include "../../../JimSec/Include/Process/ProcessContext.h"
+#include "../../../JimSec/Include/Process/ModuleAnalyzer.h"
+#include "../../JimSec/Include/Kernel/Windows/NtProcess.h"
 #include "../../../JimSec/Include/PEB/Types/PEB_LDR_DATA.h"
 #include "../../../JimSec/Include/PEB/Types/LDR_DATA_TABLE_ENTRY.h"
 

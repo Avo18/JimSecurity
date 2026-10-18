@@ -1,962 +1,633 @@
-﻿  pch.cpp
-  dllmain.cpp
-  Main.cpp
-  SecurityNative.cpp
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(66,9): warning C4005: 'STATUS_WAIT_0': macro redefinition
+﻿  SecurityNative.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(66,9): warning C4005: 'STATUS_WAIT_0': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2642,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2611,9):
       see previous definition of 'STATUS_WAIT_0'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(227,9): warning C4005: 'STATUS_ABANDONED_WAIT_0': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(227,9): warning C4005: 'STATUS_ABANDONED_WAIT_0': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2643,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2612,9):
       see previous definition of 'STATUS_ABANDONED_WAIT_0'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(250,9): warning C4005: 'STATUS_USER_APC': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(250,9): warning C4005: 'STATUS_USER_APC': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2644,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2613,9):
       see previous definition of 'STATUS_USER_APC'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(286,9): warning C4005: 'STATUS_TIMEOUT': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(286,9): warning C4005: 'STATUS_TIMEOUT': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2645,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2614,9):
       see previous definition of 'STATUS_TIMEOUT'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(295,9): warning C4005: 'STATUS_PENDING': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(295,9): warning C4005: 'STATUS_PENDING': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2646,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2615,9):
       see previous definition of 'STATUS_PENDING'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(751,9): warning C4005: 'DBG_EXCEPTION_HANDLED': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(751,9): warning C4005: 'DBG_EXCEPTION_HANDLED': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2647,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2616,9):
       see previous definition of 'DBG_EXCEPTION_HANDLED'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(760,9): warning C4005: 'DBG_CONTINUE': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(760,9): warning C4005: 'DBG_CONTINUE': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2648,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2617,9):
       see previous definition of 'DBG_CONTINUE'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(835,9): warning C4005: 'STATUS_SEGMENT_NOTIFICATION': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(835,9): warning C4005: 'STATUS_SEGMENT_NOTIFICATION': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2649,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2618,9):
       see previous definition of 'STATUS_SEGMENT_NOTIFICATION'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(998,9): warning C4005: 'STATUS_FATAL_APP_EXIT': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(998,9): warning C4005: 'STATUS_FATAL_APP_EXIT': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2650,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2619,9):
       see previous definition of 'STATUS_FATAL_APP_EXIT'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1345,9): warning C4005: 'DBG_REPLY_LATER': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(1345,9): warning C4005: 'DBG_REPLY_LATER': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2651,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2620,9):
       see previous definition of 'DBG_REPLY_LATER'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1363,9): warning C4005: 'DBG_TERMINATE_THREAD': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(1363,9): warning C4005: 'DBG_TERMINATE_THREAD': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2652,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2621,9):
       see previous definition of 'DBG_TERMINATE_THREAD'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1372,9): warning C4005: 'DBG_TERMINATE_PROCESS': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(1372,9): warning C4005: 'DBG_TERMINATE_PROCESS': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2653,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2622,9):
       see previous definition of 'DBG_TERMINATE_PROCESS'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1381,9): warning C4005: 'DBG_CONTROL_C': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(1381,9): warning C4005: 'DBG_CONTROL_C': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2654,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2623,9):
       see previous definition of 'DBG_CONTROL_C'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1390,9): warning C4005: 'DBG_PRINTEXCEPTION_C': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(1390,9): warning C4005: 'DBG_PRINTEXCEPTION_C': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2655,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2624,9):
       see previous definition of 'DBG_PRINTEXCEPTION_C'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1399,9): warning C4005: 'DBG_RIPEXCEPTION': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(1399,9): warning C4005: 'DBG_RIPEXCEPTION': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2656,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2625,9):
       see previous definition of 'DBG_RIPEXCEPTION'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1408,9): warning C4005: 'DBG_CONTROL_BREAK': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(1408,9): warning C4005: 'DBG_CONTROL_BREAK': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2657,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2626,9):
       see previous definition of 'DBG_CONTROL_BREAK'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1417,9): warning C4005: 'DBG_COMMAND_EXCEPTION': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(1417,9): warning C4005: 'DBG_COMMAND_EXCEPTION': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2658,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2627,9):
       see previous definition of 'DBG_COMMAND_EXCEPTION'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1426,9): warning C4005: 'DBG_PRINTEXCEPTION_WIDE_C': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(1426,9): warning C4005: 'DBG_PRINTEXCEPTION_WIDE_C': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2659,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2628,9):
       see previous definition of 'DBG_PRINTEXCEPTION_WIDE_C'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1458,9): warning C4005: 'STATUS_GUARD_PAGE_VIOLATION': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(1458,9): warning C4005: 'STATUS_GUARD_PAGE_VIOLATION': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2660,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2629,9):
       see previous definition of 'STATUS_GUARD_PAGE_VIOLATION'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1469,9): warning C4005: 'STATUS_DATATYPE_MISALIGNMENT': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(1469,9): warning C4005: 'STATUS_DATATYPE_MISALIGNMENT': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2661,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2630,9):
       see previous definition of 'STATUS_DATATYPE_MISALIGNMENT'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1480,9): warning C4005: 'STATUS_BREAKPOINT': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(1480,9): warning C4005: 'STATUS_BREAKPOINT': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2662,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2631,9):
       see previous definition of 'STATUS_BREAKPOINT'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1491,9): warning C4005: 'STATUS_SINGLE_STEP': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(1491,9): warning C4005: 'STATUS_SINGLE_STEP': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2663,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2632,9):
       see previous definition of 'STATUS_SINGLE_STEP'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1794,9): warning C4005: 'STATUS_LONGJUMP': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(1794,9): warning C4005: 'STATUS_LONGJUMP': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2664,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2633,9):
       see previous definition of 'STATUS_LONGJUMP'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1821,9): warning C4005: 'STATUS_UNWIND_CONSOLIDATE': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(1821,9): warning C4005: 'STATUS_UNWIND_CONSOLIDATE': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2665,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2634,9):
       see previous definition of 'STATUS_UNWIND_CONSOLIDATE'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1954,9): warning C4005: 'DBG_EXCEPTION_NOT_HANDLED': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(1945,9): warning C4005: 'DBG_EXCEPTION_NOT_HANDLED': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2666,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2635,9):
       see previous definition of 'DBG_EXCEPTION_NOT_HANDLED'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2121,9): warning C4005: 'STATUS_ACCESS_VIOLATION': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(2112,9): warning C4005: 'STATUS_ACCESS_VIOLATION': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2667,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2636,9):
       see previous definition of 'STATUS_ACCESS_VIOLATION'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2130,9): warning C4005: 'STATUS_IN_PAGE_ERROR': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(2121,9): warning C4005: 'STATUS_IN_PAGE_ERROR': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2668,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2637,9):
       see previous definition of 'STATUS_IN_PAGE_ERROR'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2148,9): warning C4005: 'STATUS_INVALID_HANDLE': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(2139,9): warning C4005: 'STATUS_INVALID_HANDLE': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2669,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2638,9):
       see previous definition of 'STATUS_INVALID_HANDLE'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2193,9): warning C4005: 'STATUS_INVALID_PARAMETER': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(2184,9): warning C4005: 'STATUS_INVALID_PARAMETER': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2670,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2639,9):
       see previous definition of 'STATUS_INVALID_PARAMETER'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2293,9): warning C4005: 'STATUS_NO_MEMORY': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(2284,9): warning C4005: 'STATUS_NO_MEMORY': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2671,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2640,9):
       see previous definition of 'STATUS_NO_MEMORY'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2350,9): warning C4005: 'STATUS_ILLEGAL_INSTRUCTION': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(2341,9): warning C4005: 'STATUS_ILLEGAL_INSTRUCTION': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2672,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2641,9):
       see previous definition of 'STATUS_ILLEGAL_INSTRUCTION'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2431,9): warning C4005: 'STATUS_NONCONTINUABLE_EXCEPTION': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(2422,9): warning C4005: 'STATUS_NONCONTINUABLE_EXCEPTION': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2673,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2642,9):
       see previous definition of 'STATUS_NONCONTINUABLE_EXCEPTION'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2440,9): warning C4005: 'STATUS_INVALID_DISPOSITION': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(2431,9): warning C4005: 'STATUS_INVALID_DISPOSITION': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2674,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2643,9):
       see previous definition of 'STATUS_INVALID_DISPOSITION'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3373,9): warning C4005: 'STATUS_ARRAY_BOUNDS_EXCEEDED': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(3364,9): warning C4005: 'STATUS_ARRAY_BOUNDS_EXCEEDED': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2675,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2644,9):
       see previous definition of 'STATUS_ARRAY_BOUNDS_EXCEEDED'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3383,9): warning C4005: 'STATUS_FLOAT_DENORMAL_OPERAND': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(3374,9): warning C4005: 'STATUS_FLOAT_DENORMAL_OPERAND': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2676,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2645,9):
       see previous definition of 'STATUS_FLOAT_DENORMAL_OPERAND'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3393,9): warning C4005: 'STATUS_FLOAT_DIVIDE_BY_ZERO': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(3384,9): warning C4005: 'STATUS_FLOAT_DIVIDE_BY_ZERO': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2677,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2646,9):
       see previous definition of 'STATUS_FLOAT_DIVIDE_BY_ZERO'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3403,9): warning C4005: 'STATUS_FLOAT_INEXACT_RESULT': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(3394,9): warning C4005: 'STATUS_FLOAT_INEXACT_RESULT': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2678,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2647,9):
       see previous definition of 'STATUS_FLOAT_INEXACT_RESULT'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3413,9): warning C4005: 'STATUS_FLOAT_INVALID_OPERATION': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(3404,9): warning C4005: 'STATUS_FLOAT_INVALID_OPERATION': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2679,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2648,9):
       see previous definition of 'STATUS_FLOAT_INVALID_OPERATION'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3423,9): warning C4005: 'STATUS_FLOAT_OVERFLOW': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(3414,9): warning C4005: 'STATUS_FLOAT_OVERFLOW': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2680,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2649,9):
       see previous definition of 'STATUS_FLOAT_OVERFLOW'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3433,9): warning C4005: 'STATUS_FLOAT_STACK_CHECK': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(3424,9): warning C4005: 'STATUS_FLOAT_STACK_CHECK': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2681,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2650,9):
       see previous definition of 'STATUS_FLOAT_STACK_CHECK'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3443,9): warning C4005: 'STATUS_FLOAT_UNDERFLOW': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(3434,9): warning C4005: 'STATUS_FLOAT_UNDERFLOW': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2682,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2651,9):
       see previous definition of 'STATUS_FLOAT_UNDERFLOW'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3453,9): warning C4005: 'STATUS_INTEGER_DIVIDE_BY_ZERO': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(3444,9): warning C4005: 'STATUS_INTEGER_DIVIDE_BY_ZERO': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2683,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2652,9):
       see previous definition of 'STATUS_INTEGER_DIVIDE_BY_ZERO'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3463,9): warning C4005: 'STATUS_INTEGER_OVERFLOW': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(3454,9): warning C4005: 'STATUS_INTEGER_OVERFLOW': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2684,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2653,9):
       see previous definition of 'STATUS_INTEGER_OVERFLOW'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3473,9): warning C4005: 'STATUS_PRIVILEGED_INSTRUCTION': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(3464,9): warning C4005: 'STATUS_PRIVILEGED_INSTRUCTION': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2685,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2654,9):
       see previous definition of 'STATUS_PRIVILEGED_INSTRUCTION'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(4419,9): warning C4005: 'STATUS_STACK_OVERFLOW': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(4410,9): warning C4005: 'STATUS_STACK_OVERFLOW': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2686,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2655,9):
       see previous definition of 'STATUS_STACK_OVERFLOW'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(4936,9): warning C4005: 'STATUS_DLL_NOT_FOUND': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(4927,9): warning C4005: 'STATUS_DLL_NOT_FOUND': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2687,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2656,9):
       see previous definition of 'STATUS_DLL_NOT_FOUND'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(4965,9): warning C4005: 'STATUS_ORDINAL_NOT_FOUND': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(4956,9): warning C4005: 'STATUS_ORDINAL_NOT_FOUND': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2688,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2657,9):
       see previous definition of 'STATUS_ORDINAL_NOT_FOUND'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(4975,9): warning C4005: 'STATUS_ENTRYPOINT_NOT_FOUND': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(4966,9): warning C4005: 'STATUS_ENTRYPOINT_NOT_FOUND': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2689,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2658,9):
       see previous definition of 'STATUS_ENTRYPOINT_NOT_FOUND'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(4985,9): warning C4005: 'STATUS_CONTROL_C_EXIT': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(4976,9): warning C4005: 'STATUS_CONTROL_C_EXIT': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2690,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2659,9):
       see previous definition of 'STATUS_CONTROL_C_EXIT'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(5063,9): warning C4005: 'STATUS_DLL_INIT_FAILED': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(5054,9): warning C4005: 'STATUS_DLL_INIT_FAILED': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2691,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2660,9):
       see previous definition of 'STATUS_DLL_INIT_FAILED'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(6060,9): warning C4005: 'STATUS_CONTROL_STACK_VIOLATION': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(6051,9): warning C4005: 'STATUS_CONTROL_STACK_VIOLATION': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2692,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2661,9):
       see previous definition of 'STATUS_CONTROL_STACK_VIOLATION'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(7654,9): warning C4005: 'STATUS_FLOAT_MULTIPLE_FAULTS': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(7645,9): warning C4005: 'STATUS_FLOAT_MULTIPLE_FAULTS': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2693,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2662,9):
       see previous definition of 'STATUS_FLOAT_MULTIPLE_FAULTS'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(7664,9): warning C4005: 'STATUS_FLOAT_MULTIPLE_TRAPS': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(7655,9): warning C4005: 'STATUS_FLOAT_MULTIPLE_TRAPS': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2694,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2663,9):
       see previous definition of 'STATUS_FLOAT_MULTIPLE_TRAPS'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(7796,9): warning C4005: 'STATUS_REG_NAT_CONSUMPTION': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(7787,9): warning C4005: 'STATUS_REG_NAT_CONSUMPTION': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2695,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2664,9):
       see previous definition of 'STATUS_REG_NAT_CONSUMPTION'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(8779,9): warning C4005: 'STATUS_HEAP_CORRUPTION': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(8770,9): warning C4005: 'STATUS_HEAP_CORRUPTION': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2696,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2665,9):
       see previous definition of 'STATUS_HEAP_CORRUPTION'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(9007,9): warning C4005: 'STATUS_STACK_BUFFER_OVERRUN': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(8998,9): warning C4005: 'STATUS_STACK_BUFFER_OVERRUN': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2697,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2666,9):
       see previous definition of 'STATUS_STACK_BUFFER_OVERRUN'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(9134,9): warning C4005: 'STATUS_INVALID_CRUNTIME_PARAMETER': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(9125,9): warning C4005: 'STATUS_INVALID_CRUNTIME_PARAMETER': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2698,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2667,9):
       see previous definition of 'STATUS_INVALID_CRUNTIME_PARAMETER'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(9197,9): warning C4005: 'STATUS_ASSERTION_FAILURE': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(9188,9): warning C4005: 'STATUS_ASSERTION_FAILURE': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2699,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2668,9):
       see previous definition of 'STATUS_ASSERTION_FAILURE'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(10106,9): warning C4005: 'STATUS_ENCLAVE_VIOLATION': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(10097,9): warning C4005: 'STATUS_ENCLAVE_VIOLATION': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2700,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2669,9):
       see previous definition of 'STATUS_ENCLAVE_VIOLATION'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(10893,9): warning C4005: 'STATUS_INTERRUPTED': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(10884,9): warning C4005: 'STATUS_INTERRUPTED': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2701,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2670,9):
       see previous definition of 'STATUS_INTERRUPTED'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(10902,9): warning C4005: 'STATUS_THREAD_NOT_RUNNING': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(10893,9): warning C4005: 'STATUS_THREAD_NOT_RUNNING': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2702,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2671,9):
       see previous definition of 'STATUS_THREAD_NOT_RUNNING'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(11223,9): warning C4005: 'STATUS_ALREADY_REGISTERED': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(11205,9): warning C4005: 'STATUS_ALREADY_REGISTERED': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2703,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2672,9):
       see previous definition of 'STATUS_ALREADY_REGISTERED'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(15368,9): warning C4005: 'STATUS_SXS_EARLY_DEACTIVATION': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(15323,9): warning C4005: 'STATUS_SXS_EARLY_DEACTIVATION': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2705,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2674,9):
       see previous definition of 'STATUS_SXS_EARLY_DEACTIVATION'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(15377,9): warning C4005: 'STATUS_SXS_INVALID_DEACTIVATION': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntstatus.h(15332,9): warning C4005: 'STATUS_SXS_INVALID_DEACTIVATION': macro redefinition
   (compiling source file 'SecurityNative.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2706,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2675,9):
       see previous definition of 'STATUS_SXS_INVALID_DEACTIVATION'
   
-C:\JimSec\SharedLib\Include\Packet.h(8,24): error C2040: 'WORD': 'unsigned char *' differs in levels of indirection from 'unsigned short'
+C:\Git\SharedLib\Include\Packet.h(34,29): error C3861: 'val': identifier not found
   (compiling source file 'SecurityNative.cpp')
-  
-C:\JimSec\SharedLib\Include\Packet.h(25,29): error C3861: 'val': identifier not found
-  (compiling source file 'SecurityNative.cpp')
-      C:\JimSec\SharedLib\Include\Packet.h(21,29):
+      C:\Git\SharedLib\Include\Packet.h(30,29):
       This diagnostic occurred in the compiler generated function 'bool Shared::Packet::Add(T)'
   
-C:\JimSec\SharedLib\Include\Packet.h(25,29): error C2065: 'val': undeclared identifier
+C:\Git\SharedLib\Include\Packet.h(34,29): error C2065: 'val': undeclared identifier
   (compiling source file 'SecurityNative.cpp')
-      C:\JimSec\SharedLib\Include\Packet.h(21,29):
+      C:\Git\SharedLib\Include\Packet.h(30,29):
       This diagnostic occurred in the compiler generated function 'bool Shared::Packet::Add(T)'
   
-C:\JimSec\SharedLib\Include\Packet.h(37,13): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+C:\Git\SharedLib\Include\Packet.h(46,13): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'SecurityNative.cpp')
   
-C:\JimSec\Security.Native\SecurityNative.cpp(130,13): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
+C:\Git\Security.Native\SecurityNative.cpp(130,13): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
   Channel.cpp
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(66,9): warning C4005: 'STATUS_WAIT_0': macro redefinition
+C:\Git\Security.Native\IOCTL\Channel.h(5,8): error C2653: 'Shared': is not a class or namespace name
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2642,9):
-      see previous definition of 'STATUS_WAIT_0'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(227,9): warning C4005: 'STATUS_ABANDONED_WAIT_0': macro redefinition
+C:\Git\Security.Native\IOCTL\Channel.h(14,22): error C2653: 'Shared': is not a class or namespace name
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2643,9):
-      see previous definition of 'STATUS_ABANDONED_WAIT_0'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(250,9): warning C4005: 'STATUS_USER_APC': macro redefinition
+C:\Git\Security.Native\IOCTL\Channel.h(15,25): error C2653: 'Shared': is not a class or namespace name
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2644,9):
-      see previous definition of 'STATUS_USER_APC'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(286,9): warning C4005: 'STATUS_TIMEOUT': macro redefinition
+C:\Git\SharedLib\Include\Packet.h(34,29): error C3861: 'val': identifier not found
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2645,9):
-      see previous definition of 'STATUS_TIMEOUT'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(295,9): warning C4005: 'STATUS_PENDING': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2646,9):
-      see previous definition of 'STATUS_PENDING'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(751,9): warning C4005: 'DBG_EXCEPTION_HANDLED': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2647,9):
-      see previous definition of 'DBG_EXCEPTION_HANDLED'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(760,9): warning C4005: 'DBG_CONTINUE': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2648,9):
-      see previous definition of 'DBG_CONTINUE'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(835,9): warning C4005: 'STATUS_SEGMENT_NOTIFICATION': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2649,9):
-      see previous definition of 'STATUS_SEGMENT_NOTIFICATION'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(998,9): warning C4005: 'STATUS_FATAL_APP_EXIT': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2650,9):
-      see previous definition of 'STATUS_FATAL_APP_EXIT'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1345,9): warning C4005: 'DBG_REPLY_LATER': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2651,9):
-      see previous definition of 'DBG_REPLY_LATER'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1363,9): warning C4005: 'DBG_TERMINATE_THREAD': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2652,9):
-      see previous definition of 'DBG_TERMINATE_THREAD'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1372,9): warning C4005: 'DBG_TERMINATE_PROCESS': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2653,9):
-      see previous definition of 'DBG_TERMINATE_PROCESS'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1381,9): warning C4005: 'DBG_CONTROL_C': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2654,9):
-      see previous definition of 'DBG_CONTROL_C'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1390,9): warning C4005: 'DBG_PRINTEXCEPTION_C': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2655,9):
-      see previous definition of 'DBG_PRINTEXCEPTION_C'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1399,9): warning C4005: 'DBG_RIPEXCEPTION': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2656,9):
-      see previous definition of 'DBG_RIPEXCEPTION'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1408,9): warning C4005: 'DBG_CONTROL_BREAK': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2657,9):
-      see previous definition of 'DBG_CONTROL_BREAK'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1417,9): warning C4005: 'DBG_COMMAND_EXCEPTION': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2658,9):
-      see previous definition of 'DBG_COMMAND_EXCEPTION'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1426,9): warning C4005: 'DBG_PRINTEXCEPTION_WIDE_C': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2659,9):
-      see previous definition of 'DBG_PRINTEXCEPTION_WIDE_C'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1458,9): warning C4005: 'STATUS_GUARD_PAGE_VIOLATION': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2660,9):
-      see previous definition of 'STATUS_GUARD_PAGE_VIOLATION'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1469,9): warning C4005: 'STATUS_DATATYPE_MISALIGNMENT': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2661,9):
-      see previous definition of 'STATUS_DATATYPE_MISALIGNMENT'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1480,9): warning C4005: 'STATUS_BREAKPOINT': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2662,9):
-      see previous definition of 'STATUS_BREAKPOINT'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1491,9): warning C4005: 'STATUS_SINGLE_STEP': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2663,9):
-      see previous definition of 'STATUS_SINGLE_STEP'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1794,9): warning C4005: 'STATUS_LONGJUMP': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2664,9):
-      see previous definition of 'STATUS_LONGJUMP'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1821,9): warning C4005: 'STATUS_UNWIND_CONSOLIDATE': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2665,9):
-      see previous definition of 'STATUS_UNWIND_CONSOLIDATE'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(1954,9): warning C4005: 'DBG_EXCEPTION_NOT_HANDLED': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2666,9):
-      see previous definition of 'DBG_EXCEPTION_NOT_HANDLED'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2121,9): warning C4005: 'STATUS_ACCESS_VIOLATION': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2667,9):
-      see previous definition of 'STATUS_ACCESS_VIOLATION'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2130,9): warning C4005: 'STATUS_IN_PAGE_ERROR': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2668,9):
-      see previous definition of 'STATUS_IN_PAGE_ERROR'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2148,9): warning C4005: 'STATUS_INVALID_HANDLE': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2669,9):
-      see previous definition of 'STATUS_INVALID_HANDLE'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2193,9): warning C4005: 'STATUS_INVALID_PARAMETER': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2670,9):
-      see previous definition of 'STATUS_INVALID_PARAMETER'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2293,9): warning C4005: 'STATUS_NO_MEMORY': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2671,9):
-      see previous definition of 'STATUS_NO_MEMORY'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2350,9): warning C4005: 'STATUS_ILLEGAL_INSTRUCTION': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2672,9):
-      see previous definition of 'STATUS_ILLEGAL_INSTRUCTION'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2431,9): warning C4005: 'STATUS_NONCONTINUABLE_EXCEPTION': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2673,9):
-      see previous definition of 'STATUS_NONCONTINUABLE_EXCEPTION'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(2440,9): warning C4005: 'STATUS_INVALID_DISPOSITION': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2674,9):
-      see previous definition of 'STATUS_INVALID_DISPOSITION'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3373,9): warning C4005: 'STATUS_ARRAY_BOUNDS_EXCEEDED': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2675,9):
-      see previous definition of 'STATUS_ARRAY_BOUNDS_EXCEEDED'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3383,9): warning C4005: 'STATUS_FLOAT_DENORMAL_OPERAND': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2676,9):
-      see previous definition of 'STATUS_FLOAT_DENORMAL_OPERAND'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3393,9): warning C4005: 'STATUS_FLOAT_DIVIDE_BY_ZERO': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2677,9):
-      see previous definition of 'STATUS_FLOAT_DIVIDE_BY_ZERO'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3403,9): warning C4005: 'STATUS_FLOAT_INEXACT_RESULT': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2678,9):
-      see previous definition of 'STATUS_FLOAT_INEXACT_RESULT'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3413,9): warning C4005: 'STATUS_FLOAT_INVALID_OPERATION': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2679,9):
-      see previous definition of 'STATUS_FLOAT_INVALID_OPERATION'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3423,9): warning C4005: 'STATUS_FLOAT_OVERFLOW': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2680,9):
-      see previous definition of 'STATUS_FLOAT_OVERFLOW'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3433,9): warning C4005: 'STATUS_FLOAT_STACK_CHECK': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2681,9):
-      see previous definition of 'STATUS_FLOAT_STACK_CHECK'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3443,9): warning C4005: 'STATUS_FLOAT_UNDERFLOW': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2682,9):
-      see previous definition of 'STATUS_FLOAT_UNDERFLOW'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3453,9): warning C4005: 'STATUS_INTEGER_DIVIDE_BY_ZERO': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2683,9):
-      see previous definition of 'STATUS_INTEGER_DIVIDE_BY_ZERO'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3463,9): warning C4005: 'STATUS_INTEGER_OVERFLOW': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2684,9):
-      see previous definition of 'STATUS_INTEGER_OVERFLOW'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(3473,9): warning C4005: 'STATUS_PRIVILEGED_INSTRUCTION': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2685,9):
-      see previous definition of 'STATUS_PRIVILEGED_INSTRUCTION'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(4419,9): warning C4005: 'STATUS_STACK_OVERFLOW': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2686,9):
-      see previous definition of 'STATUS_STACK_OVERFLOW'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(4936,9): warning C4005: 'STATUS_DLL_NOT_FOUND': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2687,9):
-      see previous definition of 'STATUS_DLL_NOT_FOUND'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(4965,9): warning C4005: 'STATUS_ORDINAL_NOT_FOUND': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2688,9):
-      see previous definition of 'STATUS_ORDINAL_NOT_FOUND'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(4975,9): warning C4005: 'STATUS_ENTRYPOINT_NOT_FOUND': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2689,9):
-      see previous definition of 'STATUS_ENTRYPOINT_NOT_FOUND'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(4985,9): warning C4005: 'STATUS_CONTROL_C_EXIT': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2690,9):
-      see previous definition of 'STATUS_CONTROL_C_EXIT'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(5063,9): warning C4005: 'STATUS_DLL_INIT_FAILED': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2691,9):
-      see previous definition of 'STATUS_DLL_INIT_FAILED'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(6060,9): warning C4005: 'STATUS_CONTROL_STACK_VIOLATION': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2692,9):
-      see previous definition of 'STATUS_CONTROL_STACK_VIOLATION'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(7654,9): warning C4005: 'STATUS_FLOAT_MULTIPLE_FAULTS': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2693,9):
-      see previous definition of 'STATUS_FLOAT_MULTIPLE_FAULTS'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(7664,9): warning C4005: 'STATUS_FLOAT_MULTIPLE_TRAPS': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2694,9):
-      see previous definition of 'STATUS_FLOAT_MULTIPLE_TRAPS'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(7796,9): warning C4005: 'STATUS_REG_NAT_CONSUMPTION': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2695,9):
-      see previous definition of 'STATUS_REG_NAT_CONSUMPTION'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(8779,9): warning C4005: 'STATUS_HEAP_CORRUPTION': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2696,9):
-      see previous definition of 'STATUS_HEAP_CORRUPTION'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(9007,9): warning C4005: 'STATUS_STACK_BUFFER_OVERRUN': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2697,9):
-      see previous definition of 'STATUS_STACK_BUFFER_OVERRUN'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(9134,9): warning C4005: 'STATUS_INVALID_CRUNTIME_PARAMETER': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2698,9):
-      see previous definition of 'STATUS_INVALID_CRUNTIME_PARAMETER'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(9197,9): warning C4005: 'STATUS_ASSERTION_FAILURE': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2699,9):
-      see previous definition of 'STATUS_ASSERTION_FAILURE'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(10106,9): warning C4005: 'STATUS_ENCLAVE_VIOLATION': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2700,9):
-      see previous definition of 'STATUS_ENCLAVE_VIOLATION'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(10893,9): warning C4005: 'STATUS_INTERRUPTED': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2701,9):
-      see previous definition of 'STATUS_INTERRUPTED'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(10902,9): warning C4005: 'STATUS_THREAD_NOT_RUNNING': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2702,9):
-      see previous definition of 'STATUS_THREAD_NOT_RUNNING'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(11223,9): warning C4005: 'STATUS_ALREADY_REGISTERED': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2703,9):
-      see previous definition of 'STATUS_ALREADY_REGISTERED'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(15368,9): warning C4005: 'STATUS_SXS_EARLY_DEACTIVATION': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2705,9):
-      see previous definition of 'STATUS_SXS_EARLY_DEACTIVATION'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntstatus.h(15377,9): warning C4005: 'STATUS_SXS_INVALID_DEACTIVATION': macro redefinition
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2706,9):
-      see previous definition of 'STATUS_SXS_INVALID_DEACTIVATION'
-  
-C:\JimSec\Security.Native\IOCTL\Channel.h(5,8): error C2653: 'Shared': is not a class or namespace name
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-  
-C:\JimSec\Security.Native\IOCTL\Channel.h(14,22): error C2653: 'Shared': is not a class or namespace name
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-  
-C:\JimSec\Security.Native\IOCTL\Channel.h(15,25): error C2653: 'Shared': is not a class or namespace name
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-  
-C:\JimSec\SharedLib\Include\Packet.h(8,24): error C2040: 'WORD': 'unsigned char *' differs in levels of indirection from 'unsigned short'
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-  
-C:\JimSec\SharedLib\Include\Packet.h(25,29): error C3861: 'val': identifier not found
-  (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\JimSec\SharedLib\Include\Packet.h(21,29):
+      C:\Git\SharedLib\Include\Packet.h(30,29):
       This diagnostic occurred in the compiler generated function 'bool Shared::Packet::Add(T)'
   
-C:\JimSec\SharedLib\Include\Packet.h(25,29): error C2065: 'val': undeclared identifier
+C:\Git\SharedLib\Include\Packet.h(34,29): error C2065: 'val': undeclared identifier
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\JimSec\SharedLib\Include\Packet.h(21,29):
+      C:\Git\SharedLib\Include\Packet.h(30,29):
       This diagnostic occurred in the compiler generated function 'bool Shared::Packet::Add(T)'
   
-C:\JimSec\SharedLib\Include\Packet.h(37,13): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+C:\Git\SharedLib\Include\Packet.h(46,13): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'Src/IOCTL/Channel.cpp')
   
-C:\JimSec\SharedLib\Include\AES-GCM.h(47,106): error C2760: syntax error: '=' was unexpected here; expected 'expression'
+C:\Git\SharedLib\Include\AES-GCM.h(47,106): error C2760: syntax error: '=' was unexpected here; expected 'expression'
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\JimSec\SharedLib\Include\AES-GCM.h(47,106):
+      C:\Git\SharedLib\Include\AES-GCM.h(47,106):
       the template instantiation context (the oldest one first) is
-          C:\JimSec\SharedLib\Include\AES-GCM.h(16,28):
+          C:\Git\SharedLib\Include\AES-GCM.h(16,28):
           while compiling class template 'AES_GCM'
   
-C:\JimSec\SharedLib\Include\AES-GCM.h(47,106): error C3878: syntax error: unexpected token '=' following 'expression'
+C:\Git\SharedLib\Include\AES-GCM.h(47,106): error C3878: syntax error: unexpected token '=' following 'expression'
   (compiling source file 'Src/IOCTL/Channel.cpp')
   
-C:\JimSec\SharedLib\Include\AES-GCM.h(47,106): error C2760: syntax error: ')' was unexpected here; expected ';'
+C:\Git\SharedLib\Include\AES-GCM.h(47,106): error C2760: syntax error: ')' was unexpected here; expected ';'
   (compiling source file 'Src/IOCTL/Channel.cpp')
   
-C:\JimSec\SharedLib\Include\AES-GCM.h(47,106): error C3878: syntax error: unexpected token ')' following 'expression-statement'
+C:\Git\SharedLib\Include\AES-GCM.h(47,106): error C3878: syntax error: unexpected token ')' following 'expression-statement'
   (compiling source file 'Src/IOCTL/Channel.cpp')
   
-C:\JimSec\SharedLib\Include\AES-GCM.h(47,124): error C2760: syntax error: ')' was unexpected here; expected ';'
+C:\Git\SharedLib\Include\AES-GCM.h(47,124): error C2760: syntax error: ')' was unexpected here; expected ';'
   (compiling source file 'Src/IOCTL/Channel.cpp')
   
-C:\JimSec\SharedLib\Include\AES-GCM.h(47,124): error C3878: syntax error: unexpected token ')' following 'expression-statement'
+C:\Git\SharedLib\Include\AES-GCM.h(47,124): error C3878: syntax error: unexpected token ')' following 'expression-statement'
   (compiling source file 'Src/IOCTL/Channel.cpp')
   
-C:\JimSec\SharedLib\Include\AES-GCM.h(66,46): error C3861: 'obj': identifier not found
+C:\Git\SharedLib\Include\AES-GCM.h(66,46): error C3861: 'obj': identifier not found
   (compiling source file 'Src/IOCTL/Channel.cpp')
   
-C:\JimSec\SharedLib\Include\AES-GCM.h(81,12): error C2664: 'NTSTATUS BCryptEncrypt(BCRYPT_KEY_HANDLE,PUCHAR,ULONG,void *,PUCHAR,ULONG,PUCHAR,ULONG,ULONG *,ULONG)': cannot convert argument 7 from 'PUCHAR *' to 'PUCHAR'
+C:\Git\SharedLib\Include\AES-GCM.h(81,12): error C2664: 'NTSTATUS BCryptEncrypt(BCRYPT_KEY_HANDLE,PUCHAR,ULONG,void *,PUCHAR,ULONG,PUCHAR,ULONG,ULONG *,ULONG)': cannot convert argument 7 from 'PUCHAR *' to 'PUCHAR'
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\JimSec\SharedLib\Include\AES-GCM.h(81,88):
+      C:\Git\SharedLib\Include\AES-GCM.h(81,88):
       Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\bcrypt.h(1368,1):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\bcrypt.h(1227,1):
       see declaration of 'BCryptEncrypt'
-      C:\JimSec\SharedLib\Include\AES-GCM.h(81,12):
+      C:\Git\SharedLib\Include\AES-GCM.h(81,12):
       while trying to match the argument list '(BCRYPT_KEY_HANDLE, PUCHAR, size_t, BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO *, nullptr, int, PUCHAR *, size_t, PULONG **, int)'
-      C:\JimSec\SharedLib\Include\AES-GCM.h(81,25):
+      C:\Git\SharedLib\Include\AES-GCM.h(81,25):
       'BCryptEncrypt': function declaration must be available as none of the arguments depend on a template parameter
   
-C:\JimSec\SharedLib\Include\AES-GCM.h(66,46): error C2065: 'obj': undeclared identifier
+C:\Git\SharedLib\Include\AES-GCM.h(66,46): error C2065: 'obj': undeclared identifier
   (compiling source file 'Src/IOCTL/Channel.cpp')
   
-C:\JimSec\SharedLib\Include\AES-GCM.h(102,21): error C2664: 'NTSTATUS BCryptDecrypt(BCRYPT_KEY_HANDLE,PUCHAR,ULONG,void *,PUCHAR,ULONG,PUCHAR,ULONG,ULONG *,ULONG)': cannot convert argument 7 from 'PUCHAR *' to 'PUCHAR'
+C:\Git\SharedLib\Include\AES-GCM.h(102,21): error C2664: 'NTSTATUS BCryptDecrypt(BCRYPT_KEY_HANDLE,PUCHAR,ULONG,void *,PUCHAR,ULONG,PUCHAR,ULONG,ULONG *,ULONG)': cannot convert argument 7 from 'PUCHAR *' to 'PUCHAR'
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\JimSec\SharedLib\Include\AES-GCM.h(102,97):
+      C:\Git\SharedLib\Include\AES-GCM.h(102,97):
       Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\bcrypt.h(1384,1):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\bcrypt.h(1243,1):
       see declaration of 'BCryptDecrypt'
-      C:\JimSec\SharedLib\Include\AES-GCM.h(102,21):
+      C:\Git\SharedLib\Include\AES-GCM.h(102,21):
       while trying to match the argument list '(BCRYPT_KEY_HANDLE, PUCHAR, size_t, BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO *, nullptr, int, PUCHAR *, PULONG **, ULONG **, int)'
-      C:\JimSec\SharedLib\Include\AES-GCM.h(102,34):
+      C:\Git\SharedLib\Include\AES-GCM.h(102,34):
       'BCryptDecrypt': function declaration must be available as none of the arguments depend on a template parameter
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(188,9): warning C4005: 'PROBE_ALIGNMENT': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(188,9): warning C4005: 'PROBE_ALIGNMENT': macro redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(160,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(160,9):
       see previous definition of 'PROBE_ALIGNMENT'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(205,9): warning C4005: 'PROBE_ALIGNMENT32': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(205,9): warning C4005: 'PROBE_ALIGNMENT32': macro redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(177,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(177,9):
       see previous definition of 'PROBE_ALIGNMENT32'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(812,16): error C2011: '_PROCESSOR_NUMBER': 'struct' type redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(800,16): error C2011: '_PROCESSOR_NUMBER': 'struct' type redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(672,16):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(660,16):
       see declaration of '_PROCESSOR_NUMBER'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(825,16): error C2011: '_GROUP_AFFINITY': 'struct' type redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(813,16): error C2011: '_GROUP_AFFINITY': 'struct' type redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(685,16):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(673,16):
       see declaration of '_GROUP_AFFINITY'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(831,16): error C2011: '_GROUP_AFFINITY32': 'struct' type redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(819,16): error C2011: '_GROUP_AFFINITY32': 'struct' type redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(691,16):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(679,16):
       see declaration of '_GROUP_AFFINITY32'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(837,16): error C2011: '_GROUP_AFFINITY64': 'struct' type redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(825,16): error C2011: '_GROUP_AFFINITY64': 'struct' type redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(697,16):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(685,16):
       see declaration of '_GROUP_AFFINITY64'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1182,16): error C2011: '_FLOAT128': 'struct' type redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(1170,16): error C2011: '_FLOAT128': 'struct' type redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(891,16):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(879,16):
       see declaration of '_FLOAT128'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1235,15): error C2011: '_LARGE_INTEGER': 'union' type redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(1223,15): error C2011: '_LARGE_INTEGER': 'union' type redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(940,15):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(928,15):
       see declaration of '_LARGE_INTEGER'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1255,15): error C2011: '_ULARGE_INTEGER': 'union' type redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(1243,15): error C2011: '_ULARGE_INTEGER': 'union' type redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(960,15):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(948,15):
       see declaration of '_ULARGE_INTEGER'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1285,16): error C2011: '_LUID': 'struct' type redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(1273,16): error C2011: '_LUID': 'struct' type redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(990,16):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(978,16):
       see declaration of '_LUID'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1653,9): warning C4005: 'UNICODE_STRING_MAX_BYTES': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(1641,9): warning C4005: 'UNICODE_STRING_MAX_BYTES': macro redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1227,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(1215,9):
       see previous definition of 'UNICODE_STRING_MAX_BYTES'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1699,16): error C2011: '_LIST_ENTRY': 'struct' type redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(1687,16): error C2011: '_LIST_ENTRY': 'struct' type redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1236,16):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(1224,16):
       see declaration of '_LIST_ENTRY'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1709,16): error C2011: '_SINGLE_LIST_ENTRY': 'struct' type redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(1697,16): error C2011: '_SINGLE_LIST_ENTRY': 'struct' type redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1246,16):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(1234,16):
       see declaration of '_SINGLE_LIST_ENTRY'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1756,16): error C2011: 'LIST_ENTRY32': 'struct' type redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(1744,16): error C2011: 'LIST_ENTRY32': 'struct' type redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1257,16):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(1245,16):
       see declaration of 'LIST_ENTRY32'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1762,16): error C2011: 'LIST_ENTRY64': 'struct' type redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(1750,16): error C2011: 'LIST_ENTRY64': 'struct' type redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1263,16):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(1251,16):
       see declaration of 'LIST_ENTRY64'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1782,5): error C2027: use of undefined type 'LIST_ENTRY64'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(1770,5): error C2027: use of undefined type 'LIST_ENTRY64'
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1263,16):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(1251,16):
       see declaration of 'LIST_ENTRY64'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1782,36): error C2027: use of undefined type 'LIST_ENTRY32'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(1770,36): error C2027: use of undefined type 'LIST_ENTRY32'
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1257,16):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(1245,16):
       see declaration of 'LIST_ENTRY32'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1783,5): error C2027: use of undefined type 'LIST_ENTRY64'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(1771,5): error C2027: use of undefined type 'LIST_ENTRY64'
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1263,16):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(1251,16):
       see declaration of 'LIST_ENTRY64'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1783,36): error C2027: use of undefined type 'LIST_ENTRY32'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(1771,36): error C2027: use of undefined type 'LIST_ENTRY32'
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1257,16):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(1245,16):
       see declaration of 'LIST_ENTRY32'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1793,5): error C2027: use of undefined type 'LIST_ENTRY32'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(1781,5): error C2027: use of undefined type 'LIST_ENTRY32'
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1257,16):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(1245,16):
       see declaration of 'LIST_ENTRY32'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1793,25): error C2027: use of undefined type 'LIST_ENTRY64'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(1781,25): error C2027: use of undefined type 'LIST_ENTRY64'
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1263,16):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(1251,16):
       see declaration of 'LIST_ENTRY64'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1794,5): error C2027: use of undefined type 'LIST_ENTRY32'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(1782,5): error C2027: use of undefined type 'LIST_ENTRY32'
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1257,16):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(1245,16):
       see declaration of 'LIST_ENTRY32'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(1794,25): error C2027: use of undefined type 'LIST_ENTRY64'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(1782,25): error C2027: use of undefined type 'LIST_ENTRY64'
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(1263,16):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(1251,16):
       see declaration of 'LIST_ENTRY64'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3130,9): warning C4005: 'MAKELANGID': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(3118,9): warning C4005: 'MAKELANGID': macro redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2309,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2297,9):
       see previous definition of 'MAKELANGID'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3131,9): warning C4005: 'PRIMARYLANGID': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(3119,9): warning C4005: 'PRIMARYLANGID': macro redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2310,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2298,9):
       see previous definition of 'PRIMARYLANGID'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3132,9): warning C4005: 'SUBLANGID': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(3120,9): warning C4005: 'SUBLANGID': macro redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2311,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2299,9):
       see previous definition of 'SUBLANGID'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3175,9): warning C4005: 'MAKELCID': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(3163,9): warning C4005: 'MAKELCID': macro redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2354,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2342,9):
       see previous definition of 'MAKELCID'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3177,9): warning C4005: 'MAKESORTLCID': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(3165,9): warning C4005: 'MAKESORTLCID': macro redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2356,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2344,9):
       see previous definition of 'MAKESORTLCID'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3180,9): warning C4005: 'LANGIDFROMLCID': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(3168,9): warning C4005: 'LANGIDFROMLCID': macro redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2359,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2347,9):
       see previous definition of 'LANGIDFROMLCID'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3181,9): warning C4005: 'SORTIDFROMLCID': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(3169,9): warning C4005: 'SORTIDFROMLCID': macro redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2360,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2348,9):
       see previous definition of 'SORTIDFROMLCID'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3182,9): warning C4005: 'SORTVERSIONFROMLCID': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(3170,9): warning C4005: 'SORTVERSIONFROMLCID': macro redefinition
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2361,9):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2349,9):
       see previous definition of 'SORTVERSIONFROMLCID'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3379,12): error C2766: explicit specialization; '_ENUM_FLAG_INTEGER_FOR_SIZE<1>' has already been defined
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(3348,12): error C2766: explicit specialization; '_ENUM_FLAG_INTEGER_FOR_SIZE<1>' has already been defined
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2558,12):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2527,12):
       see previous definition of '_ENUM_FLAG_INTEGER_FOR_SIZE<1>'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3385,12): error C2766: explicit specialization; '_ENUM_FLAG_INTEGER_FOR_SIZE<2>' has already been defined
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(3354,12): error C2766: explicit specialization; '_ENUM_FLAG_INTEGER_FOR_SIZE<2>' has already been defined
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2564,12):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2533,12):
       see previous definition of '_ENUM_FLAG_INTEGER_FOR_SIZE<2>'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3391,12): error C2766: explicit specialization; '_ENUM_FLAG_INTEGER_FOR_SIZE<4>' has already been defined
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(3360,12): error C2766: explicit specialization; '_ENUM_FLAG_INTEGER_FOR_SIZE<4>' has already been defined
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2570,12):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2539,12):
       see previous definition of '_ENUM_FLAG_INTEGER_FOR_SIZE<4>'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3397,12): error C2766: explicit specialization; '_ENUM_FLAG_INTEGER_FOR_SIZE<8>' has already been defined
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(3366,12): error C2766: explicit specialization; '_ENUM_FLAG_INTEGER_FOR_SIZE<8>' has already been defined
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(2576,12):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(2545,12):
       see previous definition of '_ENUM_FLAG_INTEGER_FOR_SIZE<8>'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3404,12): error C2953: '_ENUM_FLAG_SIZED_INTEGER': class template has already been defined
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(3373,12): error C2953: '_ENUM_FLAG_SIZED_INTEGER': class template has already been defined
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3404,12):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(3373,12):
       see declaration of '_ENUM_FLAG_SIZED_INTEGER'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3469,15): error C2027: use of undefined type '_LARGE_INTEGER'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(3438,15): error C2027: use of undefined type '_LARGE_INTEGER'
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um\winnt.h(940,15):
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winnt.h(928,15):
       see declaration of '_LARGE_INTEGER'
   
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\shared\ntdef.h(3469,40): error C2338: static_assert failed: 'Windows headers require the default packing option. Changing this can lead to memory corruption. This diagnostic can be disabled by building with WINDOWS_IGNORE_PACKING_MISMATCH defined.'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\ntdef.h(3438,40): error C2338: static_assert failed: 'Windows headers require the default packing option. Changing this can lead to memory corruption. This diagnostic can be disabled by building with WINDOWS_IGNORE_PACKING_MISMATCH defined.'
   (compiling source file 'Src/IOCTL/Channel.cpp')
   
-C:\JimSec\SharedLib\Include\Adapter\AES_GCM_Adapter.h(22,11): error C3861: '_easGcm': identifier not found
+C:\Git\SharedLib\Include\Adapter\AES_GCM_Adapter.h(22,11): error C3861: '_easGcm': identifier not found
   (compiling source file 'Src/IOCTL/Channel.cpp')
-      C:\JimSec\SharedLib\Include\Adapter\AES_GCM_Adapter.h(22,11):
+      C:\Git\SharedLib\Include\Adapter\AES_GCM_Adapter.h(22,11):
       the template instantiation context (the oldest one first) is
-          C:\JimSec\SharedLib\Include\Adapter\AES_GCM_Adapter.h(10,29):
+          C:\Git\SharedLib\Include\Adapter\AES_GCM_Adapter.h(10,29):
           while compiling class template 'Adapter::AES_GCM_Adapter'
   
-C:\JimSec\SharedLib\Include\Adapter\AES_GCM_Adapter.h(22,11): error C2065: '_easGcm': undeclared identifier
+C:\Git\SharedLib\Include\Adapter\AES_GCM_Adapter.h(22,11): error C2065: '_easGcm': undeclared identifier
   (compiling source file 'Src/IOCTL/Channel.cpp')
   
-C:\JimSec\Security.Native\Src\IOCTL\Channel.cpp(27,17): error C2511: 'DWORD IOCTL::Channel::Send(Shared::Packet *)': overloaded member function not found in 'IOCTL::Channel'
-      C:\JimSec\Security.Native\IOCTL\Channel.h(6,8):
+C:\Git\Security.Native\Src\IOCTL\Channel.cpp(26,17): error C2511: 'DWORD IOCTL::Channel::Send(Shared::Packet *)': overloaded member function not found in 'IOCTL::Channel'
+      C:\Git\Security.Native\IOCTL\Channel.h(6,8):
       see declaration of 'IOCTL::Channel'
   
-C:\JimSec\Security.Native\Src\IOCTL\Channel.cpp(30,25): error C2671: 'IOCTL::Channel::Send': static member functions do not have 'this' pointers
-C:\JimSec\Security.Native\Src\IOCTL\Channel.cpp(30,24): error C2512: 'Adapter::PacketAdapter::PacketAdapter': no appropriate default constructor available
-      C:\JimSec\Security.Native\Src\IOCTL\Channel.cpp(30,24):
+C:\Git\Security.Native\Src\IOCTL\Channel.cpp(29,25): error C2671: 'IOCTL::Channel::Send': static member functions do not have 'this' pointers
+C:\Git\Security.Native\Src\IOCTL\Channel.cpp(29,24): error C2512: 'Adapter::PacketAdapter::PacketAdapter': no appropriate default constructor available
+      C:\Git\Security.Native\Src\IOCTL\Channel.cpp(29,24):
       while trying to match the argument list '()'
   
-C:\JimSec\Security.Native\Src\IOCTL\Channel.cpp(33,24): error C2597: illegal reference to non-static member 'IOCTL::Channel::_handleDevice'
-      C:\JimSec\Security.Native\IOCTL\Channel.h(9,10):
+C:\Git\Security.Native\Src\IOCTL\Channel.cpp(32,24): error C2597: illegal reference to non-static member 'IOCTL::Channel::_handleDevice'
+      C:\Git\Security.Native\IOCTL\Channel.h(9,10):
       see declaration of 'IOCTL::Channel::_handleDevice'
   
-C:\JimSec\Security.Native\Src\IOCTL\Channel.cpp(45,17): error C2511: 'DWORD IOCTL::Channel::Receive(Shared::Packet *)': overloaded member function not found in 'IOCTL::Channel'
-      C:\JimSec\Security.Native\IOCTL\Channel.h(6,8):
+C:\Git\Security.Native\Src\IOCTL\Channel.cpp(44,17): error C2511: 'DWORD IOCTL::Channel::Receive(Shared::Packet *)': overloaded member function not found in 'IOCTL::Channel'
+      C:\Git\Security.Native\IOCTL\Channel.h(6,8):
       see declaration of 'IOCTL::Channel'
   
-C:\JimSec\Security.Native\Src\IOCTL\Channel.cpp(48,25): error C2671: 'IOCTL::Channel::Receive': static member functions do not have 'this' pointers
-C:\JimSec\Security.Native\Src\IOCTL\Channel.cpp(48,24): error C2512: 'Adapter::PacketAdapter::PacketAdapter': no appropriate default constructor available
-      C:\JimSec\Security.Native\Src\IOCTL\Channel.cpp(48,24):
+C:\Git\Security.Native\Src\IOCTL\Channel.cpp(47,25): error C2671: 'IOCTL::Channel::Receive': static member functions do not have 'this' pointers
+C:\Git\Security.Native\Src\IOCTL\Channel.cpp(47,24): error C2512: 'Adapter::PacketAdapter::PacketAdapter': no appropriate default constructor available
+      C:\Git\Security.Native\Src\IOCTL\Channel.cpp(47,24):
       while trying to match the argument list '()'
   
-C:\JimSec\Security.Native\Src\IOCTL\Channel.cpp(49,23): error C2597: illegal reference to non-static member 'IOCTL::Channel::_handleDevice'
-      C:\JimSec\Security.Native\IOCTL\Channel.h(9,10):
+C:\Git\Security.Native\Src\IOCTL\Channel.cpp(48,23): error C2597: illegal reference to non-static member 'IOCTL::Channel::_handleDevice'
+      C:\Git\Security.Native\IOCTL\Channel.h(9,10):
       see declaration of 'IOCTL::Channel::_handleDevice'
   
   Generating Code...

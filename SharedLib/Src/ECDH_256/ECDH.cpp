@@ -1,5 +1,4 @@
-#include "../../../../JimSec/SharedLib/Include/ECDH_256/ECDH.h"
-#include <ntstatus.h>
+#include "../../../SharedLib/Include/ECDH_256/ECDH.h"
 
 namespace ECDH_256
 {
@@ -23,7 +22,7 @@ namespace ECDH_256
 		status = BCryptFinalizeKeyPair(context->PrivateKey, 0);
 		if (!BCRYPT_SUCCESS(status))
 			return status;
-		return STATUS_SUCCESS;
+		return status;
     }
 
 	NTSTATUS ECDH::GetPublicKey(P_CONTEXT context, unsigned char* publicKey, size_t* publicKeySize)
@@ -35,7 +34,7 @@ namespace ECDH_256
 		if (!BCRYPT_SUCCESS(status))
 			return status;
 		*publicKeySize = resultSize;
-		return STATUS_SUCCESS;
+		return status;
 	}
 
 	void ECDH::Cleanup(P_CONTEXT context)

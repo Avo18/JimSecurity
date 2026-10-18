@@ -1,17 +1,26 @@
 #pragma once
-#include <string.h>
+#include <cstdint>
+#include <cstddef>
+#include <cstring>
+//#include <type_traits>
 
-#ifndef _Packet_
-#define _PACKET_
-
-typedef unsigned long DWORD;
-typedef unsigned char* WORD;
-#define MAX_PACKET_SIZE 256
-
-const int SESSION_KEY_LENTH = 16;
+//#ifndef _Packet_
+//#define _PACKET_
+//
+//typedef unsigned long DWORD;
+//typedef unsigned char WORD;
+//#define MAX_PACKET_SIZE 256
+//
+//const int SESSION_KEY_LENTH = 16;
 
 namespace Shared
 {
+	using Byte = std::uint8_t;
+	using PacketSize = std::uint32_t;
+
+	constexpr std::size_t MAX_PACKET_SIZE = 256;
+	constexpr std::size_t SESSION_KEY_LENGTH = 16;
+
 	class Packet
 	{
 	public:
@@ -89,4 +98,4 @@ namespace Shared
 		PULONG _packetSize;
 	};
 }
-#endif
+//#endif

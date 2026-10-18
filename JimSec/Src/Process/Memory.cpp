@@ -1,8 +1,8 @@
 #pragma once
 #include <ntifs.h>
 #include <ntimage.h>
-#include "../../../../JimSec/JimSec/Include/Process/Memory.h"
-#include "../../../../../JimSec/JimSec/Include/Kernel/Windows/NtMemory.h"
+#include "../../../JimSec/Include/Process/Memory.h"
+#include "../../../JimSec/Include/Kernel/Windows/NtMemory.h"
 #include "../../../JimSec/Include/Process/ProcessContext.h"
 
 

@@ -2,18 +2,36 @@
 bash: git clone https://github.com/microsoft/vcpkg.git
 cd vcpkg
 bootstrap-vcpkg.bat
+OF
+\.bootstrap-vcpkg.bat
 
 install open ssl: 
 vcpkg install openssl:x64-windows
+OF
+.\vcpkg.exe install openssl:x64-windows
 
 install linking library:
 vcpkg install openssl:x64-windows-static
+OF
+.\vcpkg.exe install openssl:x64-windows-static
 
 koppel vcpkg aan visual studio met commando: 
 vcpkg integrate install
+OF
+.\vcpkg.exe integrate install
 
 achter dit kan je gebruik maken van libray openssl
 #include <openssl/evp.h>
 
 als het nog niet werkt voeg manueel reference toe: 
 Project → Properties → C/C++ → General → Additional Include Directories
+
+------------------
+Driver installatie: 
+
+environment variabele voor users
+-PATH: C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\   toevoegen
+
+https://learn.microsoft.com/en-gb/windows-hardware/drivers/other-wdk-downloads
+installeer WDK (Windows Driver Kit) voor de juiste headers en libraries.
+en installeer SDK (Software Development Kit) voor de juiste headers en libraries.
