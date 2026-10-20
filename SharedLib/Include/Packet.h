@@ -31,7 +31,7 @@ namespace Shared
 			if (_size + sizeof(T) > MAX_PACKET_SIZE)
 				return false;
 
-			*((T*)&_packet[_size]) = val;
+			*((T*)&_packet[_size]) = value;
 			_size += sizeof(T);
 			return true;
 		}
@@ -49,6 +49,16 @@ namespace Shared
 			}
 			return true;
 		}
+
+		inline bool AddBytes(const __int8* bytes, size_t length)
+		{
+			if (_size + length > MAX_PACKET_SIZE)
+				return false;
+			memcpy_s(_packet + _size, MAX_PACKET_SIZE - _size, bytes, length);
+			_size += length;
+			return true;
+		}
+
 		void AddAuthenticationTag(const __int8* tag)
 		{
 			const int tagSize = 16;
