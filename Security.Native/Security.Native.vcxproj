@@ -144,6 +144,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="IOCTL\Channel.h" />
     <ClInclude Include="IOCTL\Packets\PingPacket.h" />
+    <ClInclude Include="IOCTL\Packets\PublicKeyPacket.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="SecurityNative.h" />
   </ItemGroup>
